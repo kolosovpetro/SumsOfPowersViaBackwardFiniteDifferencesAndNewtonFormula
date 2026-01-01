@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{knuth1993johann}
+{Knuth, Donald E.}
+\newblock {Johann Faulhaber and sums of powers}.
+\newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
+\newblock \url{https://arxiv.org/abs/math/9207222}.
+
+\bibitem{steffensen1927interpolation}
+{Steffensen, Johan Frederik}.
+\newblock {\em Interpolation}.
+\newblock {Williams \& Wilkins}, 1927.
+\newblock
+  \url{https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8}.
+
+\bibitem{sloane2003line}
+{Sloane, Neil J.A. and others}.
+\newblock {The on-line encyclopedia of integer sequences}, 2003.
+\newblock \url{https://oeis.org/}.
+
+\end{thebibliography}

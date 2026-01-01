@@ -1,0 +1,83 @@
+Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
+\begin{align*}
+    \KnuthRFoldSum{0}{n}{m}   &= n^m \\
+    \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
+    \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
+\end{align*}
+The book Interpolation by Steffensen~\cite{steffensen1927interpolation}
+gives Newton's formula in terms of backward finite differences
+\begin{proposition}[Newton formula via backward differences]
+    \label{prop:newtons-formula-via-backward-difference}
+    \begin{align*}
+        f(x) &= \sum_{k=0}^{\infty} \binom{x-a+k-1}{k} \nabla^{k} f(a)
+    \end{align*}
+    where $\nabla^{k} f(a) = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f(a-j)$.
+\end{proposition}
+Thus, by setting $f(n)=n^m$
+\begin{align*}
+    n^m &= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m}
+\end{align*}
+Therefore, ordinary sums of powers is equivalent to
+\begin{align*}
+    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \sum_{k=1}^{n} \binom{k-t+j-1}{j}
+\end{align*}
+We notice that the sum $\sum_{k=1}^{n} \binom{k-t+j-1}{j}$ is a good candidate for hockey stick identity for binomial coefficients
+$\sum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$.
+Thus, by setting $a=j-t$ and $b=j-t-1+n$, we get
+\begin{align*}
+    \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \sum_{m=j-t}^{j-t-1+n} \binom{m}{j}
+\end{align*}
+Because,
+\begin{align*}
+    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
+\end{align*}
+Thus,
+\begin{align*}
+    \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \binom{j-t+n}{j+1} - \binom{j-t}{j+1}
+\end{align*}
+Applying the identity for binomial coefficients $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we obtain
+\begin{proposition} [Ordinary sums of powers via backward differences]
+    \begin{align*}
+        \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
+    \end{align*}
+\end{proposition}
+For example, by setting $t=2, \; m=1,2,3,4$, we get formulas for sums of cubes
+\begin{align*}
+    \KnuthRFoldSum{1}{n}{1}
+    &=
+    2\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
+    + 1\left[ \binom{2}{2} + \binom{n-1}{2} \right],
+    \\[1em]
+    \KnuthRFoldSum{1}{n}{2}
+    &=
+    4\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
+    + 3\left[ \binom{2}{2} + \binom{n-1}{2} \right] \\
+    &\quad
+    + 2\left[ -\binom{2}{3} + \binom{n}{3} \right].
+\end{align*}
+\begin{align*}
+    \KnuthRFoldSum{1}{n}{3}
+    &=
+    8\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
+    + 7\left[ \binom{2}{2} + \binom{n-1}{2} \right] \\
+    &\quad
+    + 6\left[ -\binom{2}{3} + \binom{n}{3} \right]
+    + 6\left[ \binom{2}{4} + \binom{n+1}{4} \right].
+\end{align*}
+\begin{align*}
+    \KnuthRFoldSum{1}{n}{4}
+    &=
+    16\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
+    + 15\left[ \binom{2}{2} + \binom{n-1}{2} \right] \\
+    &\quad
+    + 14\left[ -\binom{2}{3} + \binom{n}{3} \right]
+    + 12\left[ \binom{2}{4} + \binom{n+1}{4} \right] \\
+    &\quad
+    + 24\left[ -\binom{2}{5} + \binom{n+2}{5} \right].
+\end{align*}
+The coefficients $1, 2, 1, 4, 3, 2, 8, 7, 6, 6,\cdots$ for $t=2$ is the sequence \href{https://oeis.org/A391068}{\texttt{A391068}} in the OEIS~\cite{sloane2003line}.
+For $t=0$ the coefficients are $1, 0, 1, 0, -1, 2, 0, 1, -6, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A278075}{\texttt{A278075}}.
+For $t=1$ the coefficients are $1, 1, 1, 1, 1, 2, 1, 1, 0, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A389570}{\texttt{A389570}}.
+For $t=3$ the coefficients are $1, 3, 1, 9, 5, 2, 27, 19, 12, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A391210}{\texttt{A391210}}.
+
+
