@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["github-latex-template`"]
+BeginPackage["SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula`"]
 
 (*BEGIN: Definitions *)
 A::usage="A[n, k] returns the real coefficient A of non-negative integers n, k such that n <= k."
