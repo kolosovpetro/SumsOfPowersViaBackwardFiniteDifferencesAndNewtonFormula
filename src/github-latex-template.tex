@@ -1,0 +1,182 @@
+\documentclass[12pt,letterpaper,oneside,reqno]{amsart}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{mathrsfs}
+\usepackage{colonequals}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[unicode,pdfpagelabels,hyperindex,colorlinks=true,linkcolor=red,urlcolor=blue,citecolor=red]{hyperref}
+\usepackage{graphicx}
+\emergencystretch=1em
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{mdframed}
+
+% margins and layout
+\linespread{1.7}
+\usepackage[left=1in,right=1in,bottom=1in,top=1in]{geometry}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\raggedbottom
+
+\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
+\newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
+\newcommand \bernoulli [2][B] {{#1}\sb{#2}}
+
+%\newcommand \anglePower [2]{\langle #1 \rangle \sp{#2}}
+%\newcommand \curvePower [2]{\{#1\}\sp{#2}}
+
+% central factorials and related symbols
+\newcommand \centralFactorial [2] {#1^{[#2]}}
+\newcommand \fallingFactorial [2] {\left(#1 \right)^{\underline{#2}}}
+\newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
+\newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
+
+\newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
+
+% for llceil coeffcient
+\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
+\def\llceil{\left\lceil\kern-3.5pt\left\lceil}
+\def\rrfloor{\right\rfloor\kern-3.5pt\right\rfloor}
+\newcommand \llceilCoefficient [3] {\llceil \nobarfrac{#1}{#2} \rrfloor_{#3}}
+
+% ~~~ Rascal numbers ~~~
+%\newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
+%\newcommand \north[0] {\mathbf{North}}
+%\newcommand \south[0] {\mathbf{South}}
+%\newcommand \west[0] {\mathbf{West}}
+%\newcommand \east[0] {\mathbf{East}}
+
+% ~~~~ 1-q pascal notation~~~~
+%\newcommand{\genstirlingI}[3]{%
+%    \genfrac{[}{]}{0pt}{#1}{#2}{#3}%
+%}
+%\newcommand{\genstirlingII}[3]{%
+%    \genfrac{\{}{\}}{0pt}{#1}{#2}{#3}%
+%}
+%\newcommand{\oneQBinomial}[3]{\genstirlingI{}{#1}{#2}^{#3}}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+
+%\numberwithin{equation}{section}
+
+\title[LaTeX Template for GitHub]
+{LaTeX Template for GitHub}
+\author[Petro Kolosov]{Petro Kolosov}
+\date{\today}
+
+% 05A19 — Combinatorial identities
+% 05A10 — Factorials, binomial coefficients, combinatorial functions
+% 41A15 — Spline approximation
+% 11B68 — Bernoulli and Euler numbers and polynomials
+% 11B73 — Bell and Stirling numbers
+% 11B83 — Special sequences and polynomials
+\subjclass[2010]{05A19, 05A10, 41A15, 11B68, 11B73, 11B83}
+
+% metadata
+\email{kolosovp94@gmail.com}
+\address{Software Developer, DevOps Engineer}
+\urladdr{https://kolosovpetro.github.io}
+\keywords{Sums of powers,
+    Newton's interpolation formula,
+    Finite differences,
+    Binomial coefficients,
+    Faulhaber's formula,
+    Bernoulli numbers,
+    Bernoulli polynomials,
+    Interpolation,
+    Approximation,
+    Discrete convolution,
+    Combinatorics,
+    Polynomial identities,
+    Central factorial numbers,
+    Stirling numbers,
+    Eulerian numbers,
+    Worpitzky identity,
+    Pascal's triangle,
+    OEIS}
+\hypersetup{
+    pdftitle={LaTeX Template for GitHub},
+    pdfproducer={LaTeX},
+    pdfcreator={pdflatex},
+    pdfauthor={Petro Kolosov},
+    pdfsubject={LaTeX Template for GitHub},
+    pdfkeywords={Sums of powers,
+    Power sums,
+    Polynomials,
+    Power function,
+    Polynomial identities,
+    Newton's interpolation formula,
+    Finite differences,
+    Interpolation,
+    Approximation,
+    Binomial coefficients,
+    Multinomial coefficients,
+    Binomial theorem,
+    Faulhaber's formula,
+    Bernoulli numbers,
+    Bernoulli polynomials,
+    Derivatives,
+    Differential calculus,
+    Partial differential equations,
+    Discrete convolution,
+    Sums of convolved powers,
+    Convolved power sums,
+    Combinatorics,
+    Central factorial numbers,
+    Stirling numbers,
+    Eulerian numbers,
+    Worpitzky identity,
+    Pascal's triangle,
+    Dynamic systems,
+    Time scales,
+    OEIS}
+}
+
+\begin{document}
+
+    \begin{abstract}
+        \input{sections/abstract}
+    \end{abstract}
+
+    \maketitle
+
+    \addcontentsline{toc}{section}{Abstract}
+
+%    \tableofcontents
+
+
+    \section{Introduction} \label{sec:introduction}
+    \input{sections/01_introduction}
+
+
+    \section{Conclusions}\label{sec:conclusions}
+    \input{sections/conclusions}
+
+
+    \section{Acknowledgements}\label{sec:acknowledgements}
+    \input{sections/acknowledgements}
+
+    \bibliographystyle{unsrt}
+    \bibliography{github-latex-template}
+
+    \input{metadata/footer}
+
+\end{document}
