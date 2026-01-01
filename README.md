@@ -4,7 +4,7 @@
 
 We develop formula for sums of powers using Newton's interpolation formula in terms of backward finite differences of powers.
 
-**DOI**: https://doi.org/10.5281/zenodo.18040979
+**DOI**: https://doi.org/10.5281/zenodo.18118011
 
 **MSC2010**: 05A19, 05A10, 11B83, 03C40.
 
