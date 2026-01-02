@@ -7,7 +7,7 @@ Reallocating 'name_of_file' (item size: 1) to 57 items.
 Database file #1: SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib
 You've used 4 entries,
             1791 wiz_defined-function locations,
-            472 strings with 4586 characters,
+            472 strings with 4592 characters,
 and the built_in function-call counts, 671 in all, are:
 = -- 62
 > -- 16

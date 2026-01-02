@@ -20,11 +20,11 @@
 
 \bibitem{MathematicaPrograms}
 Petro Kolosov.
-\newblock Mathematica programs for finite differences, stirling numbers, and
-  sums of powers.
+\newblock Mathematica programs for backward finite differences and newton's
+  formula.
 \newblock
-  \url{https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica},
-  2025.
+  \url{https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica},
+  2026.
 \newblock GitHub repository, Mathematica source files.
 
 \end{thebibliography}
