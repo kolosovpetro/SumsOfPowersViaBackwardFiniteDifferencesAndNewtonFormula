@@ -18,4 +18,13 @@
 \newblock {The on-line encyclopedia of integer sequences}, 2003.
 \newblock \url{https://oeis.org/}.
 
+\bibitem{MathematicaPrograms}
+Petro Kolosov.
+\newblock Mathematica programs for finite differences, stirling numbers, and
+  sums of powers.
+\newblock
+  \url{https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers/tree/main/mathematica},
+  2025.
+\newblock GitHub repository, Mathematica source files.
+
 \end{thebibliography}

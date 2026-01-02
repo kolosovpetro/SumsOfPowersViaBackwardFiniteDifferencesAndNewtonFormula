@@ -15,8 +15,9 @@ gives Newton's formula in terms of backward finite differences
 \end{proposition}
 Thus, by setting $f(n)=n^m$
 \begin{align*}
-    n^m &= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m}
+    n^m &= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m},
 \end{align*}
+where $\nabla^{j} t^{m} = \sum_{k=0}^{j} (-1)^{k} \binom{j}{k} (t-k)^{m}$.
 Therefore, ordinary sums of powers is equivalent to
 \begin{align*}
     \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \sum_{k=1}^{n} \binom{k-t+j-1}{j}
@@ -37,17 +38,21 @@ Thus,
 \end{align*}
 Applying the identity for binomial coefficients $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we obtain
 \begin{proposition} [Ordinary sums of powers via backward differences]
-    \begin{align*}
-        \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
-    \end{align*}
+    \label{prop:ordinary-sums-of-powers-via-backward-differences}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
+        \end{align*}
+    \end{mdframed}
 \end{proposition}
 For example, by setting $t=2, \; m=1,2,3,4$, we get formulas for sums of cubes
 \begin{align*}
-    \KnuthRFoldSum{1}{n}{1}
-    &=
+    \KnuthRFoldSum{1}{n}{1} &=
     2\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
     + 1\left[ \binom{2}{2} + \binom{n-1}{2} \right],
-    \\[1em]
+\end{align*}
+\begin{align*}
     \KnuthRFoldSum{1}{n}{2}
     &=
     4\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
