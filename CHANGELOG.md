@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update Mathematica references
 - Formula for backward differences in Eulerian numbers (Worpitzky identity)
 - Mathematica for backward differences in Eulerian numbers (Worpitzky identity)
+- Formula for backward differences in Stirling numbers
+- Mathematica for backward differences in Stirling numbers
 
 ## [1.0.1] - 01-Jan-2026
 

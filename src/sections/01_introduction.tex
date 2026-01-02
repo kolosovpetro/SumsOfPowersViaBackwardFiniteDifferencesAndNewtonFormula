@@ -6,13 +6,13 @@ Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
 \end{align*}
 The book Interpolation by Steffensen~\cite[chapter 2, eq. (19)]{steffensen1927interpolation}
 gives Newton's formula for backward differences evaluated
-in zero $f(x) = \sum_{k=0}^{\infty} \binom{x+k-1}{k} \nabla^{k} f(0)$.
+in zero $f(x) = \sum_{k=0}^{n} \binom{x+k-1}{k} \nabla^{k} f(0)$.
 
 In general,
 \begin{proposition}[Newton formula via backward differences]
     \label{prop:newtons-formula-via-backward-difference}
     \begin{align*}
-        f(x) &= \sum_{k=0}^{\infty} \binom{x-a+k-1}{k} \nabla^{k} f(a)
+        f(x) &= \sum_{k=0}^{n} \binom{x-a+k-1}{k} \nabla^{k} f(a)
     \end{align*}
     where $\nabla^{k} f(a) = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f(a-j)$.
 \end{proposition}
@@ -96,5 +96,32 @@ For $t=3$ the coefficients are $1, 3, 1, 9, 5, 2, 27, 19, 12, 6,\cdots$ and regi
         By Worpitzky identity $t^{m} = \sum_{k=0}^{m} \eulerian{m}{k} \binom{t+k}{m}$ and binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$, see~\cite{Worpitzky1883}.
     \end{proof}
 \end{lemma}
-
-
+Thus, let be a formula for ordinary sums of powers in terms of Eulerian numbers $\eulerian{m}{k}$
+\begin{proposition} [Ordinary sums of powers in Eulerian numbers]
+    \label{prop:ordinary-sums-of-powers-in-eulerian-numbers}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \eulerian{m}{k} \binom{t+k-j}{m-j}
+        \end{align*}
+    \end{mdframed}
+\end{proposition}
+\begin{lemma} [Backward differences in Stirling numbers]
+    \label{lem:backward-differences-in-stirling-numbers}
+    \begin{align*}
+        \nabla^{j} t^{m} = \sum_{k=j}^{m} \binom{t-j}{k-j} \stirlingii{m}{k} k!
+    \end{align*}
+    \begin{proof}
+        By the identity $t^m  = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{k} k!$ and binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$.
+    \end{proof}
+\end{lemma}
+Thus, let be a formula for ordinary sums of powers in terms of Stirling numbers $\stirlingii{m}{k}$
+\begin{proposition} [Ordinary sums of powers in Stirling numbers]
+    \label{prop:ordinary-sums-of-powers-in-stirling-numbers}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \binom{t-j}{k-j} \stirlingii{m}{k} k!
+        \end{align*}
+    \end{mdframed}
+\end{proposition}

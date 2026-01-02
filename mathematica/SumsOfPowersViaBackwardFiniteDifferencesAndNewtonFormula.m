@@ -10,6 +10,12 @@ ValidateOrdinarySumsOfPowersViaBackwardDifferences::usage=""
 EulerianNumber::usage=""
 BackwardDifferencesInEulerianNumbers::usage=""
 ValidateBackwardDifferencesInEulerianNumbers::usage=""
+BackwardDifferencesInStirlingNumbers::usage=""
+ValidateBackwardDifferencesInStirlingNumbers::usage=""
+OrdinarySumsOfPowersInEulerianNumbers::usage=""
+ValidateOrdinarySumsOfPowersInEulerianNumbers::usage=""
+OrdinarySumsOfPowersInStirlingNumbers::usage=""
+ValidateOrdinarySumsOfPowersInStirlingNumbers::usage=""
 
 (*END: Definitions *)
 (* =========================================================================DOCS END=================================================================== *)
@@ -34,6 +40,12 @@ EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
 EulerianNumber[n_, k_] := EulerianNumber[n, k] = (k + 1) EulerianNumber[n - 1, k] + (n - k) EulerianNumber[n - 1, k - 1];
 BackwardDifferencesInEulerianNumbers[t_, m_, j_] := Sum[EulerianNumber[m, k] * Binomial[t+k-j, m-j], {k, 0, m}];
 ValidateBackwardDifferencesInEulerianNumbers[max_] := Table[BackwardDifference[t, m, j]-BackwardDifferencesInEulerianNumbers[t, m, j], {m, 0, max}, {j, 0, m}, {t, 0, max}] //Flatten
+OrdinarySumsOfPowersInEulerianNumbers[n_, m_, t_] := Sum[BackwardDifferencesInEulerianNumbers[t, m, j] * ((-1)^j * Binomial[t, j+1] + Binomial[j-t+n, j+1]), {j, 0, m}];
+ValidateOrdinarySumsOfPowersInEulerianNumbers[max_]:=Table[MultifoldSumOfPowersRecurrence[1, n, m] - OrdinarySumsOfPowersInEulerianNumbers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}]//Flatten
+BackwardDifferencesInStirlingNumbers[t_, m_, j_] := Sum[StirlingS2[m,k] * Binomial[t-j, k-j] * k!, {k, j, m}];
+ValidateBackwardDifferencesInStirlingNumbers[max_]:= Table[BackwardDifference[t, m, j]-BackwardDifferencesInStirlingNumbers[t, m, j], {m, 0, max}, {j, 0, m}, {t, 0, max}] //Flatten
+OrdinarySumsOfPowersInStirlingNumbers[n_, m_, t_] := Sum[BackwardDifferencesInStirlingNumbers[t, m, j] * ((-1)^j * Binomial[t, j+1] + Binomial[j-t+n, j+1]), {j, 0, m}];
+ValidateOrdinarySumsOfPowersInStirlingNumbers[max_]:=Table[MultifoldSumOfPowersRecurrence[1, n, m] - OrdinarySumsOfPowersInStirlingNumbers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}]//Flatten
 (*END: Definitions *)
 End[ ]
 EndPackage[ ]
