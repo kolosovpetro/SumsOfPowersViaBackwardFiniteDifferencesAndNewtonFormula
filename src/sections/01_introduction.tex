@@ -4,8 +4,11 @@ Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
     \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
     \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
 \end{align*}
-The book Interpolation by Steffensen~\cite{steffensen1927interpolation}
-gives Newton's formula in terms of backward finite differences
+The book Interpolation by Steffensen~\cite[chapter 2, eq. (19)]{steffensen1927interpolation}
+gives Newton's formula for backward differences evaluated
+in zero $f(x) = \sum_{k=0}^{\infty} \binom{x+k-1}{k} \nabla^{k} f(0)$.
+
+In general,
 \begin{proposition}[Newton formula via backward differences]
     \label{prop:newtons-formula-via-backward-difference}
     \begin{align*}
@@ -28,13 +31,13 @@ Thus, by setting $a=j-t$ and $b=j-t-1+n$, we get
 \begin{align*}
     \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \sum_{m=j-t}^{j-t-1+n} \binom{m}{j}
 \end{align*}
-Because,
-\begin{align*}
-    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
-\end{align*}
 Thus,
 \begin{align*}
     \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \binom{j-t+n}{j+1} - \binom{j-t}{j+1}
+\end{align*}
+Because,
+\begin{align*}
+    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
 \end{align*}
 Applying the identity for binomial coefficients $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we obtain
 \begin{proposition} [Ordinary sums of powers via backward differences]
@@ -46,7 +49,7 @@ Applying the identity for binomial coefficients $\binom{-k}{j} = (-1)^j \binom{j
         \end{align*}
     \end{mdframed}
 \end{proposition}
-For example, by setting $t=2, \; m=1,2,3,4$, we get formulas for sums of cubes
+For example, by setting $t=2$ and $m=1,2,3,4$, we get formulas for sums of cubes
 \begin{align*}
     \KnuthRFoldSum{1}{n}{1} &=
     2\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
