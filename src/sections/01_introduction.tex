@@ -4,19 +4,23 @@ Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
     \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
     \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
 \end{align*}
-The book Interpolation by Steffensen~\cite{steffensen1927interpolation}
-gives Newton's formula in terms of backward finite differences
+The book Interpolation by Steffensen~\cite[chapter 2, eq. (19)]{steffensen1927interpolation}
+gives Newton's formula for backward differences evaluated
+in zero $f(x) = \sum_{k=0}^{n} \binom{x+k-1}{k} \nabla^{k} f(0)$.
+
+In general,
 \begin{proposition}[Newton formula via backward differences]
     \label{prop:newtons-formula-via-backward-difference}
     \begin{align*}
-        f(x) &= \sum_{k=0}^{\infty} \binom{x-a+k-1}{k} \nabla^{k} f(a)
+        f(x) &= \sum_{k=0}^{n} \binom{x-a+k-1}{k} \nabla^{k} f(a)
     \end{align*}
     where $\nabla^{k} f(a) = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f(a-j)$.
 \end{proposition}
 Thus, by setting $f(n)=n^m$
 \begin{align*}
-    n^m &= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m}
+    n^m &= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m},
 \end{align*}
+where $\nabla^{j} t^{m} = \sum_{k=0}^{j} (-1)^{k} \binom{j}{k} (t-k)^{m}$.
 Therefore, ordinary sums of powers is equivalent to
 \begin{align*}
     \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \sum_{k=1}^{n} \binom{k-t+j-1}{j}
@@ -27,27 +31,31 @@ Thus, by setting $a=j-t$ and $b=j-t-1+n$, we get
 \begin{align*}
     \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \sum_{m=j-t}^{j-t-1+n} \binom{m}{j}
 \end{align*}
-Because,
-\begin{align*}
-    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
-\end{align*}
 Thus,
 \begin{align*}
     \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \binom{j-t+n}{j+1} - \binom{j-t}{j+1}
 \end{align*}
+Because,
+\begin{align*}
+    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
+\end{align*}
 Applying the identity for binomial coefficients $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we obtain
 \begin{proposition} [Ordinary sums of powers via backward differences]
-    \begin{align*}
-        \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
-    \end{align*}
+    \label{prop:ordinary-sums-of-powers-via-backward-differences}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
+        \end{align*}
+    \end{mdframed}
 \end{proposition}
-For example, by setting $t=2, \; m=1,2,3,4$, we get formulas for sums of cubes
+For example, by setting $t=2$ and $m=1,2,3,4$, we get formulas for sums of cubes
 \begin{align*}
-    \KnuthRFoldSum{1}{n}{1}
-    &=
+    \KnuthRFoldSum{1}{n}{1} &=
     2\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
     + 1\left[ \binom{2}{2} + \binom{n-1}{2} \right],
-    \\[1em]
+\end{align*}
+\begin{align*}
     \KnuthRFoldSum{1}{n}{2}
     &=
     4\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
@@ -79,5 +87,41 @@ The coefficients $1, 2, 1, 4, 3, 2, 8, 7, 6, 6,\cdots$ for $t=2$ is the sequence
 For $t=0$ the coefficients are $1, 0, 1, 0, -1, 2, 0, 1, -6, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A278075}{\texttt{A278075}}.
 For $t=1$ the coefficients are $1, 1, 1, 1, 1, 2, 1, 1, 0, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A389570}{\texttt{A389570}}.
 For $t=3$ the coefficients are $1, 3, 1, 9, 5, 2, 27, 19, 12, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A391210}{\texttt{A391210}}.
-
-
+\begin{lemma} [Backward differences in Eulerian numbers]
+    \label{lem:backward-differences-in-eulerian-numbers}
+    \begin{align*}
+        \Delta^{j} t^{m} = \sum_{k=0}^{m} \eulerian{m}{k} \binom{t+k-j}{m-j}
+    \end{align*}
+    \begin{proof}
+        By Worpitzky identity $t^{m} = \sum_{k=0}^{m} \eulerian{m}{k} \binom{t+k}{m}$ and binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$, see~\cite{Worpitzky1883}.
+    \end{proof}
+\end{lemma}
+Thus, let be a formula for ordinary sums of powers in terms of Eulerian numbers $\eulerian{m}{k}$
+\begin{proposition} [Ordinary sums of powers in Eulerian numbers]
+    \label{prop:ordinary-sums-of-powers-in-eulerian-numbers}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \eulerian{m}{k} \binom{t+k-j}{m-j}
+        \end{align*}
+    \end{mdframed}
+\end{proposition}
+\begin{lemma} [Backward differences in Stirling numbers]
+    \label{lem:backward-differences-in-stirling-numbers}
+    \begin{align*}
+        \nabla^{j} t^{m} = \sum_{k=j}^{m} \binom{t-j}{k-j} \stirlingii{m}{k} k!
+    \end{align*}
+    \begin{proof}
+        By the identity $t^m  = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{k} k!$ and binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$.
+    \end{proof}
+\end{lemma}
+Thus, let be a formula for ordinary sums of powers in terms of Stirling numbers $\stirlingii{m}{k}$
+\begin{proposition} [Ordinary sums of powers in Stirling numbers]
+    \label{prop:ordinary-sums-of-powers-in-stirling-numbers}
+    \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \binom{t-j}{k-j} \stirlingii{m}{k} k!
+        \end{align*}
+    \end{mdframed}
+\end{proposition}

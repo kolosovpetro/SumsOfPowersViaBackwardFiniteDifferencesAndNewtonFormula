@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 02-Jan-2026
+
+### Changed
+
+- Mathematica programs for ordinary sums of powers
+- Mathematica documentation
+- Update Mathematica references
+- Formula for backward differences in Eulerian numbers (Worpitzky identity)
+- Mathematica for backward differences in Eulerian numbers (Worpitzky identity)
+- Formula for backward differences in Stirling numbers
+- Mathematica for backward differences in Stirling numbers
+- Update Mathematica documentation
+- Add conclusions
+- Update abstract
+
 ## [1.0.1] - 01-Jan-2026
 
 ### Changed

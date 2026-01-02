@@ -18,4 +18,20 @@
 \newblock {The on-line encyclopedia of integer sequences}, 2003.
 \newblock \url{https://oeis.org/}.
 
+\bibitem{Worpitzky1883}
+J.~Worpitzky.
+\newblock Studien über die bernoullischen und eulerschen zahlen.
+\newblock {\em Journal für die reine und angewandte Mathematik}, 94:203--232,
+  1883.
+\newblock \url{http://eudml.org/doc/148532}.
+
+\bibitem{MathematicaPrograms}
+Petro Kolosov.
+\newblock Mathematica programs for backward finite differences and newton's
+  formula.
+\newblock
+  \url{https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica},
+  2026.
+\newblock GitHub repository, Mathematica source files.
+
 \end{thebibliography}
