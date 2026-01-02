@@ -2,7 +2,9 @@
 
 ## Abstract
 
-We develop formula for sums of powers using Newton's interpolation formula in terms of backward finite differences of powers.
+We obtain formulas for sums of powers via Newton’s interpolation formula based on backward finite differences of powers.
+In addition, we note that backward differences are closely related to Eulerian numbers, and Stirling numbers of the second kind.
+Thus, we express formulas for sums of powers in terms of Eulerian numbers, and Stirling numbers of the second kind.
 
 **DOI**: https://doi.org/10.5281/zenodo.18118011
 

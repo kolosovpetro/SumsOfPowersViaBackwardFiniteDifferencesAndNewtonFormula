@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Formula for backward differences in Stirling numbers
 - Mathematica for backward differences in Stirling numbers
 - Update Mathematica documentation
+- Add conclusions
+- Update abstract
 
 ## [1.0.1] - 01-Jan-2026
 
