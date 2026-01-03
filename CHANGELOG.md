@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Formula for double sums of powers
 - Mathematica for double sums of powers
+- Formulas for multifold sums of powers
+- Mathematica for multifold sums of powers
 
 ## [1.2.0] - 03-Jan-2026
 

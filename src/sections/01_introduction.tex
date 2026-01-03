@@ -182,3 +182,32 @@ Hence,
         \end{align*}
     \end{mdframed}
 \end{proposition}
+In general,
+\begin{theorem} [Multifold sums of powers via backward difference]
+    \label{theorem:multifold-sums-of-powers-via-backward-difference}
+    \begin{mdframed}
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \KnuthRFoldSum{r-1-s}{n}{0} \right]
+        \end{align*}
+    \end{mdframed}
+\end{theorem}
+We may observe that
+\begin{proposition}[Multifold sum of zero powers]
+    \label{prop:multifold-sum-of-zero-powers}
+    For integers $r$ and $n$
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}
+    \end{align*}
+    \begin{proof}
+        By hockey stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
+    \end{proof}
+\end{proposition}
+Thus $\KnuthRFoldSum{r-1-s}{n}{0} = \binom{r-s+n-2}{r-s-1}$, which implies
+\begin{proposition} [Multifold sums of powers via backward difference binomial form]
+    \label{prop:multifold-sums-of-powers-via-backward-difference-binomial-form}
+    \begin{mdframed}
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \binom{r-s+n-2}{r-s-1} \right]
+        \end{align*}
+    \end{mdframed}
+\end{proposition}
