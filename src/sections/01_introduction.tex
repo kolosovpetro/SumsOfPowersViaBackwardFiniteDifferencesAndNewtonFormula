@@ -1,3 +1,10 @@
+In this manuscript,
+we obtain formulas for sums of powers via Newton’s interpolation formula
+based on backward finite differences of powers.
+The idea to derive sums of powers using difference operator and Newton's series is quite generic,
+thus, formulas for sums of powers using forward and central differences can be found
+in the works~\cite{kolosov_2025_18102534, kolosov_2025_18098442}.
+
 Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
 \begin{align*}
     \KnuthRFoldSum{0}{n}{m}   &= n^m \\
@@ -83,10 +90,12 @@ For example, by setting $t=2$ and $m=1,2,3,4$, we get formulas for sums of cubes
     &\quad
     + 24\left[ -\binom{2}{5} + \binom{n+2}{5} \right].
 \end{align*}
-The coefficients $1, 2, 1, 4, 3, 2, 8, 7, 6, 6,\cdots$ for $t=2$ is the sequence \href{https://oeis.org/A391068}{\texttt{A391068}} in the OEIS~\cite{sloane2003line}.
-For $t=0$ the coefficients are $1, 0, 1, 0, -1, 2, 0, 1, -6, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A278075}{\texttt{A278075}}.
-For $t=1$ the coefficients are $1, 1, 1, 1, 1, 2, 1, 1, 0, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A389570}{\texttt{A389570}}.
-For $t=3$ the coefficients are $1, 3, 1, 9, 5, 2, 27, 19, 12, 6,\cdots$ and registered in the OEIS as \href{https://oeis.org/A391210}{\texttt{A391210}}.
+\begin{itemize}
+    \item For $t=0$ the coefficients are $1, 0, 1, 0, -1, 2, 0, 1, -6, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A278075}{\texttt{A278075}}.
+    \item For $t=1$ the coefficients are $1, 1, 1, 1, 1, 2, 1, 1, 0, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A389570}{\texttt{A389570}}.
+    \item For $t=2$ the coefficients are $1, 2, 1, 4, 3, 2, 8, 7, 6, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A391068}{\texttt{A391068}}.
+    \item For $t=3$ the coefficients are $1, 3, 1, 9, 5, 2, 27, 19, 12, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A391210}{\texttt{A391210}}.
+\end{itemize}
 \begin{lemma} [Backward differences in Eulerian numbers]
     \label{lem:backward-differences-in-eulerian-numbers}
     \begin{align*}

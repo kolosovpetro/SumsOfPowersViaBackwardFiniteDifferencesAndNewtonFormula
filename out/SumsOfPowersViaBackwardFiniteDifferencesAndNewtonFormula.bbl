@@ -1,5 +1,16 @@
 \begin{thebibliography}{1}
 
+\bibitem{kolosov_2025_18102534}
+Petro Kolosov.
+\newblock Newton's interpolation formula and sums of powers, December 2025.
+\newblock \url{https://doi.org/10.5281/zenodo.18040979}.
+
+\bibitem{kolosov_2025_18098442}
+Petro Kolosov.
+\newblock Sums of powers via central finite differences and newton's formula,
+  December 2025.
+\newblock \url{https://doi.org/10.5281/zenodo.18096789}.
+
 \bibitem{knuth1993johann}
 {Knuth, Donald E.}
 \newblock {Johann Faulhaber and sums of powers}.
