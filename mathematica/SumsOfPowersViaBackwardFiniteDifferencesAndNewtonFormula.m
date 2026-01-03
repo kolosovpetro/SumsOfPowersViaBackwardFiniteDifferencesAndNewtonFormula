@@ -16,6 +16,12 @@ OrdinarySumsOfPowersInEulerianNumbers::usage=""
 ValidateOrdinarySumsOfPowersInEulerianNumbers::usage=""
 OrdinarySumsOfPowersInStirlingNumbers::usage=""
 ValidateOrdinarySumsOfPowersInStirlingNumbers::usage=""
+DoubleSumsOfPowersViaBackwardDifferences::usage=""
+ValidateDoubleSumsOfPowersViaBackwardDifferences::usage=""
+MultifoldSumsOfPowersViaBackwardDifference::usage=""
+MultifoldSumsOfPowersViaBackwardDifferenceBinomialForm::usage=""
+ValidateMultifoldSumsOfPowersViaBackwardDifference::usage=""
+ValidateMultifoldSumsOfPowersBackwardDiffBinomialForm::usage=""
 
 (*END: Definitions *)
 (* =========================================================================DOCS END=================================================================== *)
@@ -33,6 +39,12 @@ BackwardDifference[t_, m_, j_] := Sum[(-1)^k * Binomial[j, k] * (t-k)^m, {k, 0, 
 MultifoldSumOfPowersRecurrence[r_, n_, m_]:= 0;
 MultifoldSumOfPowersRecurrence[r_, n_, m_]:= n^m /; r==0;
 MultifoldSumOfPowersRecurrence[r_, n_, m_]:= Sum[MultifoldSumOfPowersRecurrence[r-1, k, m], {k, 1, n}] /; r>0;
+MultifoldSumsOfPowersViaBackwardDifference[r_, n_, m_, t_] := Sum[BackwardDifference[t, m, j] * ( Binomial[j-t+n+r-1, j+r] + Sum[(-1)^(j+s) * Binomial[t, j+s+1] * MultifoldSumOfPowersRecurrence[r-1-s, n, 0], {s, 0, r-1}] ), {j, 0, m}];
+ValidateMultifoldSumsOfPowersViaBackwardDifference[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, m]- MultifoldSumsOfPowersViaBackwardDifference[r, n, m, t], {r, 0, max}, {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten;
+MultifoldSumsOfPowersViaBackwardDifferenceBinomialForm[r_, n_, m_, t_] := Sum[BackwardDifference[t, m, j] * ( Binomial[j-t+n+r-1, j+r] + Sum[(-1)^(j+s) * Binomial[t, j+s+1] * Binomial[r-s+n-2, r-s-1], {s, 0, r-1}] ), {j, 0, m}];
+ValidateMultifoldSumsOfPowersBackwardDiffBinomialForm[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, m]- MultifoldSumsOfPowersViaBackwardDifferenceBinomialForm[r, n, m, t], {r, 0, max}, {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten;
+DoubleSumsOfPowersViaBackwardDifferences[n_, m_, t_] := Sum[BackwardDifference[t, m, j] * ((-1)^j * Binomial[t, j+1] * n^1 + (-1)^(j+1) * Binomial[t, j+2]*n^0 + Binomial[j-t+n+1, j+2]), {j, 0, m}];
+ValidateDoubleSumsOfPowersViaBackwardDifferences[max_]:= Table[MultifoldSumOfPowersRecurrence[2, n, m]- DoubleSumsOfPowersViaBackwardDifferences[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
 OrdinarySumsOfPowersViaBackwardDifferences[n_, m_, t_] := Sum[BackwardDifference[t, m, j] * ((-1)^j * Binomial[t, j+1] + Binomial[j-t+n, j+1]), {j, 0, m}];
 ValidateOrdinarySumsOfPowersViaBackwardDifferences[max_]:=Table[MultifoldSumOfPowersRecurrence[1, n, m] - OrdinarySumsOfPowersViaBackwardDifferences[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}]//Flatten
 EulerianNumber[0, 0] = 1;
@@ -49,6 +61,12 @@ ValidateOrdinarySumsOfPowersInStirlingNumbers[max_]:=Table[MultifoldSumOfPowersR
 (*END: Definitions *)
 End[ ]
 EndPackage[ ]
+
+
+
+
+
+
 
 
 
