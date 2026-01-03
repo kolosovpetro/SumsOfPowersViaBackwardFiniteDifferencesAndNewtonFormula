@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Refactor OEIS mentions
 - Update bibliography
 - Update README
+- Add DOI
 
 ## [1.1.0] - 02-Jan-2026
 

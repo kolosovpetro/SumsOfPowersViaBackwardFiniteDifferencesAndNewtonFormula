@@ -75,6 +75,14 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{assumption}[theorem]{Assumption}
 
+% free foot note
+\let\svthefootnote\thefootnote
+\newcommand\freefootnote[1]{%
+    \let\thefootnote\relax%
+    \footnotetext{#1}%
+    \let\thefootnote\svthefootnote%
+}
+
 %\numberwithin{equation}{section}
 
 \title[Sums of powers via backward finite differences and Newton's formula]
@@ -152,6 +160,8 @@
     \addcontentsline{toc}{section}{Abstract}
 
     \tableofcontents
+
+    \freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18118011}}
 
 
     \section{Introduction and main results}
