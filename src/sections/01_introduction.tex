@@ -121,8 +121,9 @@ Thus, let be a formula for ordinary sums of powers in terms of Eulerian numbers 
 Remarkable that having $t=0$ formula for sums of powers turns into double binomial view
 \begin{proposition}
     \begin{mdframed}
+        For non-negative integers $n,m$
         \begin{align*}
-            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=0}^{m} \binom{j+n}{j+1}  \binom{t+k-j}{m-j} \eulerian{m}{k}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=0}^{m} \binom{j+n}{j+1}  \binom{k-j}{m-j} \eulerian{m}{k}
         \end{align*}
     \end{mdframed}
 \end{proposition}
@@ -148,8 +149,9 @@ Thus, let be a formula for ordinary sums of powers in terms of Stirling numbers 
 By setting $t=0$ yields
 \begin{proposition}
     \begin{mdframed}
+        For non-negative integers $n,m$
         \begin{align*}
-            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} \binom{j+n}{j+1} \binom{t-j}{k-j} \stirlingii{m}{k} k!
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} \binom{j+n}{j+1} \binom{-j}{k-j} \stirlingii{m}{k} k!
         \end{align*}
     \end{mdframed}
 \end{proposition}
@@ -163,7 +165,7 @@ By applying generalized hockey stick identity~\eqref{lem:generalized-hockey-stic
 \begin{align*}
     \sum_{k=1}^{n} \binom{j-t+k}{j+1} = \sum_{k=j-t+1}^{j-t+n} \binom{k}{j+1} = \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2}
 \end{align*}
-Thus,
+Therefore,
 \begin{align*}
     \KnuthRFoldSum{2}{n}{m}
     &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} n + \left( \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2} \right) \right]
@@ -176,6 +178,7 @@ Hence,
 \begin{proposition} [Double sums of powers via backward differences]
     \label{prop:double-sums-of-powers-via-backward-differences}
     \begin{mdframed}
+        For non-negative integers $n,m$ and an arbitrary integer $t$
         \begin{align*}
             \KnuthRFoldSum{2}{n}{m}
             &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} n + (-1)^{j+1} \binom{t}{j+2} n^0 +  \binom{j-t+n+1}{j+2} \right]
@@ -186,6 +189,7 @@ In general,
 \begin{theorem} [Multifold sums of powers via backward difference]
     \label{theorem:multifold-sums-of-powers-via-backward-difference}
     \begin{mdframed}
+        For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
             \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \KnuthRFoldSum{r-1-s}{n}{0} \right]
         \end{align*}
@@ -206,6 +210,7 @@ Thus $\KnuthRFoldSum{r-1-s}{n}{0} = \binom{r-s+n-2}{r-s-1}$, which implies
 \begin{proposition} [Multifold sums of powers via backward difference binomial form]
     \label{prop:multifold-sums-of-powers-via-backward-difference-binomial-form}
     \begin{mdframed}
+        For non-negative integers $r,n,m$ and an arbitrary integer $t$
         \begin{align*}
             \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \binom{r-s+n-2}{r-s-1} \right]
         \end{align*}
