@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 04-Jan-2026
+
+### Changed
+
+- Add formula for sums of powers in Stirling numbers
+- Add formula for sums of powers in Eulerian numbers
+- Update conclusions
+
 ## [1.3.0] - 03-Jan-2026
 
 ### Changed
