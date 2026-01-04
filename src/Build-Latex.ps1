@@ -4,10 +4,9 @@ function Build-Latex
         [string]$OutputDirectory = "..\out",
         [Boolean]$ShouldCompileBibtex = $true
     )
-
-    try
-    {
         $InitialDirectory = Get-Location
+
+        $ErrorActionPreference = "Stop"
 
         Write-Host "Initial working directory: $InitialDirectory"  -ForegroundColor Magenta
         Write-Host "Setting working directory to PSScriptRoot: $PSScriptRoot"  -ForegroundColor Magenta
@@ -67,17 +66,13 @@ function Build-Latex
 
         Set-Location $InitialDirectory
 
-        .\..\scripts\Test-Encoding.ps1 -Autofix
+        $EncodingScriptPath = "$InitialDirectory\scripts\Test-Encoding.ps1"
+
+        & $EncodingScriptPath -Autofix
 
         Write-Host "Fix encoding is complete." -ForegroundColor Green
         Write-Host "Exit Code: $LASTEXITCODE" -ForegroundColor Green
         Write-Host "Changing Powershell Directory to $InitialDirectory ... " -ForegroundColor Green
-    }
-    catch
-    {
-        Set-Location $InitialDirectory
-        Write-Error "Latex error appeared. Inspect the logs."
-    }
 }
 
 function Write-Dash
