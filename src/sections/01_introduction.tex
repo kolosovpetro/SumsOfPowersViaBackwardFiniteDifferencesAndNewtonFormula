@@ -157,6 +157,15 @@ By setting $t=0$ yields
         \end{align*}
     \end{mdframed}
 \end{proposition}
+By $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$ yields another binomial form for sums of powers
+\begin{proposition} [Ordinary Stirling sums of powers in zero altered]
+    \begin{mdframed}
+        For non-negative integers $n,m$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} (-1)^{k-j} \binom{k-1}{k-j} \binom{j+n}{j+1}  \stirlingii{m}{k} k!
+        \end{align*}
+    \end{mdframed}
+\end{proposition}
 Formula for double sums of powers can be derived in a similar manner,
 by applying summation to the proposition~\eqref{prop:ordinary-sums-of-powers-via-backward-differences},
 which in turn implies generalized hockey-stick identity, thus

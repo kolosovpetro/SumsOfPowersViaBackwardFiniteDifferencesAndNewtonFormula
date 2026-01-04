@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add formula for sums of powers in Stirling numbers
 - Add formula for sums of powers in Eulerian numbers
 - Update conclusions
+- Add formula for ordinary sums of powers
 
 ## [1.3.0] - 03-Jan-2026
 
