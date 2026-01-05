@@ -31,3 +31,6 @@ Eulerian numbers, Worpitzky identity.
 - Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
 - Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
 
+## Pandoc compile command
+
+- `pandoc SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.tex --mathjax --standalone --citeproc --bibliography=SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib --csl=chicago-author-date.csl -o index.html`
