@@ -8,6 +8,8 @@ Thus, we express formulas for sums of powers in terms of Eulerian numbers, and S
 
 **DOI**: https://doi.org/10.5281/zenodo.18118011
 
+**HTML**: https://kolosovpetro.github.io/sums-of-powers-backward-differences/
+
 **MSC2010**: 05A19, 05A10, 11B83, 03C40.
 
 **Keywords**: Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula,
