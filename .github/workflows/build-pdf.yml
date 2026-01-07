@@ -20,7 +20,7 @@ jobs:
     with:
       file_name: 'SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula'
       enable_patch_version: true
-      enable_html_deploy: true
+      enable_pandoc: true
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build PDF'
       build_assets_path: |
