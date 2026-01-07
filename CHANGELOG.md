@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add pandoc script
 - Remove unused files
 - Enable pandoc for GitHub actions
+- Rework metadata
 
 ## [1.4.0] - 04-Jan-2026
 
