@@ -26,7 +26,8 @@ Petro Kolosov.
 
 \bibitem{sloane2003line}
 {Sloane, Neil J.A. and others}.
-\newblock {The on-line encyclopedia of integer sequences}, 2003.
+\newblock {The on-line encyclopedia of integer sequences}.
+\newblock \url{https://oeis.org/}, 2003.
 \newblock \url{https://oeis.org/}.
 
 \bibitem{Worpitzky1883}

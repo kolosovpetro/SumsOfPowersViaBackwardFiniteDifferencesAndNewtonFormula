@@ -1,11 +1,8 @@
 \documentclass[12pt,letterpaper,oneside,reqno]{amsart}
-\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{float}
-\usepackage{mathrsfs}
-\usepackage{colonequals}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[unicode,pdfpagelabels,hyperindex,colorlinks=true,linkcolor=red,urlcolor=blue,citecolor=red]{hyperref}
 \usepackage{graphicx}
@@ -15,7 +12,6 @@
 \usepackage{etoolbox}
 \usepackage{physics}
 \usepackage{booktabs}
-\usepackage{url}
 \usepackage{mdframed}
 
 % margins and layout
@@ -34,16 +30,11 @@
 % central factorials and related symbols
 \newcommand \centralFactorial [2] {#1^{[#2]}}
 \newcommand \fallingFactorial [2] {\left(#1 \right)^{\underline{#2}}}
+
 \newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
 \newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
 
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
-
-% for llceil coeffcient
-\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
-\def\llceil{\left\lceil\kern-3.5pt\left\lceil}
-\def\rrfloor{\right\rfloor\kern-3.5pt\right\rfloor}
-\newcommand \llceilCoefficient [3] {\llceil \nobarfrac{#1}{#2} \rrfloor_{#3}}
 
 % ~~~ Rascal numbers ~~~
 %\newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
@@ -90,64 +81,13 @@
 \author[Petro Kolosov]{Petro Kolosov}
 \date{\today}
 
-% 05A19 — Combinatorial identities
-% 05A10 — Factorials, binomial coefficients, combinatorial functions
-% 41A15 — Spline approximation
-% 11B68 — Bernoulli and Euler numbers and polynomials
-% 11B73 — Bell and Stirling numbers
-% 11B83 — Special sequences and polynomials
-\subjclass[2010]{05A19, 05A10, 11B68, 11B73, 11B83}
-
 % metadata
+\input{metadata/msc2010.tex}
+\input{metadata/keywords.tex}
+\input{metadata/hypersetup.tex}
+\address{DevOps Engineer}
 \email{kolosovp94@gmail.com}
-\address{Software Developer, DevOps Engineer}
 \urladdr{https://kolosovpetro.github.io}
-\keywords{Sums of powers,
-    Newton's interpolation formula,
-    Finite differences,
-    Binomial coefficients,
-    Faulhaber's formula,
-    Bernoulli numbers,
-    Bernoulli polynomials,
-    Interpolation,
-    Discrete convolution,
-    Combinatorics,
-    Polynomial identities,
-    Central factorial numbers,
-    Stirling numbers,
-    Eulerian numbers,
-    Worpitzky identity,
-    Pascal's triangle,
-    OEIS}
-\hypersetup{
-    pdftitle={Sums of powers via backward finite differences and Newton's formula},
-    pdfproducer={LaTeX},
-    pdfcreator={pdflatex},
-    pdfauthor={Petro Kolosov},
-    pdfsubject={Sums of powers via backward finite differences and Newton's formula},
-    pdfkeywords={Sums of powers,
-    Power sums,
-    Polynomials,
-    Power function,
-    Polynomial identities,
-    Newton's interpolation formula,
-    Finite differences,
-    Interpolation,
-    Approximation,
-    Binomial coefficients,
-    Multinomial coefficients,
-    Binomial theorem,
-    Faulhaber's formula,
-    Bernoulli numbers,
-    Bernoulli polynomials,
-    Combinatorics,
-    Central factorial numbers,
-    Stirling numbers,
-    Eulerian numbers,
-    Worpitzky identity,
-    Pascal's triangle,
-    OEIS}
-}
 
 \begin{document}
 
@@ -156,8 +96,6 @@
     \end{abstract}
 
     \maketitle
-
-    \addcontentsline{toc}{section}{Abstract}
 
     \tableofcontents
 
@@ -169,18 +107,13 @@
     \input{sections/01_introduction}
 
 
-    \section{Conclusions}\label{sec:conclusions}
+    \section*{Conclusions}
     \input{sections/conclusions}
-
-
-%    \section{Acknowledgements}\label{sec:acknowledgements}
-%    \input{sections/acknowledgements}
 
     \bibliographystyle{unsrt}
     \bibliography{SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula}
 
     \clearpage
-
 
     \section{Mathematica programs}
     \label{sec:mathematica-programs}

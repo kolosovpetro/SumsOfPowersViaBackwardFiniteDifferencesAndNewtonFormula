@@ -6,15 +6,22 @@ We obtain formulas for sums of powers via Newton’s interpolation formula based
 In addition, we note that backward differences are closely related to Eulerian numbers, and Stirling numbers of the second kind.
 Thus, we express formulas for sums of powers in terms of Eulerian numbers, and Stirling numbers of the second kind.
 
-**DOI**: https://doi.org/10.5281/zenodo.18118011
+## Metadata
 
-**HTML**: https://kolosovpetro.github.io/sums-of-powers-backward-differences/
+- **MSC2010:** 05A19, 05A10, 11B83, 03C40.
+- **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers, OEIS, Stirling numbers, Eulerian numbers, Worpitzky identity.
+- **License:** This work is licensed under a [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- **DOI:** https://doi.org/10.5281/zenodo.18118011
+- **Web Version:** https://kolosovpetro.github.io/sums-of-powers-backward-differences/
+- **Sources:** https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula
+- **ORCID:** https://orcid.org/0000-0002-6544-8880
+- **Email:** kolosovp94@gmail.com
 
-**MSC2010**: 05A19, 05A10, 11B83, 03C40.
+## OEIS
 
-**Keywords**: Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula,
-Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers, OEIS, Stirling numbers,
-Eulerian numbers, Worpitzky identity.
+- [A391210](https://oeis.org/A391210) — Triangle read by rows: \(T(n,k) = \sum_{j=0}^{k} (-1)^j \binom{k}{j} (3-j)^n\). (2026)
+- [A391068](https://oeis.org/A391068) — Triangle read by rows: \(T(n,k) = \sum_{j=0}^{k} (-1)^j \binom{k}{j} (2-j)^n\). (2026)
+- [A389570](https://oeis.org/A389570) — Triangle read by rows: \(T(n,k) = \sum_{j=0}^{k} (-1)^j \binom{k}{j} (1-j)^n\). (2026)
 
 ## Related projects
 
@@ -30,7 +37,3 @@ Eulerian numbers, Worpitzky identity.
 - Kolosov, P. (2025). Newton's interpolation formula and sums of powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
 - Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
 - Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
-
-## Pandoc compile command
-
-- `pandoc SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.tex --mathjax --standalone --citeproc --bibliography=SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib --csl=chicago-author-date.csl -o index.html`
