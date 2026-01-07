@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 ### Changed
 
 - Update README
+- Add pandoc script
 
 ## [1.4.0] - 04-Jan-2026
 
