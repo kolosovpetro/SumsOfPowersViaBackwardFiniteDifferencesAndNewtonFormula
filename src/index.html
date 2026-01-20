@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Petro Kolosov" />
-  <meta name="dcterms.date" content="2026-01-07" />
+  <meta name="dcterms.date" content="2026-01-20" />
   <title>Sums of powers via backward finite differences and Newton’s formula</title>
   <style>
     /* Default styles provided by pandoc.
@@ -210,7 +210,7 @@
 <h1 class="title">Sums of powers via backward finite differences and
 Newton’s formula</h1>
 <p class="author">Petro Kolosov</p>
-<p class="date">2026-01-07</p>
+<p class="date">2026-01-20</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>We obtain formulas for sums of powers via Newton’s interpolation
@@ -221,6 +221,8 @@ sums of powers in terms of Eulerian numbers, and Stirling numbers of the
 second kind.</p>
 </div>
 </header>
+<p><a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
 <h1 id="sec:introduction-and-main-results">Introduction and main
 results</h1>
 <p>In this manuscript, we obtain formulas for sums of powers via
@@ -230,42 +232,42 @@ Newton’s series is quite generic, thus, formulas for sums of powers
 using forward and central differences can be found in the works <span
 class="citation"
 data-cites="kolosov_2025_18102534 kolosov_2025_18098442">(Kolosov 2025a,
-2025b)</span>.</p>
-<p>Define multifold sums of powers in Knuth’s <span class="citation"
-data-cites="knuth1993johann">(Knuth, Donald E. 1993)</span> notation
+2025b)</span>. Define multifold sums of powers in Knuth’s <span
+class="citation" data-cites="knuth1993johann">(Knuth, Donald E.
+1993)</span> notation</p>
+<div id="prop:multifold-sums-of-powers-recurrence" class="proposition">
+<p><strong>Proposition 1</strong> (Multifold sums of powers recurrence).
+<em>For integers <span class="math inline">\(r,n,m \geq 0\)</span>,
 <span class="math display">\[\begin{align*}
-    \Sigma^{0}\,{n}^{m}   &amp;= n^m \\
-    \Sigma^{1}\,{n}^{m}   &amp;= \Sigma^{0}\,{1}^{m} +
-\Sigma^{0}\,{2}^{m} + \cdots + \Sigma^{0}\,{n}^{m} \\
-    \Sigma^{r+1}\,{n}^{m} &amp;= \Sigma^{r}\,{1}^{m} +
-\Sigma^{r}\,{2}^{m} + \cdots + \Sigma^{r}\,{n}^{m}
-\end{align*}\]</span> The book Interpolation by Steffensen <span
-class="citation" data-cites="steffensen1927interpolation">(Steffensen,
-Johan Frederik 1927, chap. 2, eq. (19))</span> gives Newton’s formula
-for backward differences evaluated in zero <span
-class="math inline">\(f(x) = \sum_{k=0}^{n} \binom{x+k-1}{k} \nabla^{k}
-f(0)\)</span>.</p>
-<p>In general,</p>
+    \Sigma^{0}\,{n}^{m}   &amp;= n^m, \\
+    \Sigma^{1}\,{n}^{m}   &amp;= \Sigma^{0}\,{1}^{m}
+    + \Sigma^{0}\,{2}^{m} + \cdots + \Sigma^{0}\,{n}^{m}, \\
+    \Sigma^{r+1}\,{n}^{m} &amp;= \Sigma^{r}\,{1}^{m}
+    + \Sigma^{r}\,{2}^{m} + \cdots + \Sigma^{r}\,{n}^{m}.
+\end{align*}\]</span></em></p>
+</div>
+<p>The book Interpolation by Steffensen <span class="citation"
+data-cites="steffensen1927interpolation">(Steffensen, Johan Frederik
+1927, chap. 2, eq. (19))</span> gives Newton’s formula for backward
+differences evaluated in zero <span class="math inline">\(f(x) =
+\sum_{k=0}^{n} \binom{x+k-1}{k} \nabla^{k} f(0)\)</span>. In
+general,</p>
 <div id="prop:newtons-formula-via-backward-difference"
 class="proposition">
-<p><strong>Proposition 1</strong> (Newton formula via backward
-differences). <em></em></p>
-<div class="mdframed">
-<p><em><span class="math display">\[\begin{align*}
-            f(x) &amp;= \sum_{k=0}^{n} \binom{x-a+k-1}{k} \nabla^{k}
-f(a)
+<p><strong>Proposition 2</strong> (Newton formula via backward
+differences). <em><span class="math display">\[\begin{align*}
+    f(x) &amp;= \sum_{k=0}^{n} \binom{x-a+k-1}{k} \nabla^{k} f(a)
 \end{align*}\]</span> where <span class="math inline">\(\nabla^{k} f(a)
 = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f(a-j)\)</span>.</em></p>
 </div>
-</div>
 <p>Thus, by setting <span class="math inline">\(f(n)=n^m\)</span> <span
 class="math display">\[\begin{align*}
-    n^m &amp;= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m},
+  n^m &amp;= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m},
 \end{align*}\]</span> where <span class="math inline">\(\nabla^{j} t^{m}
 = \sum_{k=0}^{j} (-1)^{k} \binom{j}{k} (t-k)^{m}\)</span>. Therefore,
 ordinary sums of powers is equivalent to <span
 class="math display">\[\begin{align*}
-    \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m}
+  \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m}
 \sum_{k=1}^{n} \binom{k-t+j-1}{j}
 \end{align*}\]</span> We notice that the sum <span
 class="math inline">\(\sum_{k=1}^{n} \binom{k-t+j-1}{j}\)</span> is a
@@ -275,16 +277,16 @@ class="math inline">\(\sum_{k=0}^{n} \binom{k}{j} =
 class="math inline">\(a=j-t\)</span> and <span
 class="math inline">\(b=j-t-1+n\)</span>, we get <span
 class="math display">\[\begin{align*}
-    \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \sum_{m=j-t}^{j-t-1+n}
+  \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \sum_{m=j-t}^{j-t-1+n}
 \binom{m}{j}
 \end{align*}\]</span> Thus, <span class="math display">\[\begin{align*}
-    \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \binom{j-t+n}{j+1} -
+  \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \binom{j-t+n}{j+1} -
 \binom{j-t}{j+1}
 \end{align*}\]</span> Because,</p>
 <div id="lem:generalized-hockey-stick-identity" class="lemma">
-<p><strong>Lemma 2</strong> (Generalized hockey stick identity).
+<p><strong>Lemma 3</strong> (Generalized hockey stick identity).
 <em><span class="math display">\[\begin{align*}
-        \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
+    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
 \end{align*}\]</span></em></p>
 </div>
 <p>Applying the identity for binomial coefficients <span
@@ -292,49 +294,48 @@ class="math inline">\(\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}\)</span>,
 we obtain</p>
 <div id="prop:ordinary-sums-of-powers-via-backward-differences"
 class="proposition">
-<p><strong>Proposition 3</strong> (Ordinary sums of powers via backward
-differences). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 4</strong> (Ordinary sums of powers via backward
+differences). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m}
-\left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
+    \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m}
+    \left[
+      (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1}
+    \right]
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>For example, by setting <span class="math inline">\(t=2\)</span> and
 <span class="math inline">\(m=1,2,3,4\)</span>, we get formulas for sums
 of cubes <span class="math display">\[\begin{align*}
-    \Sigma^{1}\,{n}^{1} &amp;=
-    2\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
-    + 1\left[ \binom{2}{2} + \binom{n-1}{2} \right],
+  \Sigma^{1}\,{n}^{1} &amp;=
+  2\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
+  + 1\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right],
 \end{align*}\]</span> <span class="math display">\[\begin{align*}
-    \Sigma^{1}\,{n}^{2}
-    &amp;=
-    4\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
-    + 3\left[ \binom{2}{2} + \binom{n-1}{2} \right] \\
-    &amp;\quad
-    + 2\left[ -\binom{2}{3} + \binom{n}{3} \right].
+  \Sigma^{1}\,{n}^{2}
+  &amp;=
+  4\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
+  + 3\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
+  &amp;\quad
+  + 2\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right].
 \end{align*}\]</span> <span class="math display">\[\begin{align*}
-    \Sigma^{1}\,{n}^{3}
-    &amp;=
-    8\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
-    + 7\left[ \binom{2}{2} + \binom{n-1}{2} \right] \\
-    &amp;\quad
-    + 6\left[ -\binom{2}{3} + \binom{n}{3} \right]
-    + 6\left[ \binom{2}{4} + \binom{n+1}{4} \right].
+  \Sigma^{1}\,{n}^{3}
+  &amp;=
+  8\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
+  + 7\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
+  &amp;\quad
+  + 6\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
+  + 6\left[ \tbinom{2}{4} + \tbinom{n+1}{4} \right].
 \end{align*}\]</span> <span class="math display">\[\begin{align*}
-    \Sigma^{1}\,{n}^{4}
-    &amp;=
-    16\left[ -\binom{2}{1} + \binom{n-2}{1} \right]
-    + 15\left[ \binom{2}{2} + \binom{n-1}{2} \right] \\
-    &amp;\quad
-    + 14\left[ -\binom{2}{3} + \binom{n}{3} \right]
-    + 12\left[ \binom{2}{4} + \binom{n+1}{4} \right] \\
-    &amp;\quad
-    + 24\left[ -\binom{2}{5} + \binom{n+2}{5} \right].
+  \Sigma^{1}\,{n}^{4}
+  &amp;=
+  16\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
+  + 15\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
+  &amp;\quad
+  + 14\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
+  + 12\left[ \tbinom{2}{4} + \tbinom{n+1}{4} \right] \\
+  &amp;\quad
+  + 24\left[ -\tbinom{2}{5} + \tbinom{n+2}{5} \right].
 \end{align*}\]</span></p>
 <ul>
 <li><p>For <span class="math inline">\(t=0\)</span> the coefficients are
@@ -359,9 +360,9 @@ data-cites="sloane2003line">(Sloane, Neil J.A. and others 2003)</span>
 as <a href="https://oeis.org/A391210"><code>A391210</code></a>.</p></li>
 </ul>
 <div id="lem:backward-differences-in-eulerian-numbers" class="lemma">
-<p><strong>Lemma 4</strong> (Backward differences in Eulerian numbers).
+<p><strong>Lemma 5</strong> (Backward differences in Eulerian numbers).
 <em><span class="math display">\[\begin{align*}
-        \Delta^{j} t^{m} = \sum_{k=0}^{m} \binom{t+k-j}{m-j}
+    \nabla^{j} t^{m} = \sum_{k=0}^{m} \binom{t+k-j}{m-j}
 \genfrac{\langle}{\rangle}{0pt}{}{m}{k}
 \end{align*}\]</span></em></p>
 <div class="proof">
@@ -378,39 +379,33 @@ Eulerian numbers <span
 class="math inline">\(\genfrac{\langle}{\rangle}{0pt}{}{m}{k}\)</span></p>
 <div id="prop:ordinary-sums-of-powers-in-eulerian-numbers"
 class="proposition">
-<p><strong>Proposition 5</strong> (Ordinary sums of powers in Eulerian
-numbers). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 6</strong> (Ordinary sums of powers in Eulerian
+numbers). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=0}^{m}
-\left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
-\binom{t+k-j}{m-j} \genfrac{\langle}{\rangle}{0pt}{}{m}{k}
+    \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[
+(-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \binom{t+k-j}{m-j}
+\genfrac{\langle}{\rangle}{0pt}{}{m}{k}
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>Remarkable that having <span class="math inline">\(t=0\)</span>
 formula for sums of powers turns into double binomial view</p>
 <div id="prop:ordinary-sums-of-eulerian-numbers-in-zero"
 class="proposition">
-<p><strong>Proposition 6</strong> (Ordinary Eulerian sums of powers in
-zero). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 7</strong> (Ordinary Eulerian sums of powers in
+zero). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=0}^{m}
+    \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=0}^{m}
 \binom{j+n}{j+1}  \binom{k-j}{m-j}
 \genfrac{\langle}{\rangle}{0pt}{}{m}{k}
 \end{align*}\]</span></em></p>
 </div>
-</div>
 <div id="lem:backward-differences-in-stirling-numbers" class="lemma">
-<p><strong>Lemma 7</strong> (Backward differences in Stirling numbers).
+<p><strong>Lemma 8</strong> (Backward differences in Stirling numbers).
 <em><span class="math display">\[\begin{align*}
-        \nabla^{j} t^{m} = \sum_{k=j}^{m} \binom{t-j}{k-j}
+    \nabla^{j} t^{m} = \sum_{k=j}^{m} \binom{t-j}{k-j}
 \genfrac{\{}{\}}{0pt}{}{m}{k} k!
 \end{align*}\]</span></em></p>
 <div class="proof">
@@ -426,49 +421,39 @@ Stirling numbers <span
 class="math inline">\(\genfrac{\{}{\}}{0pt}{}{m}{k}\)</span></p>
 <div id="prop:ordinary-sums-of-powers-in-stirling-numbers"
 class="proposition">
-<p><strong>Proposition 8</strong> (Ordinary sums of powers in Stirling
-numbers). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 9</strong> (Ordinary sums of powers in Stirling
+numbers). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=j}^{m}
-\left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right]
-\binom{t-j}{k-j} \genfrac{\{}{\}}{0pt}{}{m}{k} k!
+    \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=j}^{m} \left[
+(-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \binom{t-j}{k-j}
+\genfrac{\{}{\}}{0pt}{}{m}{k} k!
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>By setting <span class="math inline">\(t=0\)</span> yields</p>
 <div id="prop:ordinary-stirling-sums-of-powers-in-zero"
 class="proposition">
-<p><strong>Proposition 9</strong> (Ordinary Stirling sums of powers in
-zero). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 10</strong> (Ordinary Stirling sums of powers in
+zero). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=j}^{m}
+    \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=j}^{m}
 \binom{j+n}{j+1} \binom{-j}{k-j} \genfrac{\{}{\}}{0pt}{}{m}{k} k!
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>By <span class="math inline">\(\binom{-k}{j} = (-1)^j
 \binom{j+k-1}{j}\)</span> yields another binomial form for sums of
 powers</p>
 <div id="prop:ordinary-stirling-sums-of-powers-in-zero-altered"
 class="proposition">
-<p><strong>Proposition 10</strong> (Ordinary Stirling sums of powers in
-zero altered). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 11</strong> (Ordinary Stirling sums of powers in
+zero altered). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=j}^{m}
-(-1)^{k-j} \binom{k-1}{j-1}
-\binom{j+n}{j+1}  \genfrac{\{}{\}}{0pt}{}{m}{k} k!
+    \Sigma^{1}\,{n}^{m} &amp;= \sum_{j=0}^{m} \sum_{k=j}^{m} (-1)^{k-j}
+\binom{k-1}{j-1} \binom{j+n}{j+1}  \genfrac{\{}{\}}{0pt}{}{m}{k} k!
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>Formula for double sums of powers can be derived in a similar manner,
 by applying summation to the proposition <a
@@ -477,7 +462,7 @@ data-reference-type="eqref"
 data-reference="prop:ordinary-sums-of-powers-via-backward-differences">[prop:ordinary-sums-of-powers-via-backward-differences]</a>,
 which in turn implies generalized hockey-stick identity, thus <span
 class="math display">\[\begin{align*}
-    \Sigma^{2}\,{n}^{m} &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[
+  \Sigma^{2}\,{n}^{m} &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[
 (-1)^j \binom{t}{j+1} \sum_{k=1}^{n} 1 + \sum_{k=1}^{n}
 \binom{j-t+k}{j+1} \right]
 \end{align*}\]</span> By applying generalized hockey stick identity <a
@@ -485,58 +470,51 @@ href="#lem:generalized-hockey-stick-identity"
 data-reference-type="eqref"
 data-reference="lem:generalized-hockey-stick-identity">[lem:generalized-hockey-stick-identity]</a>,
 we obtain <span class="math display">\[\begin{align*}
-    \sum_{k=1}^{n} \binom{j-t+k}{j+1} = \sum_{k=j-t+1}^{j-t+n}
+  \sum_{k=1}^{n} \binom{j-t+k}{j+1} = \sum_{k=j-t+1}^{j-t+n}
 \binom{k}{j+1} = \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2}
 \end{align*}\]</span> Therefore, <span
 class="math display">\[\begin{align*}
-    \Sigma^{2}\,{n}^{m}
-    &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1}
-n + \left( \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2} \right) \right]
+  \Sigma^{2}\,{n}^{m}
+  &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} n
++ \left( \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2} \right) \right]
 \end{align*}\]</span> By applying the identity for negative binomial
 coefficients <span class="math inline">\(\binom{-k}{j} = (-1)^j
 \binom{j+k-1}{j}\)</span>, we get <span
 class="math display">\[\begin{align*}
-    \binom{-(t-j-1)}{j+2} = (-1)^{j+2} \binom{t}{j+2}
+  \binom{-(t-j-1)}{j+2} = (-1)^{j+2} \binom{t}{j+2}
 \end{align*}\]</span> Hence,</p>
 <div id="prop:double-sums-of-powers-via-backward-differences"
 class="proposition">
-<p><strong>Proposition 11</strong> (Double sums of powers via backward
-differences). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 12</strong> (Double sums of powers via backward
+differences). <em>For non-negative integers <span
 class="math inline">\(n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{2}\,{n}^{m}
-            &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j
-\binom{t}{j+1} n + (-1)^{j+1} \binom{t}{j+2} n^0 +  \binom{j-t+n+1}{j+2}
-\right]
+    \Sigma^{2}\,{n}^{m}
+    &amp;= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1}
+n + (-1)^{j+1} \binom{t}{j+2} n^0 +  \binom{j-t+n+1}{j+2} \right]
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>In general,</p>
 <div id="theorem:multifold-sums-of-powers-via-backward-difference"
 class="theorem">
-<p><strong>Theorem 12</strong> (Multifold sums of powers via backward
-difference). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Theorem 13</strong> (Multifold sums of powers via backward
+difference). <em>For non-negative integers <span
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[
+    \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[
 \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1}
 \Sigma^{r-1-s}\,{n}^{0} \right]
 \end{align*}\]</span></em></p>
 </div>
-</div>
 <p>We may observe that</p>
 <div id="prop:multifold-sum-of-zero-powers" class="proposition">
-<p><strong>Proposition 13</strong> (Multifold sum of zero powers).
+<p><strong>Proposition 14</strong> (Multifold sum of zero powers).
 <em>For integers <span class="math inline">\(r\)</span> and <span
 class="math inline">\(n\)</span> <span
 class="math display">\[\begin{align*}
-        \Sigma^{r}\,{n}^{0} = \binom{r+n-1}{r}
+    \Sigma^{r}\,{n}^{0} = \binom{r+n-1}{r}
 \end{align*}\]</span></em></p>
 <div class="proof">
 <p><em><em>Proof.</em> By hockey stick identity <span
@@ -549,35 +527,29 @@ class="math inline">\(\sum_{k=0}^{t} \binom{j+k}{j} =
 <div
 id="prop:multifold-sums-of-powers-via-backward-difference-binomial-form"
 class="proposition">
-<p><strong>Proposition 14</strong> (Multifold sums of powers binomial
-form). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 15</strong> (Multifold sums of powers binomial
+form). <em>For non-negative integers <span
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[
+    \Sigma^{r}\,{n}^{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[
 \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1}
 \binom{r-s+n-2}{r-s-1} \right]
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>By setting <span class="math inline">\(r \rightarrow r+1\)</span></p>
 <div
 id="cor:multifold-sums-of-powers-via-backward-difference-binomial-form-altered"
 class="corollary">
-<p><strong>Corollary 15</strong> (Multifold sums of powers binomial form
-shifted). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Corollary 16</strong> (Multifold sums of powers binomial form
+shifted). <em>For non-negative integers <span
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r+1}\,{n}^{m} = \sum_{j=0}^{m} \nabla^{j} t^{m}
-\left[ \binom{j-t+n+r}{j+r+1} + \sum_{s=0}^{r} (-1)^{j+s}
-\binom{t}{j+s+1} \binom{r-s+n-1}{r-s} \right]
+    \Sigma^{r+1}\,{n}^{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[
+\binom{j-t+n+r}{j+r+1} + \sum_{s=0}^{r} (-1)^{j+s} \binom{t}{j+s+1}
+\binom{r-s+n-1}{r-s} \right]
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>By lemma <a href="#lem:backward-differences-in-stirling-numbers"
 data-reference-type="eqref"
@@ -586,20 +558,21 @@ we get formula for multifold sums of powers in terms of Stirling numbers
 of the second kind</p>
 <div id="prop:multifold-sums-of-powers-in-stirling-numbers"
 class="proposition">
-<p><strong>Proposition 16</strong> (Multifold sums of powers in Stirling
-numbers). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 17</strong> (Multifold sums of powers in Stirling
+numbers). <em>For non-negative integers <span
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r+1}\,{n}^{m}
-            = \sum_{j=0}^{m} \sum_{k=j}^{m} \left[
-\binom{j-t+n+r}{j+r+1} + \sum_{s=0}^{r} (-1)^{j+s} \binom{t}{j+s+1}
-\binom{r-s+n-1}{r-s} \right] \binom{t-j}{k-j}
-\genfrac{\{}{\}}{0pt}{}{m}{k} k!
+    \Sigma^{r+1}\,{n}^{m}
+    = \sum_{j=0}^{m} \sum_{k=j}^{m}
+    \left[
+      \tbinom{j-t+n+r}{j+r+1}
+      + \sum_{s=0}^{r} (-1)^{j+s} \tbinom{t}{j+s+1}
+\tbinom{r-s+n-1}{r-s}
+    \right] \tbinom{t-j}{k-j} %
+  {\textstyle\genfrac\{\}{0pt}{}{m}{k}}%
+k!
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <p>By lemma <a href="#lem:backward-differences-in-eulerian-numbers"
 data-reference-type="eqref"
@@ -608,20 +581,20 @@ we get formula for multifold sums of powers in terms of Eulerian
 numbers</p>
 <div id="prop:multifold-sums-of-powers-in-eulerian-numbers"
 class="proposition">
-<p><strong>Proposition 17</strong> (Multifold sums of powers in Eulerian
-numbers). <em></em></p>
-<div class="mdframed">
-<p><em>For non-negative integers <span
+<p><strong>Proposition 18</strong> (Multifold sums of powers in Eulerian
+numbers). <em>For non-negative integers <span
 class="math inline">\(r,n,m\)</span> and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
-            \Sigma^{r+1}\,{n}^{m}
-            = \sum_{j=0}^{m} \sum_{k=0}^{m} \left[
-\binom{j-t+n+r}{j+r+1} + \sum_{s=0}^{r} (-1)^{j+s} \binom{t}{j+s+1}
-\binom{r-s+n-1}{r-s} \right] \binom{t+k-j}{m-j}
-\genfrac{\langle}{\rangle}{0pt}{}{m}{k}
+    \Sigma^{r+1}\,{n}^{m}
+    = \sum_{j=0}^{m} \sum_{k=0}^{m}
+    \left[
+      \tbinom{j-t+n+r}{j+r+1}
+      + \sum_{s=0}^{r} (-1)^{j+s} \tbinom{t}{j+s+1}
+\tbinom{r-s+n-1}{r-s}
+    \right] \tbinom{t+k-j}{m-j} %
+  {\textstyle\genfrac\langle\rangle{0pt}{}{m}{k}}%
 \end{align*}\]</span></em></p>
-</div>
 </div>
 <h1 class="unnumbered" id="conclusions">Conclusions</h1>
 <p>In this manuscript, we derived formula for sums of powers <a
@@ -639,15 +612,14 @@ data-reference="prop:multifold-sums-of-powers-in-stirling-numbers">[prop:multifo
 and Eulerian numbers <a
 href="#prop:multifold-sums-of-powers-in-eulerian-numbers"
 data-reference-type="eqref"
-data-reference="prop:multifold-sums-of-powers-in-eulerian-numbers">[prop:multifold-sums-of-powers-in-eulerian-numbers]</a>.</p>
-<p>Future research directions are discussed and proposed at <span
+data-reference="prop:multifold-sums-of-powers-in-eulerian-numbers">[prop:multifold-sums-of-powers-in-eulerian-numbers]</a>.
+Future research directions are discussed and proposed at <span
 class="citation" data-cites="kolosov_2025_18102534">(Kolosov
 2025a)</span>, which includes development of generalized algorithm for
 sums of powers using interpolation formulas combined with hockey-stick
-family identities for binomial coefficients.</p>
-<p>All the results are validated using <code>Mathematica</code>
-programs, see section <a href="#sec:mathematica-programs"
-data-reference-type="eqref"
+family identities for binomial coefficients. All the results are
+validated using <code>Mathematica</code> programs, see section <a
+href="#sec:mathematica-programs" data-reference-type="eqref"
 data-reference="sec:mathematica-programs">[sec:mathematica-programs]</a>.</p>
 <h1 id="sec:mathematica-programs">Mathematica programs</h1>
 <p>Use the <em>Mathematica</em> package <span class="citation"
@@ -671,7 +643,7 @@ class="math inline">\(\Sigma^{r}\,{n}^{m}\)</span></td>
 <tr>
 <td
 style="text-align: left;"><code>ValidateOrdinarySumsOfPowersViaBackwardDifferences[20]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:ordinary-sums-of-powers-via-backward-differences"
 data-reference-type="eqref"
 data-reference="prop:ordinary-sums-of-powers-via-backward-differences">[prop:ordinary-sums-of-powers-via-backward-differences]</a></td>
@@ -679,7 +651,7 @@ data-reference="prop:ordinary-sums-of-powers-via-backward-differences">[prop:ord
 <tr>
 <td
 style="text-align: left;"><code>ValidateBackwardDifferencesInEulerianNumbers[20]</code></td>
-<td style="text-align: left;">Validates Lemma <a
+<td style="text-align: left;">Validates <a
 href="#lem:backward-differences-in-eulerian-numbers"
 data-reference-type="eqref"
 data-reference="lem:backward-differences-in-eulerian-numbers">[lem:backward-differences-in-eulerian-numbers]</a></td>
@@ -687,7 +659,7 @@ data-reference="lem:backward-differences-in-eulerian-numbers">[lem:backward-diff
 <tr>
 <td
 style="text-align: left;"><code>ValidateOrdinarySumsOfPowersInEulerianNumbers[10]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:ordinary-sums-of-powers-in-eulerian-numbers"
 data-reference-type="eqref"
 data-reference="prop:ordinary-sums-of-powers-in-eulerian-numbers">[prop:ordinary-sums-of-powers-in-eulerian-numbers]</a></td>
@@ -695,7 +667,7 @@ data-reference="prop:ordinary-sums-of-powers-in-eulerian-numbers">[prop:ordinary
 <tr>
 <td
 style="text-align: left;"><code>ValidateBackwardDifferencesInStirlingNumbers[20]</code></td>
-<td style="text-align: left;">Validates Lemma <a
+<td style="text-align: left;">Validates <a
 href="#lem:backward-differences-in-stirling-numbers"
 data-reference-type="eqref"
 data-reference="lem:backward-differences-in-stirling-numbers">[lem:backward-differences-in-stirling-numbers]</a></td>
@@ -703,7 +675,7 @@ data-reference="lem:backward-differences-in-stirling-numbers">[lem:backward-diff
 <tr>
 <td
 style="text-align: left;"><code>ValidateOrdinarySumsOfPowersInStirlingNumbers[20]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:ordinary-sums-of-powers-in-stirling-numbers"
 data-reference-type="eqref"
 data-reference="prop:ordinary-sums-of-powers-in-stirling-numbers">[prop:ordinary-sums-of-powers-in-stirling-numbers]</a></td>
@@ -711,7 +683,7 @@ data-reference="prop:ordinary-sums-of-powers-in-stirling-numbers">[prop:ordinary
 <tr>
 <td
 style="text-align: left;"><code>ValidateOrdinaryStirlingSumsOfPowersInZero[20]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:ordinary-stirling-sums-of-powers-in-zero"
 data-reference-type="eqref"
 data-reference="prop:ordinary-stirling-sums-of-powers-in-zero">[prop:ordinary-stirling-sums-of-powers-in-zero]</a></td>
@@ -719,7 +691,7 @@ data-reference="prop:ordinary-stirling-sums-of-powers-in-zero">[prop:ordinary-st
 <tr>
 <td
 style="text-align: left;"><code>ValidateOrdinaryStirlingSumsOfPowersInZeroAltered[20]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:ordinary-stirling-sums-of-powers-in-zero-altered"
 data-reference-type="eqref"
 data-reference="prop:ordinary-stirling-sums-of-powers-in-zero-altered">[prop:ordinary-stirling-sums-of-powers-in-zero-altered]</a></td>
@@ -727,7 +699,7 @@ data-reference="prop:ordinary-stirling-sums-of-powers-in-zero-altered">[prop:ord
 <tr>
 <td
 style="text-align: left;"><code>ValidateDoubleSumsOfPowersViaBackwardDifferences[10]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:double-sums-of-powers-via-backward-differences"
 data-reference-type="eqref"
 data-reference="prop:double-sums-of-powers-via-backward-differences">[prop:double-sums-of-powers-via-backward-differences]</a></td>
@@ -735,7 +707,7 @@ data-reference="prop:double-sums-of-powers-via-backward-differences">[prop:doubl
 <tr>
 <td
 style="text-align: left;"><code>ValidateMultifoldSumsOfPowersViaBackwardDifference[5]</code></td>
-<td style="text-align: left;">Validates Theorem <a
+<td style="text-align: left;">Validates <a
 href="#theorem:multifold-sums-of-powers-via-backward-difference"
 data-reference-type="eqref"
 data-reference="theorem:multifold-sums-of-powers-via-backward-difference">[theorem:multifold-sums-of-powers-via-backward-difference]</a></td>
@@ -743,7 +715,7 @@ data-reference="theorem:multifold-sums-of-powers-via-backward-difference">[theor
 <tr>
 <td
 style="text-align: left;"><code>ValidateMultifoldSumsOfPowersBackwardDiffBinomialForm[5]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:multifold-sums-of-powers-via-backward-difference-binomial-form"
 data-reference-type="eqref"
 data-reference="prop:multifold-sums-of-powers-via-backward-difference-binomial-form">[prop:multifold-sums-of-powers-via-backward-difference-binomial-form]</a></td>
@@ -751,7 +723,7 @@ data-reference="prop:multifold-sums-of-powers-via-backward-difference-binomial-f
 <tr>
 <td
 style="text-align: left;"><code>ValidateMultifoldSumsOfPowersBinomialFormShifted[5]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#cor:multifold-sums-of-powers-via-backward-difference-binomial-form-altered"
 data-reference-type="eqref"
 data-reference="cor:multifold-sums-of-powers-via-backward-difference-binomial-form-altered">[cor:multifold-sums-of-powers-via-backward-difference-binomial-form-altered]</a></td>
@@ -759,7 +731,7 @@ data-reference="cor:multifold-sums-of-powers-via-backward-difference-binomial-fo
 <tr>
 <td
 style="text-align: left;"><code>ValidateMultifoldSumsOfPowersInStirlingNumbers[5]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:multifold-sums-of-powers-in-stirling-numbers"
 data-reference-type="eqref"
 data-reference="prop:multifold-sums-of-powers-in-stirling-numbers">[prop:multifold-sums-of-powers-in-stirling-numbers]</a></td>
@@ -767,7 +739,7 @@ data-reference="prop:multifold-sums-of-powers-in-stirling-numbers">[prop:multifo
 <tr>
 <td
 style="text-align: left;"><code>ValidateMultifoldSumsOfPowersInEulerianNumbers[5]</code></td>
-<td style="text-align: left;">Validates Proposition <a
+<td style="text-align: left;">Validates <a
 href="#prop:multifold-sums-of-powers-in-eulerian-numbers"
 data-reference-type="eqref"
 data-reference="prop:multifold-sums-of-powers-in-eulerian-numbers">[prop:multifold-sums-of-powers-in-eulerian-numbers]</a></td>
@@ -777,23 +749,25 @@ data-reference="prop:multifold-sums-of-powers-in-eulerian-numbers">[prop:multifo
 </div>
 <p><span><strong>Metadata</strong></span></p>
 <ul>
+<li><p><strong>Initial release date:</strong> January 1, 2026.</p></li>
+<li><p><strong>Current release date:</strong> 2026-01-20.</p></li>
 <li><p><strong>Version:</strong> <code>Local-0.1.0</code></p></li>
 <li><p><strong>MSC2010:</strong> 05A19, 05A10, 11B68, 11B73,
-11B83</p></li>
+11B83.</p></li>
 <li><p><strong>Keywords:</strong> Sums of powers, Newton’s interpolation
 formula, Finite differences, Binomial coefficients, Faulhaber’s formula,
 Bernoulli numbers, Bernoulli polynomials Interpolation, Approximation,
 Discrete convolution, Combinatorics, Polynomial identities, Central
 factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky
-identity, Pascal’s triangle, OEIS</p></li>
+identity, Pascal’s triangle, OEIS.</p></li>
 <li><p><strong>License:</strong> This work is licensed under a <a
 href="https://creativecommons.org/licenses/by/4.0/"><code>CC BY 4.0 License</code></a>.</p></li>
 <li><p><strong>DOI:</strong> <a
 href="https://doi.org/10.5281/zenodo.18118011"><code>https://doi.org/10.5281/zenodo.18118011</code></a></p></li>
 <li><p><strong>Web Version:</strong> <a
-href="https://kolosovpetro.github.io/sums-of-powers-backward-differences/"><code>kolosovpetro.github.io/sums-of-powers-backward-differences/</code></a></p></li>
+href="https://kolosovpetro.github.io/sums-of-powers-backward-differences/"><code>kolosovpetro.github.io/sums-of-powers-backward-differences</code></a></p></li>
 <li><p><strong>Sources:</strong> <a
-href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula"><code>github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula</code></a></p></li>
+href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula"><code>github/kolosovpetro/SumsOfPowersBackwardDiffNewtonFormula</code></a></p></li>
 <li><p><strong>ORCID:</strong> <a
 href="https://orcid.org/0000-0002-6544-8880"><code>0000-0002-6544-8880</code></a></p></li>
 <li><p><strong>Email:</strong> <a
@@ -840,5 +814,14 @@ Eulerschen Zahlen.”</span> <em>Journal Für Die Reine Und Angewandte
 Mathematik</em> 94: 203–32.
 </div>
 </div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>DOI: <a href="https://doi.org/10.5281/zenodo.18118011"
+class="uri">https://doi.org/10.5281/zenodo.18118011</a><a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 </body>
 </html>

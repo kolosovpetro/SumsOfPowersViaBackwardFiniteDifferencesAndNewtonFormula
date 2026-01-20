@@ -1,0 +1,171 @@
+\documentclass[10pt]{article}
+\textwidth= 5.00in
+\textheight= 7.4in
+\topmargin = 30pt
+\evensidemargin=0pt
+\oddsidemargin=55pt
+\headsep=17pt
+\parskip=.5pt
+\parindent=12pt
+\font\smallit=cmti10
+\font\smalltt=cmtt10
+\font\smallrm=cmr9
+
+\usepackage{amssymb,latexsym,amsmath,epsfig,amsthm} %% Add other packages as necessary
+
+\usepackage[
+  unicode,                  % allow unicode characters in bookmarks
+  pdfpagelabels,            % use page numbers as labels in PDF
+  hyperindex,               % add page numbers to index entries as hyperlinks
+  colorlinks=true,          % color the text of links instead of boxes
+  linkcolor=red,            % color of internal links (sections, equations)
+  urlcolor=blue,            % color of URLs
+  citecolor=red             % color of citation links
+]{hyperref}
+
+\usepackage{geometry} % Page layout and margins
+% \geometry{showframe}
+
+\usepackage{booktabs}
+
+\makeatletter
+
+\renewcommand
+\section{\@startsection {section}{1}{\z@}
+  {-30pt \@plus -1ex \@minus -.2ex}
+  {2.3ex \@plus.2ex}
+{\normalfont\normalsize\bfseries\boldmath}}
+
+\renewcommand
+\subsection{\@startsection{subsection}{2}{\z@}
+  {-3.25ex\@plus -1ex \@minus -.2ex}
+  {1.5ex \@plus .2ex}
+{\normalfont\normalsize\bfseries\boldmath}}
+
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname. }
+
+\newcommand\blfootnote[1]{
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}
+  \addtocounter{footnote}{-1}
+  \endgroup
+}
+
+\makeatother
+
+\newcommand \bernoulli [2][B] {{#1}\sb{#2}}
+
+% factorial notations
+\newcommand \centralFactorial [2] {#1^{[#2]}}
+\newcommand{\fallingFactorial}[2]{\left(#1\right)_{#2}}
+\newcommand{\risingFactorial}[2]{#1^{\left(#2\right)}}
+
+\newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
+\newcommand{\tstirlingii}[2]{%
+  {\textstyle\genfrac\{\}{0pt}{}{#1}{#2}}%
+}
+\newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
+\newcommand{\teulerian}[2]{%
+  {\textstyle\genfrac\langle\rangle{0pt}{}{#1}{#2}}%
+}
+
+\newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
+
+\newcommand{\tsum}{\mathop{\textstyle\sum}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\begin{document}
+\begin{figure}
+  \vspace*{-62pt}
+  %\rightline{\epsfig{file=erdos1.pdf, height=.75in}}
+  \vspace{.75in}
+\end{figure}
+\vspace*{-45pt}
+\leftline{\smalltt\#A1} \vskip -12.5pt
+\centerline{\smalltt  INTEGERS 26 (2026)}
+\vskip 3pt \hrule
+\begin{center}
+  \uppercase{\bf \boldmath Newton's interpolation formula and sums of powers}
+  \blfootnote{DOI: }
+  \vskip 20pt
+  {\bf Petro Kolosov} \\
+  %   {\smallit Department of Mathematics, One University {\tt (outside the U.S)}, City, Country}\\ %Do not include zip codes or postal numbers in authors' affiliations.
+  %   {\tt me@math.one.edu}\\ %(optional)
+  %   \vskip 10pt
+  %   {\bf Author Two}\\
+  %   {\smallit Department of Mathematics, University of Two {\tt (inside the U.S)}, City, State}\\ %Do not include zip codes or postal numbers in authors' affiliations.
+  %   {\tt you@math.two.edu}\\ %(optional)
+\end{center}
+\vskip 20pt
+\centerline{\smallit Received: , Revised: , Accepted: , Published: } % We will fill in the dates
+\vskip 30pt
+
+
+
+\centerline{\bf Abstract}
+\noindent
+\input{sections/abstract}
+
+
+
+\pagestyle{myheadings}
+\markright{\smalltt INTEGERS: 26 (2026)\hfill}
+\thispagestyle{empty}
+\baselineskip=12.875pt
+\vskip 30pt
+
+\section{Introduction and main results}
+\label{sec:introduction-and-main-results}
+\input{sections/01_introduction}
+
+
+\section*{Conclusions}
+\input{sections/conclusions}
+
+\bibliographystyle{unsrt}
+\bibliography{SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula}
+
+\clearpage
+
+\section{Mathematica programs}
+\label{sec:mathematica-programs}
+\input{sections/mathematica_programs}
+
+% \begin{thebibliography}{1}\footnotesize
+
+%   \bibitem{A} J. Author, My first math paper, {\it Integers} {\bf 25} (2020), \#A32, 8 pp.
+
+%   \bibitem{BS} S. Biswas and N. Saikia, Arithmetic properties of the coefficients of some mock theta functions, {\it Integers} {\bf 25} (2025), \#A72, 15 pp.
+
+%   \bibitem{CD} I. Can and N. Do, Proof of existence, {\it J. Math. Stuff} {\bf 17} (2000), 19--23.
+
+%   \bibitem{C} D. B. Cooper, {\it How to Make Money}, Ph.D. thesis, Skyfall University, 1971.
+
+%   \bibitem{DD} J. Deer and K. Doe, On the history of mathematics, {\it J. of the World} {\bf 52} (3) (1999), 123--135.
+
+%   \bibitem{EZ} R. Evans and D. Zager, Math in the future, preprint, {\tt arXiv:2525.31415}.
+
+%   \bibitem{JSV} A. Jones, L. Smith, and C. Vector, {\it The Theory of Everything}, Publishing Company, New York, 1987.
+
+%   \bibitem{OEIS} OEIS Foundation Inc.,  The On-Line Encyclopedia of Integer Sequences, {\tt https://oeis.org}.
+
+%   \bibitem{RW} A. Reid and B. Wright, Important number theory result, in {\it The Big Math Book}, Publishing Company, Boston, MA, 1975, 123--135.
+
+%   \bibitem{S} A. Smith, Math to be published, {\it J. Future Math.}, to appear.
+
+% \end{thebibliography}
+
+
+\end{document}
