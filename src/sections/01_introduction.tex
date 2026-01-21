@@ -1,10 +1,21 @@
-In this manuscript,
-we obtain formulas for sums of powers via Newton’s interpolation formula
-based on backward finite differences of powers.
-The idea to derive sums of powers using difference operator and Newton's series is quite generic,
-thus, formulas for sums of powers using forward and central differences can be found
-in the works~\cite{kolosov_2025_18102534, kolosov_2025_18098442}.
-Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
+In this manuscript, we derive formulas for multifold sums of powers
+by utilizing Newton's interpolation formula.
+Furthermore, we provide formulas for multifold sums of powers in terms
+of Stirling numbers of the second kind $\stirlingii{n}{k}$
+and Eulerian numbers $\eulerian{n}{k}$.
+The main idea is to utilize Newton's interpolation formula
+combined with hockey stick identities to
+derive formulas for multifold sums of powers.
+In this work, we use Newton's interpolation formula
+in backward finite differences.
+However, Newton's formula approach for sums of powers is quite generic,
+as such it does not necessary requires to bind to forward difference operator
+specifically. Thus, formulas for sums of powers using forward and central
+differences can be found
+in~~\cite{kolosov_2025_18102534, kolosov_2025_18098442}, respectively.
+Define multifold sums of powers in
+Knuth's~\cite{knuth1993johann}
+notation
 \begin{proposition} [Multifold sums of powers recurrence]
   \label{prop:multifold-sums-of-powers-recurrence}
   For integers $r,n,m \geq 0$,
@@ -106,10 +117,12 @@ That is,
   \end{proof}
 \end{lemma}
 \begin{lemma}[Shifted hockey stick identity]
+  \label{lem:shifted-hockey-stick-identity}
+  For integers $j,r \geq 0$, and an arbitrary integer $t$,
   \begin{align*}
     \sum_{k=1}^{n} \binom{j-t+k+r-1}{j+r}
     =\sum_{a=j-t+r}^{j-t+n+r-1} \binom{a}{j+r}
-    = \binom{j-t+n+r}{j+r+1} - \binom{j-t+r}{j+r+1}
+    = \binom{j-t+n+r}{j+r+1} - \binom{j-t+r}{j+r+1}.
   \end{align*}
 \end{lemma}
 \begin{proposition} [Backward sums of powers]
@@ -135,143 +148,197 @@ Thus, formula for negated backward sums of powers follows.
     \right].
   \end{align*}
 \end{proposition}
-For example, by setting $t=2$ and $m=1,2,3,4$,
-we get formulas for sums of cubes
+For example, by setting $t=2$ and $m=1$,
+we get,
 \begin{align*}
   \KnuthRFoldSum{1}{n}{1} &=
   2\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
-  + 1\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right],
+  + 1\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right].
 \end{align*}
+For $m=2$:
 \begin{align*}
   \KnuthRFoldSum{1}{n}{2}
-  &=
+  =
   4\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
-  + 3\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
-  &+ 2\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right].
+  + 3\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right]
+  + 2\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right].
 \end{align*}
+For $m=3$:
 \begin{align*}
   \KnuthRFoldSum{1}{n}{3}
-  &=
+  =
   8\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
-  + 7\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
-  & + 6\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
+  + 7\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right]
+  + 6\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
   + 6\left[ \tbinom{2}{4} + \tbinom{n+1}{4} \right].
 \end{align*}
+For $m=4$:
 \begin{align*}
   \KnuthRFoldSum{1}{n}{4}
   &=
   16\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
-  + 15\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
-  &+ 14\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
+  + 15\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right]
+  + 14\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
   + 12\left[ \tbinom{2}{4} + \tbinom{n+1}{4} \right] \\
   & + 24\left[ -\tbinom{2}{5} + \tbinom{n+2}{5} \right].
 \end{align*}
-\begin{itemize}
-  \item For $t=0$ the coefficients are $1, 0, 1, 0, -1, 2, 0, 1, -6, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A278075}{\texttt{A278075}}.
-  \item For $t=1$ the coefficients are $1, 1, 1, 1, 1, 2, 1, 1, 0, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A389570}{\texttt{A389570}}.
-  \item For $t=2$ the coefficients are $1, 2, 1, 4, 3, 2, 8, 7, 6, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A391068}{\texttt{A391068}}.
-  \item For $t=3$ the coefficients are $1, 3, 1, 9, 5, 2, 27, 19, 12, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A391210}{\texttt{A391210}}.
-\end{itemize}
+The coefficients $1, 2, 1, 4, 3, 2, 8, 7, 6, 6,\ldots$
+is the sequence \href{https://oeis.org/A391068}{\texttt{A391068}}
+in the OEIS~\cite{sloane2003line}.
+% \begin{itemize}
+%   \item For $t=0$ the coefficients are $1, 0, 1, 0, -1, 2, 0, 1, -6, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A278075}{\texttt{A278075}}.
+%   \item For $t=1$ the coefficients are $1, 1, 1, 1, 1, 2, 1, 1, 0, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A389570}{\texttt{A389570}}.
+%   \item For $t=2$ the coefficients are $1, 2, 1, 4, 3, 2, 8, 7, 6, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A391068}{\texttt{A391068}}.
+%   \item For $t=3$ the coefficients are $1, 3, 1, 9, 5, 2, 27, 19, 12, 6,\ldots$ and registered in the OEIS~\cite{sloane2003line} as \href{https://oeis.org/A391210}{\texttt{A391210}}.
+% \end{itemize}
+The following Lemma connects the Eulerian numbers $\eulerian{n}{k}$ and backward
+differences of powers.
 \begin{lemma} [Backward differences in Eulerian numbers]
+  For integers $j,m \geq 0$, and an arbitrary integer $t$,
   \label{lem:backward-differences-in-eulerian-numbers}
   \begin{align*}
-    \nabla^{j} t^{m} = \sum_{k=0}^{m} \binom{t+k-j}{m-j} \eulerian{m}{k}
+    \nabla^{j} t^{m} = \sum_{k=0}^{m} \binom{t+k-j}{m-j} \eulerian{m}{k}.
   \end{align*}
   \begin{proof}
-    By Worpitzky identity $t^{m} = \sum_{k=0}^{m} \binom{t+k}{m} \eulerian{m}{k}$ and binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$, see~\cite{Worpitzky1883}.
+    By Worpitzky identity
+    $t^{m} = \sum_{k=0}^{m} \binom{t+k}{m} \eulerian{m}{k}$,
+    and by binomial recurrence
+    $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$,
+    see~\cite{Worpitzky1883}.
   \end{proof}
 \end{lemma}
-Thus, let be a formula for ordinary sums of powers in terms of Eulerian numbers $\eulerian{m}{k}$
+Thus, we get formula for ordinary sums of powers in terms
+of Eulerian numbers $\eulerian{m}{k}$.
 \begin{proposition} [Ordinary sums of powers in Eulerian numbers]
   \label{prop:ordinary-sums-of-powers-in-eulerian-numbers}
   For non-negative integers $n,m$ and an arbitrary integer $t$
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=0}^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \binom{t+k-j}{m-j} \eulerian{m}{k}
+    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=0}^{m}
+    \left[
+      (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1}
+    \right] \binom{t+k-j}{m-j} \eulerian{m}{k}
   \end{align*}
 \end{proposition}
-Remarkable that having $t=0$ formula for sums of powers turns into double binomial view
+It is quite
+remarkable that
+having $t=0$ yields formula for sums of powers in double binomial form,
+involving Eulerian numbers $\eulerian{m}{k}$.
 \begin{proposition} [Ordinary Eulerian sums of powers in zero]
   \label{prop:ordinary-sums-of-eulerian-numbers-in-zero}
-  For non-negative integers $n,m$
+  For non-negative integers $n,m$,
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=0}^{m} \binom{j+n}{j+1}  \binom{k-j}{m-j} \eulerian{m}{k}
+    \KnuthRFoldSum{1}{n}{m}
+    = \sum_{j=0}^{m}
+    \sum_{k=0}^{m} \binom{j+n}{j+1}  \binom{k-j}{m-j} \eulerian{m}{k}.
   \end{align*}
 \end{proposition}
 \begin{lemma} [Backward differences in Stirling numbers]
+  For integers $j,m \geq 0$, and an arbitrary integer $t$,
   \label{lem:backward-differences-in-stirling-numbers}
   \begin{align*}
     \nabla^{j} t^{m} = \sum_{k=j}^{m} \binom{t-j}{k-j} \stirlingii{m}{k} k!
   \end{align*}
   \begin{proof}
-    By the identity $t^m  = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{k} k!$ and binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$.
+    By the identity $t^m  = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{k} k!$
+    and binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$.
   \end{proof}
 \end{lemma}
-Thus, let be a formula for ordinary sums of powers in terms of Stirling numbers $\stirlingii{m}{k}$
+Thus, let be a formula for ordinary sums of powers in terms of Stirling
+numbers $\stirlingii{m}{k}$
 \begin{proposition} [Ordinary sums of powers in Stirling numbers]
   \label{prop:ordinary-sums-of-powers-in-stirling-numbers}
-  For non-negative integers $n,m$ and an arbitrary integer $t$
+  For non-negative integers $n,m$ and an arbitrary integer $t$,
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} \left[ (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1} \right] \binom{t-j}{k-j} \stirlingii{m}{k} k!
+    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m}
+    \sum_{k=j}^{m}
+    \left[
+      (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1}
+    \right] \binom{t-j}{k-j} \stirlingii{m}{k} k!
   \end{align*}
 \end{proposition}
 By setting $t=0$ yields
 \begin{proposition} [Ordinary Stirling sums of powers in zero]
   \label{prop:ordinary-stirling-sums-of-powers-in-zero}
-  For non-negative integers $n,m$
+  For non-negative integers $n,m$,
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} \binom{j+n}{j+1} \binom{-j}{k-j} \stirlingii{m}{k} k!
+    \KnuthRFoldSum{1}{n}{m}
+    = \sum_{j=0}^{m}
+    \sum_{k=j}^{m} \binom{j+n}{j+1} \binom{-j}{k-j} \stirlingii{m}{k} k!
   \end{align*}
 \end{proposition}
-By $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$ yields another binomial form for sums of powers
+By upper negation property of binomial coefficients
+$\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$,
+another binomial form for sums of powers follows.
 \begin{proposition} [Ordinary Stirling sums of powers in zero altered]
   \label{prop:ordinary-stirling-sums-of-powers-in-zero-altered}
   For non-negative integers $n,m$
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \sum_{k=j}^{m} (-1)^{k-j} \binom{k-1}{j-1} \binom{j+n}{j+1}  \stirlingii{m}{k} k!
+    \KnuthRFoldSum{1}{n}{m}
+    = \sum_{j=0}^{m} \sum_{k=j}^{m} (-1)^{k-j}
+    \binom{k-1}{j-1} \binom{j+n}{j+1}  \stirlingii{m}{k} k!
   \end{align*}
 \end{proposition}
-Formula for double sums of powers can be derived in a similar manner,
-by applying summation to the proposition~\eqref{prop:ordinary-sums-of-powers-via-backward-differences},
-which in turn implies generalized hockey-stick identity, thus
+Similarly to Proposition~\eqref{prop:negated-backward-sums-of-powers},
+we can derive formula for double sums of powers.
+Thus,
 \begin{align*}
-  \KnuthRFoldSum{2}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} \sum_{k=1}^{n} 1 + \sum_{k=1}^{n} \binom{j-t+k}{j+1} \right]
+  \KnuthRFoldSum{2}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m}
+  \left[
+    (-1)^j \binom{t}{j+1} \sum_{k=1}^{n} 1 + \sum_{k=1}^{n} \binom{j-t+k}{j+1}
+  \right]
 \end{align*}
-By applying generalized hockey stick identity~\eqref{lem:generalized-hockey-stick-identity}, we obtain
+By applying generalized hockey
+stick identity~\eqref{lem:generalized-hockey-stick-identity},
+we obtain,
 \begin{align*}
-  \sum_{k=1}^{n} \binom{j-t+k}{j+1} = \sum_{k=j-t+1}^{j-t+n} \binom{k}{j+1} = \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2}
+  \sum_{k=1}^{n} \binom{j-t+k}{j+1}
+  = \sum_{k=j-t+1}^{j-t+n} \binom{k}{j+1}
+  = \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2}.
 \end{align*}
-Therefore,
+Therefore, we get closed form.
 \begin{align*}
   \KnuthRFoldSum{2}{n}{m}
-  &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} n + \left( \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2} \right) \right]
+  &= \sum_{j=0}^{m} \nabla^{j} t^{m}
+  \left[
+    (-1)^j \binom{t}{j+1} n +
+    \left( \binom{j-t+n+1}{j+2} - \binom{j-t+1}{j+2} \right)
+  \right].
 \end{align*}
-By applying the identity for negative binomial coefficients $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we get
+By applying the identity for negative binomial
+coefficients $\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we get,
 \begin{align*}
-  \binom{-(t-j-1)}{j+2} = (-1)^{j+2} \binom{t}{j+2}
+  \binom{-(t-j-1)}{j+2} = (-1)^{j+2} \binom{t}{j+2}.
 \end{align*}
 Hence,
 \begin{proposition} [Double sums of powers via backward differences]
   \label{prop:double-sums-of-powers-via-backward-differences}
-  For non-negative integers $n,m$ and an arbitrary integer $t$
+  For non-negative integers $n,m$ and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{2}{n}{m}
-    &= \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ (-1)^j \binom{t}{j+1} n + (-1)^{j+1} \binom{t}{j+2} n^0 +  \binom{j-t+n+1}{j+2} \right]
+    &= \sum_{j=0}^{m} \nabla^{j} t^{m}
+    \left[
+      (-1)^j \binom{t}{j+1} n
+      + (-1)^{j+1} \binom{t}{j+2} n^0 +  \binom{j-t+n+1}{j+2}
+    \right]
   \end{align*}
 \end{proposition}
-In general,
+By applying the hockey stick
+identities~\eqref{lem:generalized-hockey-stick-identity},
+and~\eqref{lem:shifted-hockey-stick-identity}
+repeatedly, yields formula for $r-$fold sums of powers.
 \begin{theorem} [Multifold sums of powers via backward difference]
   \label{theorem:multifold-sums-of-powers-via-backward-difference}
-  For non-negative integers $r,n,m$ and an arbitrary integer $t$
+  For non-negative integers $r,n,m$ and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     = \sum_{j=0}^{m} \nabla^{j} t^{m}
     \left[
       \binom{j-t+n+r-1}{j+r}
       + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \KnuthRFoldSum{r-1-s}{n}{0}
-    \right]
+    \right].
   \end{align*}
 \end{theorem}
-We may observe that
+We may observe that,
 \begin{proposition}[Multifold sum of zero powers]
   \label{prop:multifold-sum-of-zero-powers}
   For integers $r \geq 0$, and $n\geq 1$,
@@ -301,27 +368,38 @@ We may observe that
     This completes the proof.
   \end{proof}
 \end{proposition}
-By $\KnuthRFoldSum{r-1-s}{n}{0} = \binom{r-s+n-2}{r-s-1}$, we get
+Hence, binomial form of formula for multifold sums of powers
+~\eqref{theorem:multifold-sums-of-powers-via-backward-difference}
+follows.
 \begin{proposition} [Multifold sums of powers binomial form]
   \label{prop:multifold-sums-of-powers-via-backward-difference-binomial-form}
-  For non-negative integers $r,n,m$ and an arbitrary integer $t$
+  For non-negative integers $r,n,m$ and an arbitrary integer $t$,
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \binom{r-s+n-2}{r-s-1} \right]
+    \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m}
+    \left[
+      \binom{j-t+n+r-1}{j+r}
+      + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \binom{r-s+n-2}{r-s-1}
+    \right].
   \end{align*}
 \end{proposition}
-By setting $r \rightarrow r+1$
+By setting $r \rightarrow r+1$ yields shifted version of the identity above.
 \begin{corollary} [Multifold sums of powers binomial form shifted]
   \label{cor:multifold-sums-of-powers-via-backward-difference-binomial-form-altered}
-  For non-negative integers $r,n,m$ and an arbitrary integer $t$
+  For non-negative integers $r,n,m$ and an arbitrary integer $t$,
   \begin{align*}
-    \KnuthRFoldSum{r+1}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ \binom{j-t+n+r}{j+r+1} + \sum_{s=0}^{r} (-1)^{j+s} \binom{t}{j+s+1} \binom{r-s+n-1}{r-s} \right]
+    \KnuthRFoldSum{r+1}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m}
+    \left[
+      \binom{j-t+n+r}{j+r+1}
+      + \sum_{s=0}^{r} (-1)^{j+s} \binom{t}{j+s+1} \binom{r-s+n-1}{r-s}
+    \right].
   \end{align*}
 \end{corollary}
-By lemma~\eqref{lem:backward-differences-in-stirling-numbers}, we get formula for multifold sums of powers
-in terms of Stirling numbers of the second kind
+By Lemma~\eqref{lem:backward-differences-in-stirling-numbers},
+we get formula for multifold sums of powers
+in terms of Stirling numbers of the second kind $\stirlingii{n}{k}$.
 \begin{proposition}[Multifold sums of powers in Stirling numbers]
   \label{prop:multifold-sums-of-powers-in-stirling-numbers}
-  For non-negative integers $r,n,m$ and an arbitrary integer $t$
+  For non-negative integers $r,n,m$ and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{r+1}{n}{m}
     = \sum_{j=0}^{m} \sum_{k=j}^{m}
@@ -331,8 +409,9 @@ in terms of Stirling numbers of the second kind
     \right] \tbinom{t-j}{k-j} \tstirlingii{m}{k} k!
   \end{align*}
 \end{proposition}
-By lemma~\eqref{lem:backward-differences-in-eulerian-numbers}, we get formula for multifold sums of powers
-in terms of Eulerian numbers
+By lemma~\eqref{lem:backward-differences-in-eulerian-numbers},
+we get formula for multifold sums of powers
+in terms of Eulerian numbers $\eulerian{n}{k}$.
 \begin{proposition}[Multifold sums of powers in Eulerian numbers]
   \label{prop:multifold-sums-of-powers-in-eulerian-numbers}
   For non-negative integers $r,n,m$ and an arbitrary integer $t$
@@ -342,6 +421,6 @@ in terms of Eulerian numbers
     \left[
       \tbinom{j-t+n+r}{j+r+1}
       + \sum_{s=0}^{r} (-1)^{j+s} \tbinom{t}{j+s+1} \tbinom{r-s+n-1}{r-s}
-    \right] \tbinom{t+k-j}{m-j} \teulerian{m}{k}
+    \right] \tbinom{t+k-j}{m-j} \teulerian{m}{k}.
   \end{align*}
 \end{proposition}
