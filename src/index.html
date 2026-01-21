@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Petro Kolosov" />
-  <meta name="dcterms.date" content="2026-01-20" />
+  <meta name="dcterms.date" content="2026-01-21" />
   <title>Sums of powers via backward finite differences and Newton’s formula</title>
   <style>
     /* Default styles provided by pandoc.
@@ -210,7 +210,7 @@
 <h1 class="title">Sums of powers via backward finite differences and
 Newton’s formula</h1>
 <p class="author">Petro Kolosov</p>
-<p class="date">2026-01-20</p>
+<p class="date">2026-01-21</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>We obtain formulas for sums of powers via Newton’s interpolation
@@ -288,6 +288,34 @@ class="math display">\[\begin{align*}
 <em><span class="math display">\[\begin{align*}
     \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
 \end{align*}\]</span></em></p>
+<div class="proof">
+<p><em><em>Proof.</em> We have, <span
+class="math display">\[\begin{align*}
+      \mathop{\textstyle\sum}_{k=a}^{b} \tbinom{k}{j} = \tbinom{a}{j} +
+\tbinom{a+1}{j}
+      + \cdots + \tbinom{b}{j},
+\end{align*}\]</span> which implies, <span
+class="math display">\[\begin{align*}
+      \mathop{\textstyle\sum}_{k=a}^{b} \tbinom{k}{j} =
+      \left( \mathop{\textstyle\sum}_{k=0}^{b} \tbinom{k}{j} \right)
+      -
+      \left(\mathop{\textstyle\sum}_{k=0}^{a-1} \tbinom{k}{j}\right).
+\end{align*}\]</span> Thus, by hockey stick identity <span
+class="math inline">\(\mathop{\textstyle\sum}_{k=0}^{n} \binom{k}{j} =
+\binom{n+1}{j+1}\)</span>, we get, <span
+class="math display">\[\begin{align*}
+      \mathop{\textstyle\sum}_{k=a}^{b} \tbinom{k}{j}
+      =
+      \left(
+        \mathop{\textstyle\sum}_{k=0}^{b} \tbinom{k}{j}
+      \right)
+      -
+      \left(
+        \mathop{\textstyle\sum}_{k=0}^{a-1} \tbinom{k}{j}
+      \right)
+      = \tbinom{b+1}{j+1} - \tbinom{a}{j+1}.
+\end{align*}\]</span> This completes the proof. ◻</em></p>
+</div>
 </div>
 <p>Applying the identity for binomial coefficients <span
 class="math inline">\(\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}\)</span>,
@@ -316,26 +344,22 @@ of cubes <span class="math display">\[\begin{align*}
   &amp;=
   4\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
   + 3\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
-  &amp;\quad
-  + 2\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right].
+  &amp;+ 2\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right].
 \end{align*}\]</span> <span class="math display">\[\begin{align*}
   \Sigma^{1}\,{n}^{3}
   &amp;=
   8\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
   + 7\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
-  &amp;\quad
-  + 6\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
+  &amp; + 6\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
   + 6\left[ \tbinom{2}{4} + \tbinom{n+1}{4} \right].
 \end{align*}\]</span> <span class="math display">\[\begin{align*}
   \Sigma^{1}\,{n}^{4}
   &amp;=
   16\left[ -\tbinom{2}{1} + \tbinom{n-2}{1} \right]
   + 15\left[ \tbinom{2}{2} + \tbinom{n-1}{2} \right] \\
-  &amp;\quad
-  + 14\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
+  &amp;+ 14\left[ -\tbinom{2}{3} + \tbinom{n}{3} \right]
   + 12\left[ \tbinom{2}{4} + \tbinom{n+1}{4} \right] \\
-  &amp;\quad
-  + 24\left[ -\tbinom{2}{5} + \tbinom{n+2}{5} \right].
+  &amp; + 24\left[ -\tbinom{2}{5} + \tbinom{n+2}{5} \right].
 \end{align*}\]</span></p>
 <ul>
 <li><p>For <span class="math inline">\(t=0\)</span> the coefficients are
@@ -511,15 +535,35 @@ class="math display">\[\begin{align*}
 <p>We may observe that</p>
 <div id="prop:multifold-sum-of-zero-powers" class="proposition">
 <p><strong>Proposition 14</strong> (Multifold sum of zero powers).
-<em>For integers <span class="math inline">\(r\)</span> and <span
-class="math inline">\(n\)</span> <span
+<em>For integers <span class="math inline">\(r \geq 0\)</span>, and
+<span class="math inline">\(n\geq 1\)</span>, <span
 class="math display">\[\begin{align*}
-    \Sigma^{r}\,{n}^{0} = \binom{r+n-1}{r}
+    \Sigma^{r}\,{n}^{0} = \binom{r+n-1}{r}.
 \end{align*}\]</span></em></p>
 <div class="proof">
-<p><em><em>Proof.</em> By hockey stick identity <span
-class="math inline">\(\sum_{k=0}^{t} \binom{j+k}{j} =
-\binom{j+t+1}{j+1}\)</span>. ◻</em></p>
+<p><em><em>Proof.</em></em></p>
+<ol>
+<li><p><em>Let <span class="math inline">\(r=0\)</span>, then <span
+class="math inline">\(\Sigma^{0}\,{n}^{0}=n^0=\binom{n-1}{0} =
+1\)</span>, by definition.</em></p></li>
+<li><p><em>Let <span class="math inline">\(r=1\)</span>, then <span
+class="math inline">\(\Sigma^{1}\,{n}^{0}
+        = \sum_{k=1}^{n} \binom{k-1}{0}
+        = \sum_{k=1}^{n} 1 = \binom{n}{1}\)</span>.</em></p></li>
+<li><p><em>Let <span class="math inline">\(r=2\)</span>, then <span
+class="math inline">\(\Sigma^{2}\,{n}^{0}= \sum_{k=1}^{n} \binom{k}{1}
+        = \sum_{k=1}^{n} k = \binom{n+1}{2}\)</span>.</em></p></li>
+<li><p><em>Let <span class="math inline">\(r=3\)</span>, then <span
+class="math inline">\(\Sigma^{3}\,{n}^{0}
+        = \sum_{k=1}^{n} \binom{k+1}{2}
+        = \binom{n+2}{3}\)</span>.</em></p></li>
+<li><p><em>By induction over <span class="math inline">\(r\)</span> and
+hockey stick identity <span class="math inline">\(\sum_{k=r}^{n}
+\binom{k}{r} = \binom{n+1}{r+1}\)</span>, the claim follows <span
+class="math inline">\(\Sigma^{r}\,{n}^{0} =
+\binom{r+n-1}{r}\)</span>.</em></p></li>
+</ol>
+<p><em>This completes the proof. ◻</em></p>
 </div>
 </div>
 <p>By <span class="math inline">\(\Sigma^{r-1-s}\,{n}^{0} =
@@ -750,7 +794,7 @@ data-reference="prop:multifold-sums-of-powers-in-eulerian-numbers">[prop:multifo
 <p><span><strong>Metadata</strong></span></p>
 <ul>
 <li><p><strong>Initial release date:</strong> January 1, 2026.</p></li>
-<li><p><strong>Current release date:</strong> 2026-01-20.</p></li>
+<li><p><strong>Current release date:</strong> 2026-01-21.</p></li>
 <li><p><strong>Version:</strong> <code>Local-0.1.0</code></p></li>
 <li><p><strong>MSC2010:</strong> 05A19, 05A10, 11B68, 11B73,
 11B83.</p></li>
@@ -778,7 +822,8 @@ role="list">
 <div id="ref-knuth1993johann" class="csl-entry" role="listitem">
 Knuth, Donald E. 1993. <span>“<span class="nocase">Johann Faulhaber and
 sums of powers</span>.”</span> <em><span class="nocase">Mathematics of
-Computation</span></em> 61 (203): 277–94.
+Computation</span></em> 61 (203): 277–94. <a
+href="https://arxiv.org/abs/math/9207222">https://arxiv.org/abs/math/9207222</a>.
 </div>
 <div id="ref-kolosov_2025_18102534" class="csl-entry" role="listitem">
 Kolosov, Petro. 2025a. <em>Newton’s Interpolation Formula and Sums of
@@ -793,8 +838,7 @@ href="https://doi.org/10.5281/zenodo.18096789">https://doi.org/10.5281/zenodo.18
 <div id="ref-MathematicaPrograms" class="csl-entry" role="listitem">
 Kolosov, Petro. 2026. <em>Mathematica Programs for Backward Finite
 Differences and Newton’s Formula</em>. <a
-href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica"
-class="uri">Https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica</a>.
+href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica">https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica</a>.
 </div>
 <div id="ref-sloane2003line" class="csl-entry" role="listitem">
 Sloane, Neil J.A. and others. 2003. <em><span class="nocase">The on-line
@@ -811,7 +855,8 @@ class="uri">Https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathema
 <div id="ref-Worpitzky1883" class="csl-entry" role="listitem">
 Worpitzky, J. 1883. <span>“Studien Über Die Bernoullischen Und
 Eulerschen Zahlen.”</span> <em>Journal Für Die Reine Und Angewandte
-Mathematik</em> 94: 203–32.
+Mathematik</em> 94: 203–32. <a
+href="http://eudml.org/doc/148532">http://eudml.org/doc/148532</a>.
 </div>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document"

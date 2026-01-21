@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Remove mdframed package
 - Remove unused references
 - Fix overfull margins
+- Fix HTML links
+- Update build script
 
 ## [1.5.1] - 07-Jan-2026
 

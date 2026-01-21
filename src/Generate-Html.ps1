@@ -1,5 +1,6 @@
 $InitialDirectory = Get-Location
-cd $PSScriptRoot
+
+Set-Location $PSScriptRoot
 
 $LatexFileName = (Get-ChildItem -Filter "*.tex" | Select-Object -First 1).BaseName
 Write-Host "Latex file: $LatexFileName"  -ForegroundColor Magenta
@@ -16,4 +17,4 @@ Write-Host "Fix encoding is complete." -ForegroundColor Green
 Write-Host "Exit Code: $LASTEXITCODE" -ForegroundColor Green
 Write-Host "Changing Powershell Directory to $InitialDirectory ... " -ForegroundColor Green
 
-cd $InitialDirectory
+Set-Location $InitialDirectory
