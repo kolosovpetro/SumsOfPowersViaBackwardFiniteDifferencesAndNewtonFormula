@@ -20,6 +20,11 @@ function Build-Latex {
 
         Write-Host "Latex file: $LatexFileName"  -ForegroundColor Magenta
 
+        if (-not (Test-Path $OutputDirectory)) {
+            Write-Warning "Output directory: $OutputDirectory does not exist. Creating it ..."
+            New-Item -ItemType Directory -Path $OutputDirectory
+        }
+
         $OutputDirectoryAbsPath = (Resolve-Path $OutputDirectory).Path
         $LatexFileAbsPath = (Resolve-Path "$LatexFileName.tex").Path
         $AuxDirectoryAbsPath = $OutputDirectoryAbsPath
