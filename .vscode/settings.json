@@ -15,6 +15,10 @@
     "editor.defaultFormatter": "James-Yu.latex-workshop",
     "editor.formatOnSave": true
   },
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell",
+    "editor.formatOnSave": true
+  },
   "latex-workshop.formatting.latex": "tex-fmt",
   "cSpell.language": "en",
   "cSpell.enabled": true,

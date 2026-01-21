@@ -25,6 +25,7 @@ tests
 # *.ps
 # *.eps
 *.pdf
+out
 
 ## JetBrains
 .idea

@@ -1,12 +1,10 @@
-function Build-Latex
-{
+function Build-Latex {
     param (
         [string]$OutputDirectory = "..\out",
         [Boolean]$ShouldCompileBibtex = $true
     )
 
-    try
-    {
+    try {
         $InitialDirectory = Get-Location
 
         Write-Host "Initial working directory: $InitialDirectory"  -ForegroundColor Magenta
@@ -31,11 +29,10 @@ function Build-Latex
         Write-Host "Compiling $LatexFileName first time... "  -ForegroundColor Magenta
 
         Compile-Latex -LatexFileAbsPath $LatexFileAbsPath `
-              -OutputDirectoryAbsPath $OutputDirectoryAbsPath `
-              -AuxDirectoryAbsPath $AuxDirectoryAbsPath
+            -OutputDirectoryAbsPath $OutputDirectoryAbsPath `
+            -AuxDirectoryAbsPath $AuxDirectoryAbsPath
 
-        if ($ShouldCompileBibtex -eq $true)
-        {
+        if ($ShouldCompileBibtex -eq $true) {
             Write-Dash
 
             Write-Host "Compiling bibtex ... "  -ForegroundColor Magenta
@@ -48,16 +45,16 @@ function Build-Latex
         Write-Host "Compiling $LatexFileName second time... "  -ForegroundColor Magenta
 
         Compile-Latex -LatexFileAbsPath $LatexFileAbsPath `
-              -OutputDirectoryAbsPath $OutputDirectoryAbsPath `
-              -AuxDirectoryAbsPath $AuxDirectoryAbsPath
+            -OutputDirectoryAbsPath $OutputDirectoryAbsPath `
+            -AuxDirectoryAbsPath $AuxDirectoryAbsPath
 
         Write-Dash
 
         Write-Host "Compiling $LatexFileName third time... "  -ForegroundColor Magenta
 
         Compile-Latex -LatexFileAbsPath $LatexFileAbsPath `
-              -OutputDirectoryAbsPath $OutputDirectoryAbsPath `
-              -AuxDirectoryAbsPath $AuxDirectoryAbsPath
+            -OutputDirectoryAbsPath $OutputDirectoryAbsPath `
+            -AuxDirectoryAbsPath $AuxDirectoryAbsPath
 
         Write-Dash
 
@@ -75,21 +72,18 @@ function Build-Latex
         Write-Host "Exit Code: $LASTEXITCODE" -ForegroundColor Green
         Write-Host "Changing Powershell Directory to $InitialDirectory ... " -ForegroundColor Green
     }
-    catch
-    {
+    catch {
         Set-Location $InitialDirectory
         Write-Error "Latex error appeared. Inspect the logs."
     }
 }
 
-function Write-Dash
-{
+function Write-Dash {
     Write-Host "==============================================================================" -ForegroundColor Cyan
 }
 
 
-function Compile-Latex
-{
+function Compile-Latex {
     param(
         [string] $LatexFileAbsPath,
         [string] $OutputDirectoryAbsPath,
@@ -101,17 +95,15 @@ function Compile-Latex
     Write-Host "Aux directory absolute path: $AuxDirectoryAbsPath" -ForegroundColor Magenta
 
     pdflatex -file-line-error -halt-on-error -interaction="nonstopmode" -synctex="1" -output-format="pdf" `
-             -output-directory="$OutputDirectoryAbsPath" `
-             -aux-directory="$AuxDirectoryAbsPath" $LatexFileAbsPath
+        -output-directory="$OutputDirectoryAbsPath" `
+        -aux-directory="$AuxDirectoryAbsPath" $LatexFileAbsPath
 
-    if ($LASTEXITCODE -ne 0)
-    {
+    if ($LASTEXITCODE -ne 0) {
         throw "Latex error appeared. Inspect the logs."
     }
 }
 
-function Compile-Bibtex
-{
+function Compile-Bibtex {
     param(
         [string]$OutputDirectoryAbsPath,
         [string]$LatexFileName
@@ -123,8 +115,7 @@ function Compile-Bibtex
 
     bibtex "$WorkingDirectoryForBibtex"
 
-    if ($LASTEXITCODE -ne 0)
-    {
+    if ($LASTEXITCODE -ne 0) {
         throw "Bibtex error appeared. Inspect the logs."
     }
 }
