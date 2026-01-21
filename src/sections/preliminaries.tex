@@ -1,0 +1,157 @@
+Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
+\begin{proposition} [Multifold sums of powers recurrence]
+  \label{prop:multifold-sums-of-powers-recurrence}
+  For integers $r,n,m \geq 0$,
+  \begin{align*}
+    \KnuthRFoldSum{0}{n}{m}   &= n^m, \\
+    \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m}
+    + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m}, \\
+    \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m}
+    + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}.
+  \end{align*}
+\end{proposition}
+Steffensen
+gives Newton's formula for backward differences evaluated
+at zero $f(x) = \sum_{k=0}^{n} \binom{x+k-1}{k} \nabla^{k} f(0)$,
+in his book
+Interpolation~\cite[chapter 2, eq. (19)]{steffensen1927interpolation}.
+Thus, Newton's formula for backward differences evaluated
+at arbitrary integer $a$ follows.
+\begin{proposition}[Newton formula in backward differences]
+  Let $f\colon \mathbb{Z} \to \mathbb{C}$ be a function,
+  and let $a \in \mathbb{Z}$.
+  Then, for all $x \in \mathbb{Z}$,
+  \label{prop:newtons-formula-via-backward-difference}
+  \begin{align*}
+    f(x) &= \sum_{k=0}^{n} \binom{x-a+k-1}{k} \nabla^{k} f(a),
+  \end{align*}
+  where the $k$-th backward finite difference of $f$ evaluated
+  at $a$ is defined by
+  \begin{align*}
+    \nabla^{k} f(a) = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f(a-j).
+  \end{align*}
+\end{proposition}
+\begin{lemma} [Generalized hockey stick identity]
+  \label{lem:generalized-hockey-stick-identity}
+  For integers $a \leq b$ and $j$,
+  \begin{align*}
+    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}.
+  \end{align*}
+  \begin{proof}
+    We have,
+    \begin{align*}
+      \tsum_{k=a}^{b} \tbinom{k}{j} = \tbinom{a}{j} + \tbinom{a+1}{j}
+      + \cdots + \tbinom{b}{j},
+    \end{align*}
+    which implies,
+    \begin{align*}
+      \tsum_{k=a}^{b} \tbinom{k}{j} =
+      \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right)
+      -
+      \left(\tsum_{k=0}^{a-1} \tbinom{k}{j}\right).
+    \end{align*}
+    Thus, by hockey stick identity
+    $\tsum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$,
+    we get,
+    \begin{align*}
+      \tsum_{k=a}^{b} \tbinom{k}{j}
+      =
+      \left(
+        \tsum_{k=0}^{b} \tbinom{k}{j}
+      \right)
+      -
+      \left(
+        \tsum_{k=0}^{a-1} \tbinom{k}{j}
+      \right)
+      = \tbinom{b+1}{j+1} - \tbinom{a}{j+1}.
+    \end{align*}
+    This completes the proof.
+  \end{proof}
+\end{lemma}
+
+\begin{definition}[Multifold binomial sum recurrence]
+  \begin{align*}
+    F_{r} (n, t, j) =
+    \begin{cases}
+      0, \quad &r<0, \\
+      \binom{n-t+j-1}{j}, \quad &r=0, \\
+      \sum_{k=1}^{n} F_{r-1}(k, t, j), \quad &r>0.
+    \end{cases}
+  \end{align*}
+\end{definition}
+
+\begin{proposition}[Multifold binomial sum closed form]
+  \begin{align*}
+    F_{r} (n,t,j)
+    = \sum_{k=1}^{n} F_{r-1} (k,t,j)
+    = \binom{n-t+j+r-1}{j+r}
+    -
+    \sum_{s=0}^{r-1} \binom{j-t+(r-1-s)}{j+r-s}
+    \KnuthRFoldSum{s}{n}{0}.
+  \end{align*}
+  \begin{proof}
+    Consider the case $r=0$, then result is trivial.
+    \begin{align*}
+      F_0 (n,t,j) = \binom{n-t+j-1}{j}.
+    \end{align*}
+    Consider the case $r=1$, then:
+    \begin{align*}
+      F_1 (n,t,j)
+      = \sum_{k=1}^{n} F_0 (k,t,j)
+      = \sum_{k=1}^{n} \binom{k-t+j-1}{j}.
+    \end{align*}
+    By generalized hockey stick identity, closed form
+    yields.
+    \begin{align*}
+      \sum_{k=1}^{n} \binom{k-t+j-1}{j}
+      =\sum_{a=j-t}^{n-t+j-1} \binom{a}{j}
+      = \binom{n-t+j}{j+1} - \binom{j-t}{j+1}.
+    \end{align*}
+    Thus,
+    \begin{align*}
+      F_1 (n,t,j) = \binom{n-t+j}{j+1} - \binom{j-t}{j+1}.
+    \end{align*}
+    Now we may notice that only the binomial coefficient
+    $\binom{n-t+j}{j+1}$ depends on $n$, meaning that
+    there is only one place to apply generalized hockey stick
+    identity, to get $F_2 (n, t, j)$.
+    Hence, for $r=2$, we get,
+    \begin{align*}
+      F_2 (n,t,j)
+      = \sum_{k=1}^{n} F_1 (k,t,j)
+      = \sum_{k=1}^{n} \left[ \binom{k-t+j}{j+1} - \binom{j-t}{j+1} \right].
+    \end{align*}
+    By generalized hockey stick identity
+    \begin{align*}
+      \sum_{k=1}^{n} \binom{k-t+j}{j+1}
+      =\sum_{a=j-t+1}^{n-t+j} \binom{a}{j+1}
+      = \binom{n-t+j+1}{j+2} - \binom{j-t+1}{j+2}.
+    \end{align*}
+    Thus,
+    \begin{align*}
+      F_2 (n,t,j)
+      = \sum_{k=1}^{n} F_1 (k,t,j)
+      = \binom{n-t+j+1}{j+2} - \binom{j-t+1}{j+2} - \binom{j-t}{j+1} n.
+    \end{align*}
+    We actually may observe that $n=\KnuthRFoldSum{1}{n}{0}$,
+    and $1=\KnuthRFoldSum{0}{n}{0}$.
+    Hence,
+    \begin{align*}
+      F_2 (n,t,j)
+      = \sum_{k=1}^{n} F_1 (k,t,j)
+      = \binom{n-t+j+1}{j+2}
+      - \binom{j-t+1}{j+2} \KnuthRFoldSum{0}{n}{0}
+      - \binom{j-t}{j+1} \KnuthRFoldSum{1}{n}{0}.
+    \end{align*}
+    By induction over $r$ yields the closed form for $F_r (n,t,j)$.
+    \begin{align*}
+      F_{r} (n,t,j)
+      = \sum_{k=1}^{n} F_{r-1} (k,t,j)
+      = \binom{n-t+j+r-1}{j+r}
+      -
+      \sum_{s=0}^{r-1} \binom{j-t+(r-1-s)}{j+r-s}
+      \KnuthRFoldSum{s}{n}{0}.
+    \end{align*}
+    This completes the proof.
+  \end{proof}
+\end{proposition}
