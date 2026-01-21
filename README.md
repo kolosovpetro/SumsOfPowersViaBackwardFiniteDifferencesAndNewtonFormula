@@ -8,6 +8,7 @@ Thus, we express formulas for sums of powers in terms of Eulerian numbers, and S
 
 ## Metadata
 
+- **Initial release date:** January 1, 2026.
 - **MSC2010:** 05A19, 05A10, 11B83, 03C40.
 - **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers, OEIS, Stirling numbers, Eulerian numbers, Worpitzky identity.
 - **License:** This work is licensed under a [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)

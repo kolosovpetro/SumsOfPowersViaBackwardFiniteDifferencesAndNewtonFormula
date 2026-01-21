@@ -1,13 +1,15 @@
 function Build-Latex {
     param (
         [string]$OutputDirectory = "..\out",
-        [Boolean]$ShouldCompileBibtex = $True
+        [Boolean]$ShouldCompileBibtex = $true,
+        [string]$LatexFileName = ""
     )
 
     try {
         $InitialDirectory = Get-Location
 
         Write-Host "Initial working directory: $InitialDirectory"  -ForegroundColor Magenta
+        Write-Host "Parameter for LatexFileName: $LatexFileName"  -ForegroundColor Magenta
         Write-Host "Setting working directory to PSScriptRoot: $PSScriptRoot"  -ForegroundColor Magenta
 
         Set-Location -Path $PSScriptRoot
@@ -16,7 +18,10 @@ function Build-Latex {
 
         Write-Host "Determining the root latex file to build ..."
 
-        $LatexFileName = (Get-ChildItem -Filter "*.tex" | Select-Object -First 1).BaseName
+        if ([string]::IsNullOrEmpty($LatexFileName)) {
+            Write-Host "Parameter LatexFileName is null or empty. Getting Latex file name ..."
+            $LatexFileName = (Get-ChildItem -Filter "*.tex" | Select-Object -First 1).BaseName
+        }
 
         Write-Host "Latex file: $LatexFileName"  -ForegroundColor Magenta
 
@@ -125,4 +130,6 @@ function Compile-Bibtex {
     }
 }
 
-Build-Latex
+Build-Latex `
+    -LatexFileName "SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormulaIntegers" `
+    -ShouldCompileBibtex $True

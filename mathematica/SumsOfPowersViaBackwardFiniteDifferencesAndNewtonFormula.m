@@ -32,6 +32,8 @@ MultifoldSumsOfPowersInStirlingNumbers::usage=""
 ValidateMultifoldSumsOfPowersInStirlingNumbers::usage=""
 MultifoldSumsOfPowersInEulerianNumbers::usage=""
 ValidateMultifoldSumsOfPowersInEulerianNumbers::usage=""
+MultifoldBinomialSumRecurrence::usage=""
+MultifoldBinomialSumClosedForm::usage=""
 
 (*END: Definitions *)
 (* =========================================================================DOCS END=================================================================== *)
@@ -78,6 +80,21 @@ MultifoldSumsOfPowersInStirlingNumbers[r_, n_, m_, t_] := Sum[Sum[ ( Binomial[j-
 ValidateMultifoldSumsOfPowersInStirlingNumbers[max_]:= Table[MultifoldSumOfPowersRecurrence[r+1, n, m]- MultifoldSumsOfPowersInStirlingNumbers[r, n, m, t], {r, 0, max}, {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
 MultifoldSumsOfPowersInEulerianNumbers[r_, n_, m_, t_] := Sum[Sum[ ( Binomial[j-t+n+r, j+r+1] + Sum[(-1)^(j+s) * Binomial[t, j+s+1] * Binomial[r-s+n-1, r-s], {s, 0, r}]) * Binomial[t+k-j, m-j] * EulerianNumber[m, k], {k, 0, m}], {j, 0, m}];
 ValidateMultifoldSumsOfPowersInEulerianNumbers[max_] := Table[MultifoldSumOfPowersRecurrence[r+1, n, m]- MultifoldSumsOfPowersInEulerianNumbers[r, n, m, t], {r, 0, max}, {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+(* Base cases *)
+MultifoldBinomialSumRecurrence[r_, n_, t_, j_] := 0;
+MultifoldBinomialSumRecurrence[r_, n_, t_, j_] := Binomial[n - t + j - 1, j] /; r == 0;
+MultifoldBinomialSumRecurrence[r_, n_, t_, j_] := Sum[MultifoldBinomialSumRecurrence[r - 1, k, t, j], {k, 1, n}]/; r > 0;
+
+(* Closed-form multifold binomial sum *)
+MultifoldBinomialSumClosedForm[r_, n_, t_, j_] :=
+    Binomial[n - t + j + r - 1, j + r]
+    -
+    Sum[
+      Binomial[j - t + (r - 1 - s), j + r - s]*
+        MultifoldSumOfPowersRecurrence[s, n, 0],
+      {s, 0, r - 1}
+    ];
+
 (*END: Definitions *)
 End[ ]
 EndPackage[ ]
