@@ -16,41 +16,63 @@ Define multifold sums of powers in Knuth's~\cite{knuth1993johann} notation
     + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}.
   \end{align*}
 \end{proposition}
-The book Interpolation by Steffensen~\cite[chapter 2, eq. (19)]{steffensen1927interpolation}
+Steffensen
 gives Newton's formula for backward differences evaluated
-in zero $f(x) = \sum_{k=0}^{n} \binom{x+k-1}{k} \nabla^{k} f(0)$.
-In general,
-\begin{proposition}[Newton formula via backward differences]
+at zero $f(x) = \sum_{k=0}^{n} \binom{x+k-1}{k} \nabla^{k} f(0)$,
+in his book
+Interpolation~\cite[chapter 2, eq. (19)]{steffensen1927interpolation}.
+Thus, Newton's formula for backward differences evaluated
+at arbitrary integer $a$ follows.
+\begin{proposition}[Newton formula in backward differences]
+  Let $f\colon \mathbb{Z} \to \mathbb{C}$ be a function,
+  and let $a \in \mathbb{Z}$.
+  Then, for all $x \in \mathbb{Z}$,
   \label{prop:newtons-formula-via-backward-difference}
   \begin{align*}
-    f(x) &= \sum_{k=0}^{n} \binom{x-a+k-1}{k} \nabla^{k} f(a)
+    f(x) &= \sum_{k=0}^{n} \binom{x-a+k-1}{k} \nabla^{k} f(a),
   \end{align*}
-  where $\nabla^{k} f(a) = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f(a-j)$.
+  where the $k$-th backward finite difference of $f$ evaluated
+  at $a$ is defined by
+  \begin{align*}
+    \nabla^{k} f(a) = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f(a-j).
+  \end{align*}
 \end{proposition}
-Thus, by setting $f(n)=n^m$
+Thus, by setting $f(n)=n^m$, we get interpolation of powers
+via backward differences evaluated at arbitrary point $t$.
+\begin{corollary}[Backward Newton's formula for powers]
+  \label{corr:backward-netwons-formula-for-powers}
+  For integers $n,m \geq 0$,
+  \begin{align*}
+    n^m &= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m},
+  \end{align*}
+  where $\nabla^{j} t^{m} = \sum_{k=0}^{j} (-1)^{k} \binom{j}{k} (t-k)^{m}$.
+\end{corollary}
+Therefore, by Corollary~\eqref{corr:backward-netwons-formula-for-powers},
+identity for sums of powers follows.
 \begin{align*}
-  n^m &= \sum_{j=0}^{m} \binom{n-t+j-1}{j} \nabla^{j} t^{m},
+  \KnuthRFoldSum{1}{n}{m}
+  = \sum_{j=0}^{m} \nabla^{j} t^{m} \sum_{k=1}^{n} \binom{k-t+j-1}{j}.
 \end{align*}
-where $\nabla^{j} t^{m} = \sum_{k=0}^{j} (-1)^{k} \binom{j}{k} (t-k)^{m}$.
-Therefore, ordinary sums of powers is equivalent to
-\begin{align*}
-  \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m} \sum_{k=1}^{n} \binom{k-t+j-1}{j}
-\end{align*}
-We notice that the sum $\sum_{k=1}^{n} \binom{k-t+j-1}{j}$ is a good candidate for hockey stick identity for binomial coefficients
+We notice that the sum $\sum_{k=1}^{n} \binom{k-t+j-1}{j}$
+is a good candidate for hockey stick identity for binomial coefficients
 $\sum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$.
-Thus, by setting $a=j-t$ and $b=j-t-1+n$, we get
+Thus, by setting $a=j-t$ and $b=j-t-1+n$, we get,
 \begin{align*}
-  \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \sum_{m=j-t}^{j-t-1+n} \binom{m}{j}
+  \sum_{k=1}^{n} \binom{k-t+j-1}{j}
+  = \sum_{m=j-t}^{j-t-1+n} \binom{m}{j}
+  = \binom{j-t+n}{j+1} - \binom{j-t}{j+1}.
 \end{align*}
-Thus,
-\begin{align*}
-  \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \binom{j-t+n}{j+1} - \binom{j-t}{j+1}
-\end{align*}
-Because,
+% which implies,
+% \begin{align*}
+%   \sum_{k=1}^{n} \binom{-t+j-1+k}{j} = \binom{j-t+n}{j+1} - \binom{j-t}{j+1}.
+% \end{align*}
+The closed form above is a partial case of Generalized hockey stick identity.
+That is,
 \begin{lemma} [Generalized hockey stick identity]
   \label{lem:generalized-hockey-stick-identity}
+  For integers $a \leq b$ and $j$,
   \begin{align*}
-    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}
+    \sum_{m=a}^{b} \binom{m}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}.
   \end{align*}
   \begin{proof}
     We have,
@@ -83,16 +105,34 @@ Because,
     This completes the proof.
   \end{proof}
 \end{lemma}
-Applying the identity for binomial coefficients
-$\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$, we obtain
-\begin{proposition} [Ordinary sums of powers via backward differences]
-  \label{prop:ordinary-sums-of-powers-via-backward-differences}
-  For non-negative integers $n,m$ and an arbitrary integer $t$
+\begin{lemma}[Shifted hockey stick identity]
+  \begin{align*}
+    \sum_{k=1}^{n} \binom{j-t+k+r-1}{j+r}
+    =\sum_{a=j-t+r}^{j-t+n+r-1} \binom{a}{j+r}
+    = \binom{j-t+n+r}{j+r+1} - \binom{j-t+r}{j+r+1}
+  \end{align*}
+\end{lemma}
+\begin{proposition} [Backward sums of powers]
+  \label{prop:backward-sums-of-powers}
+  For integers $n,m \geq 0$, and an arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m}
     \left[
-      (-1)^j \binom{t}{j+1} + \binom{j-t+n}{j+1}
-    \right]
+      \binom{j-t+n}{j+1} - \binom{j-t}{j+1}
+    \right].
+  \end{align*}
+\end{proposition}
+Recall the negation property of binomial coefficients
+$\binom{-k}{j} = (-1)^j \binom{j+k-1}{j}$.
+Thus, formula for negated backward sums of powers follows.
+\begin{proposition} [Negated backward sums of powers]
+  \label{prop:negated-backward-sums-of-powers}
+  For integers $n,m \geq 0$, and an arbitrary integer $t$,
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{m} &= \sum_{j=0}^{m} \nabla^{j} t^{m}
+    \left[
+      \binom{j-t+n}{j+1} + (-1)^j \binom{t}{j+1}
+    \right].
   \end{align*}
 \end{proposition}
 For example, by setting $t=2$ and $m=1,2,3,4$,
@@ -223,7 +263,12 @@ In general,
   \label{theorem:multifold-sums-of-powers-via-backward-difference}
   For non-negative integers $r,n,m$ and an arbitrary integer $t$
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m} = \sum_{j=0}^{m} \nabla^{j} t^{m} \left[ \binom{j-t+n+r-1}{j+r} + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \KnuthRFoldSum{r-1-s}{n}{0} \right]
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{j=0}^{m} \nabla^{j} t^{m}
+    \left[
+      \binom{j-t+n+r-1}{j+r}
+      + \sum_{s=0}^{r-1} (-1)^{j+s} \binom{t}{j+s+1} \KnuthRFoldSum{r-1-s}{n}{0}
+    \right]
   \end{align*}
 \end{theorem}
 We may observe that
