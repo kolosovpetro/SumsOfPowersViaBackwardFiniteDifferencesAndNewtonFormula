@@ -20,6 +20,7 @@
     "editor.formatOnSave": true
   },
   "latex-workshop.formatting.latex": "tex-fmt",
+  "latex-workshop.latex.autoBuild.run": "never",
   "cSpell.language": "en",
   "cSpell.enabled": true,
   "cSpell.words": [
