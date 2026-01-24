@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Fix integers title
 - Add math writing guidelines
+- Update HTML metadata
 
 ## [1.6.0] - 21-Jan-2026
 
