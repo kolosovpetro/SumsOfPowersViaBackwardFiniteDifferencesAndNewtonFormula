@@ -1,0 +1,19 @@
+Generate examples for the formula:
+
+\begin{proposition}[Multifold binomial sums of powers]
+  \label{thm:multifold-binomial-sums-of-powers}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+r}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \binom{r-s-t}{k+r-s}
+      \binom{s+n-1}{s}
+    \right] \Delta^{k} t^{m}.
+  \end{align*}
+\end{proposition}
+
+For t = 0,1,2,3, substitute values of t directly. 

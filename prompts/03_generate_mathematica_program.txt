@@ -1,0 +1,81 @@
+Generate Mathematica program to validate the identity:
+
+\begin{lemma}[Backward Newton's formula for powers]
+  \label{lem:backward-newtons-formula-for-powers}
+  For non-negative integers $n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    n^m = \sum_{k=0}^{m} \binom{n-t+k-1}{k} \nabla^{k} t^m.
+  \end{align*}
+  \begin{proof}
+    Special case of Lemma~\eqref{lem:backward-newtons-formula} for powers.
+  \end{proof}
+\end{lemma}
+
+Use the definitions as follows, if they appear in identity under validation
+
+\begin{align*}
+    \nabla^{k} t^{m} = \tsum_{j=0}^{k} (-1)^j \tbinom{k}{j} (t-j)^m.
+\end{align*}
+
+And
+
+\begin{definition} [Multifold sums of powers]
+  \label{def:multifold-sums-of-powers-recurrence}
+  For non-negative integers $r,n,m$
+  \begin{align*}
+    \KnuthRFoldSum{0}{n}{m}   &= n^m, \\
+    \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m}
+    + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m}, \\
+    \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m}
+    + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}.
+  \end{align*}
+\end{definition}
+
+Add convention for x^0 = 1 for all x.
+Treat symbol \nabla as backward finite difference.
+Treat symbol \delta as cental finite difference.
+Treat symbol \stirlingii as Stirling number of the second kind.
+
+EulerianNumber[0, 0] = 1;
+EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
+EulerianNumber[n_, k_] := EulerianNumber[n, k] =(k + 1) EulerianNumber[n - 1, k] + (n - k) EulerianNumber[n - 1, k - 1];
+
+
+
+
+Use the example below, give your response in a separate code block so that I 
+copy paste it easily
+
+(* ================================================================ *)
+(*  Validates Centered Hockey Stick Identity                        *)
+(* ================================================================ *)
+
+ClearAll[ValidateCenteredHockeyStickIdentity];
+
+(* --------------------------------------------------------------- *)
+(*  Identity check                                                 *)
+(* --------------------------------------------------------------- *)
+
+ValidateCenteredHockeyStickIdentity[max_] :=
+  Flatten[
+    Table[
+      FullSimplify[
+        Sum[
+          Binomial[j - t + k/2 + r, k],
+          {j, 1, n}
+        ]
+        -
+        (
+          Binomial[n - t + k/2 + r + 1, k + 1]
+          -
+          Binomial[1 - t + k/2 + r, k + 1]
+        )
+      ],
+      {n, 1, max},
+      {t, -max, max},
+      {k, -max, max},
+      {r, -max, max}
+    ]
+  ];
+
+ValidateCenteredHockeyStickIdentity[10]

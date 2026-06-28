@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Cleanup unused files
 - Change file structure
+- Added auxiliary lemmas
 
 ## [1.6.1] - 24-Jan-2026
 
