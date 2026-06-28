@@ -27,6 +27,7 @@ We derive formulas for sums of powers via Newton’s interpolation formula based
 - [Newton's interpolation formula and sums of powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
 - [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
 - [Sums of powers via backward finite differences and Newton's formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
+- [Sums of powers of integers: A complete framework for closed formulas (2026)](https://github.com/kolosovpetro/SumsOfPowersACompleteFrameworkForClosedForms)
 
 ## References
 
