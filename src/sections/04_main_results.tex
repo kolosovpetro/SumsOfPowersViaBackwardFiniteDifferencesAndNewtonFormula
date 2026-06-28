@@ -20,17 +20,22 @@ yields closed form of ordinary sums of powers
     \right] \nabla^{k} t^m.
   \end{align*}
 \end{proposition}
-% We may see that the basis $\binom{j-t+r}{k+r}$ for repeatedly
-% applied Lemma~\eqref{lem:forward-hockey-stick-identity}
-% was indeed chosen correctly, because we derived closed form for sums of powers
-% with ease, simply setting parameter for $r$.
-% For example,
-% \input{examples/01_ordinary_sums_of_cubes.tex}
-% From example above, we may observe binomial coefficients of negative upper
-% index, which may looking unfamiliar.
-% However, there is no reason to be afraid of, because negative
-% upper index binomial coefficients are completely deterministic,
-% because $\binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}$.
+We may see that the basis $\binom{j-t+k-1+r}{k+r}$ for repeatedly
+applied Lemma~\eqref{lem:backward-hockey-stick-identity}
+was indeed chosen correctly, because we derived closed form for sums of powers
+with ease, simply setting parameter for $r$.
+For example,
+\input{examples/01_ordinary_sums_of_cubes.tex}
+From example above, we may observe binomial coefficients of negative upper
+index, which may looking unfamiliar.
+However, there is no reason to be afraid of, because negative
+upper index binomial coefficients are completely deterministic,
+because $\binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}$.
+Moreover, binomial coefficient $\binom{n}{k}$ is a polynomial
+in $n$, thus accepting even fraction values in its upper index.
+Therefore, Proposition~\eqref{prop:ordinary-sums-of-powers}
+is also a polynomial in $n$.
+For example,
 % By setting $t=0$ into
 % Proposition~\eqref{prop:ordinary-sums-of-powers}
 % yields one more well-known identity for sums of powers,
