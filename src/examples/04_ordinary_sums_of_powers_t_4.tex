@@ -1,0 +1,18 @@
+\begin{example} For non-negative integer $n$, we have
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{0} &= 1  \left( \tbinom{n-3}{1}
+    + \tbinom{3}{1}  \right), \\
+    \KnuthRFoldSum{1}{n}{1} &= 4  \left( \tbinom{n-3}{1}
+    + \tbinom{3}{1}  \right)  + 1  \left( \tbinom{n-3}{2}
+    - \tbinom{4}{2}  \right), \\
+    \KnuthRFoldSum{1}{n}{2} &= 16 \left( \tbinom{n-3}{1}
+    + \tbinom{3}{1}  \right)  + 9  \left( \tbinom{n-3}{2}
+    - \tbinom{4}{2}  \right)
+    + 2  \left( \tbinom{n-2}{3} + \tbinom{5}{3}  \right), \\
+    \KnuthRFoldSum{1}{n}{3} &= 64 \left( \tbinom{n-3}{1}
+    + \tbinom{3}{1}  \right)  + 61 \left( \tbinom{n-3}{2}
+    - \tbinom{4}{2}  \right)
+    + 30 \left( \tbinom{n-3}{3} + \tbinom{5}{3}  \right)
+    + 6 \left( \tbinom{n-3}{4} - \tbinom{6}{4}  \right).
+  \end{align*}
+\end{example}

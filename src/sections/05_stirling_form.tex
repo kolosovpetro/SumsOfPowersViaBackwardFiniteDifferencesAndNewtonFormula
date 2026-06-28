@@ -1,0 +1,45 @@
+% We have
+% \begin{lemma}[Stirling finite differences]
+%   \label{lem:finite-differences-via-stirling-numbers}
+%   For non-negative integers $k,m$, and an arbitrary integer $t$,
+%   \begin{align*}
+%     \Delta^{k} t^{m} = \sum_{j=0}^{m} \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
+%   \end{align*}
+%   \begin{proof}
+%     By well-known identity
+%     $t^{m} = \sum_{j=0}^{m} \stirlingii{m}{j} \binom{t}{j} j!$
+%   \end{proof}
+% \end{lemma}
+% Thus, from Theorem~\eqref{thm:multifold-sums-of-powers} follows
+% \begin{proposition}[Multifold Stirling sums]
+%   \label{prop:multifold-stirling-sums}
+%   For non-negative integers $r,n,m$, and an arbitrary integer $t$
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     = \sum_{k=0}^{m} \sum_{j=0}^{m}
+%     \left[
+%       \binom{n-t+r}{k+r}
+%       -
+%       \sum_{s=0}^{r-1}
+%       \binom{r-s-t}{k+r-s}
+%       \KnuthRFoldSum{s}{n}{0}
+%     \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
+%   \end{align*}
+% \end{proposition}
+% By Lemma~\eqref{lem:multifold-sum-of-zero-powers},
+% the pure binomial form follows
+% \begin{proposition}[Multifold Stirling-Binomial sums]
+%   \label{prop:multifold-stirling-binomial-sums}
+%   For non-negative integers $r,n,m$, and an arbitrary integer $t$
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     = \sum_{k=0}^{m} \sum_{j=0}^{m}
+%     \left[
+%       \binom{n-t+r}{k+r}
+%       -
+%       \sum_{s=0}^{r-1}
+%       \binom{r-s-t}{k+r-s}
+%       \binom{s+n-1}{s}
+%     \right] \stirlingii{m}{k+j} \binom{t}{j} (k+j)!
+%   \end{align*}
+% \end{proposition}

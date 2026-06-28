@@ -1,0 +1,22 @@
+\begin{example} For non-negative integer $n$, we have
+  \begin{align*}
+    \KnuthRFoldSum{2}{n}{0}
+    &= 1 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right),
+    \\
+    \KnuthRFoldSum{2}{n}{1}
+    &= 5 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right)
+    + 1 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right),
+    \\
+    \KnuthRFoldSum{2}{n}{2}
+    &= 25 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right)
+    + 11 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right)
+    + 2 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right),
+    \\
+    \KnuthRFoldSum{2}{n}{3}
+    &=
+    125 \left( \tbinom{n-3}{2} + \tbinom{4}{1} n - \tbinom{4}{2} \right)
+    + 91 \left( \tbinom{n-3}{3} - \tbinom{5}{2} n + \tbinom{5}{3} \right)
+    + 36 \left( \tbinom{n-3}{4} + \tbinom{6}{3} n - \tbinom{6}{4} \right) \\
+    &+ 6 \left( \tbinom{n-3}{5} - \tbinom{7}{3} n + \tbinom{7}{4} \right).
+  \end{align*}
+\end{example}

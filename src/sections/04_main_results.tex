@@ -1,0 +1,234 @@
+% We start our discussion from Lemma~\eqref{lem:forward-newtons-formula-for-powers},
+% which yields forward Newton's interpolation formula for powers.
+% For example,
+% \input{examples/00_newtons_formula_for_cubes.tex}
+% Thus, the transition to formula for sums of powers is quite straightforward,
+% \begin{align*}
+%   \KnuthRFoldSum{1}{n}{m}
+%   = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t}{k} \right] \Delta^{k} t^m.
+% \end{align*}
+% Therefore, by setting $r=0$ into Lemma~\eqref{lem:forward-hockey-stick-identity}
+% yields closed form of ordinary sums of powers
+% \begin{proposition}[Ordinary sums of powers]
+%   \label{prop:ordinary-sums-of-powers}
+%   For non-negative integers $n,m$, and an arbitrary integer $t$
+%   \begin{align*}
+%     \KnuthRFoldSum{1}{n}{m}
+%     = \sum_{k=0}^{m} \left[ \binom{n-t+1}{k+1} - \binom{1-t}{k+1} \right] \Delta^{k} t^m.
+%   \end{align*}
+% \end{proposition}
+% We may see that the basis $\binom{j-t+r}{k+r}$ for repeatedly
+% applied Lemma~\eqref{lem:forward-hockey-stick-identity}
+% was indeed chosen correctly, because we derived closed form for sums of powers
+% with ease, simply setting parameter for $r$.
+% For example,
+% \input{examples/01_ordinary_sums_of_cubes.tex}
+% From example above, we may observe binomial coefficients of negative upper
+% index, which may looking unfamiliar.
+% However, there is no reason to be afraid of, because negative
+% upper index binomial coefficients are completely deterministic,
+% because $\binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}$.
+% By setting $t=0$ into
+% Proposition~\eqref{prop:ordinary-sums-of-powers}
+% yields one more well-known identity for sums of powers,
+% mentioned in~\cite[p. 190]{graham1994concrete}, and in~\cite{pfaff2007deriving}
+% \begin{corollary}
+%   For non-negative integers $n,m$
+%   \begin{align*}
+%     \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \binom{n+1}{j+1} \Delta^{j} 0^m.
+%   \end{align*}
+% \end{corollary}
+% For example,
+% \input{examples/02_ordinary_sums_of_powers_t_0.tex}
+% From the example above, we observe
+% the coefficients $0,1,2,0, 1, 6, 6, 0, 1, 14, 36, 24, \dots$,
+% are defined by Stirling numbers of the second kind $a_k = k! \stirlingii{n}{k}$,
+% which is the sequence
+% \href{https://oeis.org/A131689}{\texttt{A131689}}
+% in the OEIS~\cite{sloane2003line}.
+% This leads us to the notion, that
+% Stirling numbers of the second kind $\stirlingii{n}{k}$
+% recover naturally from forward Newton's interpolation formula
+% for powers.
+% By setting $t=1$ into
+% Proposition~\eqref{prop:ordinary-sums-of-powers}, we get
+% another well-known special case
+% \begin{corollary}
+%   For non-negative integers $n,m$,
+%   \begin{align*}
+%     \KnuthRFoldSum{1}{n}{m} = \sum_{j=0}^{m} \binom{n}{j+1} \Delta^{j} 1^m,
+%   \end{align*}
+% \end{corollary}
+% mentioned, for instance, in~\cite{cereceda2022sums}.
+% For example,
+% \input{examples/03_ordinary_sums_of_powers_t_1.tex}
+% The coefficients $1,1,1,1,3,2,1,7,12,6,1,15, \dots$ is the sequence
+% \href{https://oeis.org/A028246}{\texttt{A028246}}
+% in the OEIS~\cite{sloane2003line}.
+% It is interesting to note that the work~\cite{cereceda2022sums}
+% provide formulas for sums of powers
+% in terms of generalized Stirling numbers of
+% the second kind $\stirlingii{k}{j}_{r}$,
+% that is
+% \begin{proposition}[Cereceda (2022)]
+%   For non-negative integers $n,k$
+%   \begin{align}
+%     \label{eq:cereceda-sums-1}
+%     \KnuthRFoldSum{1}{n}{k} &= \sum_{j=0}^{k} j!
+%     \left[
+%       \binom{n+1-r}{j+1} + (-1)^j \binom{r+j-1}{j+1}
+%     \right] \stirlingii{k}{j}_{r},
+%   \end{align}
+%   And
+%   \begin{align}
+%     \label{eq:cereceda-sums-2}
+%     \KnuthRFoldSum{1}{n}{k} &= \sum_{j=0}^{k} j!
+%     \left[
+%       \binom{n+1+r}{j+1} + \binom{r+1}{j+1}
+%     \right] \stirlingii{k}{j}_{-r}.
+%   \end{align}
+% \end{proposition}
+% Formula~\eqref{eq:cereceda-sums-1}
+% is a special case of
+% Proposition~\eqref{prop:ordinary-sums-of-powers}
+% with setting $t \rightarrow r$, and upper negated binomial coefficient
+% $\binom{1-t}{k+1}$, by using upper negation formula
+% from Lemma~\eqref{lem:upper-binomial-negation}.
+% We may observe that forward finite difference of powers $\Delta^{k} t^m $ can be expressed
+% in terms of generalized Stirling numbers of the second kind, that is
+% \begin{align}
+%   \label{eq:gen-stirling-finit-difference}
+%   \Delta^{k} t^m = k! \stirlingii{m}{k}_{t}.
+% \end{align}
+% This leads us to the observation, that
+% generalized Stirling numbers of the second kind $\stirlingii{n}{k}_t$
+% recover naturally from forward Newton's interpolation formula
+% for powers, evaluated in arbitrary integer $t$.
+% Now, reviewing Formula~\eqref{eq:cereceda-sums-2}, we notice that it is a special case
+% of Proposition~\eqref{prop:ordinary-sums-of-powers}
+% with setting $t \rightarrow -r$, and by
+% using Equation~\eqref{eq:gen-stirling-finit-difference}.
+% For example, by setting $t=4$ into
+% Proposition~\eqref{prop:ordinary-sums-of-powers}
+% yields rather unusual formulas for sums of powers
+% \input{examples/04_ordinary_sums_of_powers_t_4.tex}
+% The coefficients $1,4,1,16,9,\dots$ is the sequence
+% \href{https://oeis.org/A391633}{\texttt{A391633}}
+% in the OEIS~\cite{sloane2003line}.
+% As we have all required identities in our disposal,
+% consider the case of double sums of powers.
+% Surely, we derive its formula with ease, and gracefully,
+% by setting $r=1$ into hockey-stick identity from
+% Lemma~\eqref{lem:forward-hockey-stick-identity},
+% with additional correction terms $\KnuthRFoldSum{r}{n}{0}$.
+% Therefore,
+% \begin{proposition}[Double sums of powers]
+%   \label{prop:double-sums-of-powers}
+%   For non-negative integers $n,m$, and an arbitrary integer $t$
+%   \begin{align*}
+%     \KnuthRFoldSum{2}{n}{m}
+%     = \sum_{k=0}^{m}
+%     \left[
+%       \binom{n-t+2}{k+2}
+%       - \binom{1-t}{k+1} \KnuthRFoldSum{1}{n}{0}
+%       - \binom{2-t}{k+2} \KnuthRFoldSum{0}{n}{0}
+%     \right] \Delta^{k} t^m.
+%   \end{align*}
+% \end{proposition}
+% Note that $\KnuthRFoldSum{1}{n}{0}=n$, and $\KnuthRFoldSum{0}{n}{0}=1$.
+% By applying upper binomial negation formula
+% from Lemma~\eqref{lem:upper-binomial-negation}
+% yields
+% \begin{proposition}[Double sums of powers negated]
+%   \label{prop:double-sums-of-powers-negated}
+%   For non-negative integers $n,m$, and an arbitrary integer $t$
+%   \begin{align*}
+%     \KnuthRFoldSum{2}{n}{m}
+%     = \sum_{k=0}^{m}
+%     \left[
+%       \binom{n-t+2}{k+2} + (-1)^k \binom{k+t-1}{k+1} n
+%       + (-1)^{k+1} \binom{k+t-1}{k+2}
+%     \right] \Delta^{j} t^m.
+%   \end{align*}
+% \end{proposition}
+% For example, by setting $t=5$ into
+% Proposition~\eqref{prop:double-sums-of-powers-negated}
+% yields
+% \input{examples/05_double_sums_of_powers_t_5.tex}
+% The coefficients $1,5,1,25,11,2,\dots$ is the sequence
+% \href{https://oeis.org/A391635}{\texttt{A391635}}
+% in the OEIS~\cite{sloane2003line}.
+% Therefore, generalized formula for $r$-fold
+% sums of powers is straightforward,
+% repeating the same procedure as we have done for
+% $\KnuthRFoldSum{1}{n}{m}$, and
+% $\KnuthRFoldSum{2}{n}{m}$
+% \begin{theorem}[Multifold sums of powers]
+%   \label{thm:multifold-sums-of-powers}
+%   For non-negative integers $r,n,m$, and an arbitrary integer $t$
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     = \sum_{k=0}^{m}
+%     \left[
+%       \binom{n-t+r}{k+r}
+%       -
+%       \sum_{s=0}^{r-1}
+%       \binom{r-s-t}{k+r-s}
+%       \KnuthRFoldSum{s}{n}{0}
+%     \right] \Delta^{k} t^{m}.
+%   \end{align*}
+% \end{theorem}
+% Which is quite remarkable in its pure binomial form,
+% by using Lemma~\eqref{lem:multifold-sum-of-zero-powers}
+% \begin{proposition}[Multifold binomial sums of powers]
+%   \label{prop:multifold-binomial-sums-of-powers}
+%   For non-negative integers $r,n,m$, and an arbitrary integer $t$
+%   \begin{align*}
+%     \KnuthRFoldSum{r}{n}{m}
+%     = \sum_{k=0}^{m}
+%     \left[
+%       \binom{n-t+r}{k+r}
+%       -
+%       \sum_{s=0}^{r-1}
+%       \binom{r-s-t}{k+r-s}
+%       \binom{s+n-1}{s}
+%     \right] \Delta^{k} t^{m}.
+%   \end{align*}
+% \end{proposition}
+% Explicitly,
+% \begin{align*}
+%   \KnuthRFoldSum{r}{n}{m}
+%   = \sum_{k=0}^{m}
+%   \bigg[
+%     \tbinom{n-t+r}{k+r}
+%     -
+%     \tbinom{r-t}{k+r}
+%     \tbinom{n-1}{0}
+%     -
+%     \tbinom{r-1-t}{k+r-1}
+%     \tbinom{n}{1}
+%     -
+%     \cdots
+%     -
+%     \tbinom{2-t}{k+2}
+%     \tbinom{r+n-3}{r-2}
+%     -
+%     \tbinom{1-t}{k+1}
+%     \tbinom{r+n-2}{r-1}
+%   \bigg] \Delta^{k} t^{m}.
+% \end{align*}
+% For example,
+% \input{examples/06_multifold_binomial_sums_of_powers_t_0_3.tex}
+% These formulas are polynomials in $n$, with integer coefficients
+% which are forward finite differences of powers, evaluated at
+% arbitrary integer $t$.
+% For example, for integer $0 \leq t \leq 4$, we have
+% \input{examples/07_ordinary_sums_of_powers_polynomial_form.tex}
+% Where the coefficients
+% \begin{itemize}
+%   \item For $t=0$ are $0, 1, 6, 6$ belong to the sequence \href{https://oeis.org/A131689}{\texttt{A131689}} in the OEIS.
+%   \item For $t=1$ are $1, 7, 12, 6$ belong to the sequence \href{https://oeis.org/A028246}{\texttt{A028246}} in the OEIS.
+%   \item For $t=2$ are $8, 19, 18, 6$ belong to the sequence \href{https://oeis.org/A038719}{\texttt{A038719}} in the OEIS.
+%   \item For $t=3$ are $27, 37, 24, 6$ belong to the sequence \href{https://oeis.org/A391552}{\texttt{A391552}} in the OEIS.
+%   \item For $t=4$ are $64, 61, 30, 6$ belong to the sequence \href{https://oeis.org/A391633}{\texttt{A391633}} in the OEIS.
+% \end{itemize}

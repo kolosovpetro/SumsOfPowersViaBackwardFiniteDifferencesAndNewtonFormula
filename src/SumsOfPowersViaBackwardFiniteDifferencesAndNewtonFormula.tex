@@ -2,13 +2,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-% \usepackage{float}
-% \usepackage{mathrsfs}
-% \usepackage{colonequals}
-% \usepackage[font=small,labelfont=bf]{caption}
-% \usepackage{graphicx}
-% \usepackage{mdframed}
-% \usepackage{array}
+\usepackage{array}
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage[
@@ -29,12 +23,18 @@
   right=1in,   % right margin
   top=1in,     % top margin
   bottom=1in,  % bottom margin
-  %showframe    % draw the page frame (useful for checking margins)
 }
 
+%% Figures and captions
+% \usepackage{float}
+% \usepackage[font=small,labelfont=bf]{caption}
+% \usepackage{graphicx}
+
+% % display line numbers
 % \usepackage{lineno}
 % \linenumbers
-% %draw the page frame (useful for checking margins)
+
+% % draw the page frame (useful for checking margins)
 % \geometry{showframe}
 
 % margins and layout
@@ -44,25 +44,47 @@
 % \raggedbottom
 % \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
-\newcommand \bernoulli [2][B] {{#1}\sb{#2}}
+% \newcommand \coeffA [3][A] {{\mathbf{#1}}_{#2,#3}}
+% \newcommand \polynomialP [4][P]{{\mathbf{#1}}^{#2}_{#3}(#4)}
+
+%\newcommand \anglePower [2]{\langle #1 \rangle \sp{#2}}
+%\newcommand \curvePower [2]{\{#1\}\sp{#2}}
 
 % factorial notations
 \newcommand \centralFactorial [2] {#1^{[#2]}}
 \newcommand{\fallingFactorial}[2]{\left(#1\right)_{#2}}
 \newcommand{\risingFactorial}[2]{#1^{\left(#2\right)}}
-
-\newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
-\newcommand{\tstirlingii}[2]{%
-  {\textstyle\genfrac\{\}{0pt}{}{#1}{#2}}%
-}
-\newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
-\newcommand{\teulerian}[2]{%
-  {\textstyle\genfrac\langle\rangle{0pt}{}{#1}{#2}}%
-}
+\newcommand{\generalizedFactorial}[3]{\left(#1\mid #2\right)_{#3}}
 
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
-
 \newcommand{\tsum}{\mathop{\textstyle\sum}}
+
+% Special numbers
+\newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
+\newcommand{\tstirlingii}[2]{{\textstyle\genfrac\{\}{0pt}{}{#1}{#2}}}
+
+\newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
+\newcommand{\teulerian}[2]{{\textstyle\genfrac\langle\rangle{0pt}{}{#1}{#2}}}
+
+\newcommand \bernoulli [2][B] {{#1}_{#2}}
+\newcommand{\stirlingi}{\genfrac{[}{]}{0pt}{}}
+
+% % Ordinary derivatives
+% \newcommand{\od}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\odd}[3]{\frac{\mathrm{d}^{#3} #1}{\mathrm{d} #2^{#3}}}
+
+% % Partial derivatives
+% \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+% \newcommand{\pdd}[3]{\frac{\partial^{#3} #1}{\partial #2^{#3}}}
+
+% free foot note
+\let\svthefootnote\thefootnote
+\newcommand\freefootnote[1]{%
+  \let\thefootnote\relax%
+  \footnotetext{#1}%
+  \let\thefootnote\svthefootnote%
+}
+
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
@@ -76,17 +98,8 @@
 \newtheorem{question}[theorem]{Question}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{assumption}[theorem]{Assumption}
-
-% free foot note
-\newcommand{\freefootnote}[1]{%
-  \begingroup
-  \renewcommand{\thefootnote}{}%
-  \footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
-}
-
-%\numberwithin{equation}{section}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{convention}[theorem]{Convention}
 
 \title[Sums of powers via backward finite differences and Newton's formula]
 {Sums of powers via backward finite differences and Newton's formula}
@@ -104,7 +117,7 @@
 \begin{document}
 
 \begin{abstract}
-  \input{sections/abstract}
+  \input{sections/01_abstract.tex}
 \end{abstract}
 
 \maketitle
@@ -114,24 +127,31 @@
 \freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18118011}}
 
 
-% \section{Preliminaries}
-% \input{sections/preliminaries.tex}
+\section{Auxiliary lemmas}
+\input{sections/02_auxiliary_lemmas.tex}
 
-\section{Introduction and main results}
-\input{sections/01_introduction}
+\section{Introduction}
+\input{sections/03_introduction.tex}
 
+\section{Main results}
+\input{sections/04_main_results.tex}
 
-\section*{Conclusions}
-\input{sections/conclusions}
+\section{Stirling form}
+\input{sections/05_stirling_form.tex}
+
+\section{Eulerian form}
+\input{sections/06_eulerian_form.tex}
+
+\section{Conclusions}
+\input{sections/07_conclusions.tex}
 
 \bibliographystyle{unsrt}
 \bibliography{SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula}
 
 \clearpage
 
-\section{Mathematica programs}
-\label{sec:mathematica-programs}
-\input{sections/mathematica_programs}
+\section*{Mathematica programs}
+\input{sections/08_mathematica.tex}
 
 \clearpage
 

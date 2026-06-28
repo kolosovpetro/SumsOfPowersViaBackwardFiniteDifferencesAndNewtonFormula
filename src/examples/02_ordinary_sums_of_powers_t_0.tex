@@ -1,0 +1,20 @@
+\begin{example} For non-negative integer $n$, we have
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{1} &= 1 \tbinom{n+1}{1},
+    \\
+    \KnuthRFoldSum{1}{n}{1} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2},
+    \\
+    \KnuthRFoldSum{1}{n}{2} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2}
+    + 2  \tbinom{n+1}{3},
+    \\
+    \KnuthRFoldSum{1}{n}{3} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2}
+    + 6  \tbinom{n+1}{3} + 6   \tbinom{n+1}{4},
+    \\
+    \KnuthRFoldSum{1}{n}{4} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2}
+    + 14 \tbinom{n+1}{3} + 36  \tbinom{n+1}{4} + 24  \tbinom{n+1}{5},
+    \\
+    \KnuthRFoldSum{1}{n}{5} &= 0 \tbinom{n+1}{1} + 1 \tbinom{n+1}{2}
+    + 30 \tbinom{n+1}{3} + 150 \tbinom{n+1}{4} + 240 \tbinom{n+1}{5}
+    + 120 \tbinom{n+1}{6}.
+  \end{align*}
+\end{example}
