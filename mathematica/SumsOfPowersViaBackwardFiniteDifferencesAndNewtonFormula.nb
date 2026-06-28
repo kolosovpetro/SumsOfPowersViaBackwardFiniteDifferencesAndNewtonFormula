@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     24757,        736]
-NotebookOptionsPosition[     23590,        707]
-NotebookOutlinePosition[     23996,        723]
-CellTagsIndexPosition[     23953,        720]
+NotebookDataLength[     24932,        717]
+NotebookOptionsPosition[     23679,        687]
+NotebookOutlinePosition[     24077,        703]
+CellTagsIndexPosition[     24034,        700]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,8 +30,8 @@ Cell[BoxData[
       RowBox[{"0", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}], " ", 
      "-", " ", 
      RowBox[{"MultifoldBinomialSumClosedForm", "[", 
-      RowBox[{"0", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}]}], 
-    ",", " ", 
+      RowBox[{"0", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}]}], ",",
+     " ", 
     RowBox[{"{", 
      RowBox[{"n", ",", " ", "0", ",", " ", "max"}], "}"}], ",", " ", 
     RowBox[{"{", 
@@ -190,8 +190,8 @@ Cell[BoxData[
       RowBox[{"r", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}], " ", 
      "-", " ", 
      RowBox[{"MultifoldBinomialSumClosedForm", "[", 
-      RowBox[{"r", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}]}], 
-    ",", " ", 
+      RowBox[{"r", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}]}], ",",
+     " ", 
     RowBox[{"{", 
      RowBox[{"n", ",", " ", "0", ",", " ", "max"}], "}"}], ",", " ", 
     RowBox[{"{", 
@@ -216,12 +216,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", 
-       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"4", ",", 
        RowBox[{"-", "6"}], ",", "4", ",", 
@@ -240,12 +238,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", 
-       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"4", ",", 
        RowBox[{"-", "6"}], ",", "4", ",", 
@@ -264,12 +260,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", 
-       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"4", ",", 
        RowBox[{"-", "6"}], ",", "4", ",", 
@@ -288,12 +282,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", 
-       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"4", ",", 
        RowBox[{"-", "6"}], ",", "4", ",", 
@@ -312,12 +304,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", 
-       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"4", ",", 
        RowBox[{"-", "6"}], ",", "4", ",", 
@@ -336,12 +326,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", 
-       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"4", ",", 
        RowBox[{"-", "6"}], ",", "4", ",", 
@@ -370,8 +358,8 @@ Cell[BoxData[
       RowBox[{"r", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}], " ", 
      "-", " ", 
      RowBox[{"MultifoldBinomialSumClosedForm", "[", 
-      RowBox[{"r", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}]}], 
-    ",", " ", 
+      RowBox[{"r", ",", " ", "n", ",", " ", "t", ",", " ", "j"}], "]"}]}], ",",
+     " ", 
     RowBox[{"{", 
      RowBox[{"n", ",", " ", "0", ",", " ", "max"}], "}"}], ",", " ", 
     RowBox[{"{", 
@@ -409,8 +397,7 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{
        RowBox[{"-", "10"}], ",", "10", ",", 
-       RowBox[{"-", "5"}], ",", "1", ",", "0", ",", "0"}], "}"}]}], "}"}], 
-   ",", 
+       RowBox[{"-", "5"}], ",", "1", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
@@ -421,12 +408,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"1", ",", 
-       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"0", ",", 
-       RowBox[{"-", "2"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "2"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"-", "2"}], ",", 
@@ -446,12 +431,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "2"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "2"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"3", ",", 
-       RowBox[{"-", "5"}], ",", "2", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "5"}], ",", "2", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"2", ",", 
        RowBox[{"-", "8"}], ",", "7", ",", 
@@ -470,12 +453,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"5", ",", 
-       RowBox[{"-", "3"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "3"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"6", ",", 
-       RowBox[{"-", "8"}], ",", "3", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "8"}], ",", "3", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"6", ",", 
        RowBox[{"-", "14"}], ",", "11", ",", 
@@ -494,12 +475,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"7", ",", 
-       RowBox[{"-", "4"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "4"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"9", ",", 
-       RowBox[{"-", "11"}], ",", "4", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "11"}], ",", "4", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"10", ",", 
        RowBox[{"-", "20"}], ",", "15", ",", 
@@ -518,12 +497,10 @@ Cell[BoxData[
      ",", 
      RowBox[{"{", 
       RowBox[{"9", ",", 
-       RowBox[{"-", "5"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "5"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"12", ",", 
-       RowBox[{"-", "14"}], ",", "5", ",", "0", ",", "0", ",", "0"}], "}"}], 
-     ",", 
+       RowBox[{"-", "14"}], ",", "5", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"14", ",", 
        RowBox[{"-", "26"}], ",", "19", ",", 
@@ -573,8 +550,7 @@ Cell[BoxData[
          RowBox[{"r", "-", "1"}], ",", "k", ",", "m"}], "]"}], ",", 
        RowBox[{"{", 
         RowBox[{"k", ",", "1", ",", "n"}], "}"}]}], "]"}], "/;", 
-     RowBox[{"r", ">", "0"}]}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+     RowBox[{"r", ">", "0"}]}]}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"--", 
@@ -591,8 +567,7 @@ Cell[BoxData[
            RowBox[{
             RowBox[{"zero", " ", "when", " ", "n"}], "<", 
             RowBox[{"k", " ", "or", " ", "k"}], "<", "0"}], ")"}], "--"}], 
-         "--"}], "--"}], "--"}], "--"}]}], "*)"}], "\n", 
-   "\[IndentingNewLine]", 
+         "--"}], "--"}], "--"}], "--"}]}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"SafeBinomial", "[", 
      RowBox[{"n_", ",", "k_"}], "]"}], ":=", 
@@ -604,8 +579,7 @@ Cell[BoxData[
     RowBox[{"SafeBinomial", "[", 
      RowBox[{"n_", ",", "k_"}], "]"}], ":=", 
     RowBox[{"Binomial", "[", 
-     RowBox[{"n", ",", "k"}], "]"}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+     RowBox[{"n", ",", "k"}], "]"}]}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"--", 
@@ -619,7 +593,7 @@ Cell[BoxData[
        RowBox[{
         RowBox[{
          RowBox[{"recurrence", "--"}], "--"}], "--"}], "--"}], "--"}]}], 
-    "*)"}], "\n", "\[IndentingNewLine]", 
+    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"MultifoldBinomialSumRecurrence", "[", 
      RowBox[{"r_", ",", "n_", ",", "t_", ",", "j_"}], "]"}], ":=", 
@@ -644,8 +618,7 @@ Cell[BoxData[
        
        RowBox[{"{", 
         RowBox[{"k", ",", "1", ",", "n"}], "}"}]}], "]"}], "/;", 
-     RowBox[{"r", ">", "0"}]}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+     RowBox[{"r", ">", "0"}]}]}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"--", 
@@ -660,7 +633,7 @@ Cell[BoxData[
         RowBox[{
          RowBox[{
           RowBox[{"(", "corrected", ")"}], "--"}], "--"}], "--"}], "--"}], 
-      "--"}]}], "*)"}], "\n", "\[IndentingNewLine]", 
+      "--"}]}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"MultifoldBinomialSumClosedForm", "[", 
      RowBox[{"r_", ",", "n_", ",", "t_", ",", "j_"}], "]"}], ":=", 
@@ -703,11 +676,18 @@ Cell[BoxData[
  CellChangeTimes->{3.977994974606969*^9},
  CellLabel->
   "Out[479]=",ExpressionUUID->"be31d8d0-f35f-4ebf-9e4d-737dc7bd86f0"]
-}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Column", "[", 
+  RowBox[{"Table", "[", "BackwardDifference", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9916681509133835`*^9, 
+  3.9916681694133205`*^9}},ExpressionUUID->"a626582c-a9e3-1346-bb9c-\
+984bc8ea89b3"]
 },
-WindowSize->{1280, 732},
-WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
-FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+WindowSize->{1269, 726.5},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"7354c940-be81-4421-9309-a16476218f93"
 ]
@@ -724,20 +704,21 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 1041, 24, 28, "Input",ExpressionUUID->"75c91927-49d7-4a4a-9cfa-76aaccbae354"],
-Cell[1624, 48, 4544, 128, 128, "Output",ExpressionUUID->"2b907205-d5a8-492a-adde-9fc45017f7d8"]
+Cell[1624, 48, 4544, 128, 127, "Output",ExpressionUUID->"2b907205-d5a8-492a-adde-9fc45017f7d8"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[6205, 181, 867, 22, 28, "Input",ExpressionUUID->"6636ebd4-0aa1-4206-841c-4934ae35189f"],
-Cell[7075, 205, 5181, 151, 128, "Output",ExpressionUUID->"b2dbacef-7e17-48be-9e00-85580771e2a4"]
+Cell[7075, 205, 5109, 139, 127, "Output",ExpressionUUID->"b2dbacef-7e17-48be-9e00-85580771e2a4"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12293, 361, 862, 22, 28, "Input",ExpressionUUID->"cb29b806-6788-457a-a22d-d0e6b892fa13"],
-Cell[13158, 385, 5150, 152, 128, "Output",ExpressionUUID->"c4d4fa4e-7e0e-49cc-8b7b-df7666a73b85"]
+Cell[12221, 349, 862, 22, 28, "Input",ExpressionUUID->"cb29b806-6788-457a-a22d-d0e6b892fa13"],
+Cell[13086, 373, 5086, 141, 127, "Output",ExpressionUUID->"c4d4fa4e-7e0e-49cc-8b7b-df7666a73b85"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18345, 542, 4777, 146, 371, "Input",ExpressionUUID->"96596e92-d088-4b08-8996-6a2d0202f4d7"],
-Cell[23125, 690, 449, 14, 32, "Output",ExpressionUUID->"be31d8d0-f35f-4ebf-9e4d-737dc7bd86f0"]
-}, Open  ]]
+Cell[18209, 519, 4761, 142, 370, "Input",ExpressionUUID->"96596e92-d088-4b08-8996-6a2d0202f4d7"],
+Cell[22973, 663, 449, 14, 32, "Output",ExpressionUUID->"be31d8d0-f35f-4ebf-9e4d-737dc7bd86f0"]
+}, Open  ]],
+Cell[23437, 680, 238, 5, 28, "Input",ExpressionUUID->"a626582c-a9e3-1346-bb9c-984bc8ea89b3"]
 }
 ]
 *)

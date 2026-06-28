@@ -1,22 +1,25 @@
-% We start our discussion from Lemma~\eqref{lem:forward-newtons-formula-for-powers},
-% which yields forward Newton's interpolation formula for powers.
-% For example,
-% \input{examples/00_newtons_formula_for_cubes.tex}
-% Thus, the transition to formula for sums of powers is quite straightforward,
-% \begin{align*}
-%   \KnuthRFoldSum{1}{n}{m}
-%   = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t}{k} \right] \Delta^{k} t^m.
-% \end{align*}
-% Therefore, by setting $r=0$ into Lemma~\eqref{lem:forward-hockey-stick-identity}
-% yields closed form of ordinary sums of powers
-% \begin{proposition}[Ordinary sums of powers]
-%   \label{prop:ordinary-sums-of-powers}
-%   For non-negative integers $n,m$, and an arbitrary integer $t$
-%   \begin{align*}
-%     \KnuthRFoldSum{1}{n}{m}
-%     = \sum_{k=0}^{m} \left[ \binom{n-t+1}{k+1} - \binom{1-t}{k+1} \right] \Delta^{k} t^m.
-%   \end{align*}
-% \end{proposition}
+We start our discussion from Lemma~\eqref{lem:backward-newtons-formula-for-powers},
+which yields backward Newton's interpolation formula for powers.
+For example,
+\input{examples/00_newtons_formula_for_cubes.tex}
+Thus, the transition to formula for sums of powers is quite straightforward,
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{m}
+  = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t+k-1}{k} \right] \nabla^{k} t^m.
+\end{align*}
+Therefore, by setting $r=0$ into Lemma~\eqref{lem:backward-hockey-stick-identity}
+yields closed form of ordinary sums of powers
+\begin{proposition}[Ordinary sums of powers]
+  \label{prop:ordinary-sums-of-powers}
+  For non-negative integers $n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+k}{k+1} - \binom{k-t}{k+1}
+    \right] \nabla^{k} t^m.
+  \end{align*}
+\end{proposition}
 % We may see that the basis $\binom{j-t+r}{k+r}$ for repeatedly
 % applied Lemma~\eqref{lem:forward-hockey-stick-identity}
 % was indeed chosen correctly, because we derived closed form for sums of powers

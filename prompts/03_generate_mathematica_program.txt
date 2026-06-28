@@ -1,15 +1,16 @@
 Generate Mathematica program to validate the identity:
 
-\begin{lemma}[Backward Newton's formula for powers]
-  \label{lem:backward-newtons-formula-for-powers}
+\begin{proposition}[Ordinary sums of powers]
+  \label{prop:ordinary-sums-of-powers}
   For non-negative integers $n,m$, and an arbitrary integer $t$
   \begin{align*}
-    n^m = \sum_{k=0}^{m} \binom{n-t+k-1}{k} \nabla^{k} t^m.
+    \KnuthRFoldSum{1}{n}{m}
+    = \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+k}{k+1} - \binom{1-t+k-1}{k+1}
+    \right] \nabla^{k} t^m.
   \end{align*}
-  \begin{proof}
-    Special case of Lemma~\eqref{lem:backward-newtons-formula} for powers.
-  \end{proof}
-\end{lemma}
+\end{proposition}
 
 Use the definitions as follows, if they appear in identity under validation
 

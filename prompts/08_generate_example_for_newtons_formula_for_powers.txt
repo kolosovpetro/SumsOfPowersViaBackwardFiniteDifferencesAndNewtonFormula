@@ -1,0 +1,30 @@
+Generate example similar to this:
+
+\begin{align*}
+  n^3 &= 0 \tbinom{n-0}{0}  + 1 \tbinom{n-0}{1}  + 6 \tbinom{n-0}{2}  + 6 \tbinom{n-0}{3}, \\
+  n^3 &= 1 \tbinom{n-1}{0}  + 7 \tbinom{n-1}{1}  + 12 \tbinom{n-1}{2} + 6 \tbinom{n-1}{3}, \\
+  n^3 &= 8 \tbinom{n-2}{0}  + 19 \tbinom{n-2}{1} + 18 \tbinom{n-2}{2} + 6 \tbinom{n-2}{3}, \\
+  n^3 &= 27 \tbinom{n-3}{0} + 37 \tbinom{n-3}{1} + 24 \tbinom{n-3}{2} + 6 \tbinom{n-3}{3}.
+\end{align*}
+
+For the formula:
+
+\begin{lemma}[Backward Newton's formula for powers]
+  \label{lem:backward-newtons-formula-for-powers}
+  For non-negative integers $n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    n^m = \sum_{k=0}^{m} \binom{n-t+k-1}{k} \nabla^{k} t^m.
+  \end{align*}
+  \begin{proof}
+    Special case of Lemma~\eqref{lem:backward-newtons-formula} for powers.
+  \end{proof}
+\end{lemma}
+
+Using the values:
+
+{0,1,-6,6}
+{1,1,0,6}
+{8,7,6,6}
+{27,19,12,6}
+
+Give response in a code block so that I easily copt paste it

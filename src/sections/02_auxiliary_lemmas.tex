@@ -89,14 +89,14 @@ generalized factorials~\cite{steffensen1933definition}.
 \end{lemma}
 
 \begin{lemma}[Backward hockey-stick identity]
-  \label{lem:forward-hockey-stick-identity}
+  \label{lem:backward-hockey-stick-identity}
   For integer $n\geq1$, and arbitrary integers $t,k,r$
   \begin{align*}
     \sum_{j=1}^{n} \binom{j-t+k-1+r}{k+r}
-    = \binom{n-t+k+r}{k+r+1} - \binom{1-t+k-1+r}{k+r+1}.
+    = \binom{n-t+k+r}{k+r+1} - \binom{k-t+r}{k+r+1}.
   \end{align*}
   \begin{proof}
-    By setting $a=1-t+k-1+r$, and $b=n-t+k-1+r$
+    By setting $a=k-t+r$, and $b=n-t+k-1+r$
     into Lemma~\eqref{lem:generalized-hockey-stick-identity}.
   \end{proof}
 \end{lemma}
