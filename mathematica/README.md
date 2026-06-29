@@ -5,3 +5,4 @@
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowers.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowers.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialForm.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateFiniteDifferenceTriangles.txt"
