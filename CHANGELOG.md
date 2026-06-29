@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica test: `ValidateMultifoldSumsOfPowers.txt`
 - Add Mathematica program: `GenerateExamplesInPolynomialForm.txt`
 - Edits in examples
+- Add double sums polynomial form example
 
 ## [1.6.1] - 24-Jan-2026
 

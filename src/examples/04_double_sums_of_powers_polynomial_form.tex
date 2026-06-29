@@ -1,0 +1,25 @@
+\begin{example}
+  For integer $0 \leq t \leq 2$, we have
+  \begin{align*}
+    t=0:\quad \KnuthRFoldSum{2}{n}{3}
+    &=
+    \tfrac{1}{2}(n+n^2)\cdot0
+    +\tfrac{1}{6}(2n+3n^2+n^3)\cdot1
+    +\tfrac{1}{24}(6n+11n^2+6n^3+n^4)\cdot(-6) \\
+    &+\tfrac{1}{120}(24n+50n^2+35n^3+10n^4+n^5)\cdot6,
+    \\
+    t=1:\quad \KnuthRFoldSum{2}{n}{3}
+    &=
+    \tfrac{1}{2}(n+n^2)\cdot1
+    +\tfrac{1}{6}(-n+n^3)\cdot1
+    +\tfrac{1}{24}(-2n-n^2+2n^3+n^4)\cdot0 \\
+    &+\tfrac{1}{120}(-6n-5n^2+5n^3+5n^4+n^5)\cdot6,
+    \\
+    t=2:\quad \KnuthRFoldSum{2}{n}{3}
+    &=
+    \tfrac{1}{2}(n+n^2)\cdot8
+    +\tfrac{1}{6}(-4n-3n^2+n^3)\cdot7
+    +\tfrac{1}{24}(2n-n^2-2n^3+n^4)\cdot6 \\
+    &+\tfrac{1}{120}(4n-5n^3+n^5)\cdot6.
+  \end{align*}
+\end{example}
