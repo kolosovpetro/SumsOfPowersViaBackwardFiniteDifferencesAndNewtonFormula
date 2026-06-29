@@ -1,0 +1,64 @@
+(* ================================================================ *)
+(*  Validates Proposition: Multifold Binomial Sums of Powers       *)
+(* ================================================================ *)
+
+ClearAll[
+  KnuthRFoldSum,
+  ForwardDifference,
+  RHS,
+  ValidateMultifoldBinomialSumsOfPowers
+];
+
+(* --------------------------------------------------------------- *)
+(*  Convention: x^0 = 1                                             *)
+(* --------------------------------------------------------------- *)
+
+Unprotect[Power];
+Power[x_, 0] := 1;
+Protect[Power];
+
+(* --------------------------------------------------------------- *)
+(*  Multifold sums of powers                                        *)
+(* --------------------------------------------------------------- *)
+
+KnuthRFoldSum[0, n_, m_] := n^m;
+
+KnuthRFoldSum[r_, n_, m_] /; r > 0 :=
+  Sum[KnuthRFoldSum[r - 1, k, m], {k, 1, n}];
+
+(* --------------------------------------------------------------- *)
+(*  Backward/forward difference operator (as defined in identity)   *)
+(* --------------------------------------------------------------- *)
+
+ForwardDifference[t_, m_, k_] :=
+  Sum[(-1)^j Binomial[k, j] (t - j)^m, {j, 0, k}];
+
+(* --------------------------------------------------------------- *)
+(*  Main RHS expression                                            *)
+(* --------------------------------------------------------------- *)
+
+RHS[r_, n_, m_, t_] :=
+  Sum[
+    (Binomial[n - t + k + r - 1, k + r] - Sum[Binomial[k - t + r - 1 - s, k + r - s] Binomial[s + n - 1, s], {s, 0, r - 1}])
+    ForwardDifference[t, m, k],
+    {k, 0, m}
+  ];
+
+(* --------------------------------------------------------------- *)
+(*  Validation routine                                              *)
+(* --------------------------------------------------------------- *)
+
+ValidateMultifoldBinomialSumsOfPowers[max_] :=
+  Flatten[
+    Table[
+      FullSimplify[
+        KnuthRFoldSum[r, n, m] - RHS[r, n, m, t]
+      ],
+      {r, 0, max},
+      {n, 1, max},
+      {m, 0, max},
+      {t, -max, max}
+    ]
+  ];
+
+ValidateMultifoldBinomialSumsOfPowers[5]

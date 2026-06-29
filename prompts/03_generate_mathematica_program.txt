@@ -1,7 +1,7 @@
 Generate Mathematica program to validate the identity:
 
-\begin{theorem} [Multifold sums of powers]
-  \label{thm:multifold-sum-of-powers}
+\begin{proposition} [Multifold Binomial sums of powers]
+  \label{prop:multifold-binomial-sums-of-powers}
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
@@ -11,10 +11,10 @@ Generate Mathematica program to validate the identity:
       \binom{n-t+k+r-1}{k+r}
       -
       \sum_{s=0}^{r-1}
-      \binom{k-t+r-1-s}{k+r-s} \KnuthRFoldSum{s}{n}{0}
+      \binom{k-t+r-1-s}{k+r-s} \binom{s+n-1}{s}
     \right] \nabla^{k} t^{m}.
   \end{align*}
-\end{theorem}
+\end{proposition}
 
 Use the definitions as follows, if they appear in identity under validation
 
@@ -40,6 +40,10 @@ Add convention for x^0 = 1 for all x.
 Treat symbol \nabla as backward finite difference.
 Treat symbol \delta as cental finite difference.
 Treat symbol \stirlingii as Stirling number of the second kind.
+Do not decompose main formula by different functions.
+Generate just code block, so that I easily copy paste it,
+no additional comments required.
+Do not move - Sum[...] to the next line, Mathematica ignores it.
 
 EulerianNumber[0, 0] = 1;
 EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
