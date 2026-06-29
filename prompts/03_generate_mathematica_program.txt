@@ -1,13 +1,15 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition}[Ordinary sums of powers]
-  \label{prop:ordinary-sums-of-powers}
+\begin{proposition}[Double sums of powers]
+  \label{prop:double-sums-of-powers}
   For non-negative integers $n,m$, and an arbitrary integer $t$
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m}
+    \KnuthRFoldSum{2}{n}{m}
     = \sum_{k=0}^{m}
     \left[
-      \binom{n-t+k}{k+1} - \binom{1-t+k-1}{k+1}
+      \binom{n-t+k+1}{k+2}
+      - \binom{k-t+1}{k+2} \KnuthRFoldSum{1}{n}{0}
+      - \binom{k-t+0}{k+1} \KnuthRFoldSum{1}{n}{0}
     \right] \nabla^{k} t^m.
   \end{align*}
 \end{proposition}

@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Added auxiliary lemmas
 - Add ordinary sums of powers formula
 - Add Mathematica test: `ValidateOrdinarySumsOfPowers.txt`
+- Add double sums of powers formula
+- Add Mathematica test: `ValidateDoubleSumsOfPowers.txt`
 
 ## [1.6.1] - 24-Jan-2026
 
