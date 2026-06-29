@@ -1,0 +1,61 @@
+I want you to generate explicit examples of the proposition below, 
+in form of polynomials in n, using data below:
+
+------------------------------------------------------------
+m = 3,   t = 1
+------------------------------------------------------------
+L[n,t,r,k]:
+{n, (3*n + n^2)/2, (11*n + 6*n^2 + n^3)/6, (50*n + 35*n^2 + 10*n^3 + n^4)/24}
+Backward differences:
+{-1, 7, -12, 6}
+
+------------------------------------------------------------
+m = 3,   t = 2
+------------------------------------------------------------
+L[n,t,r,k]:
+{n, (5*n + n^2)/2, (26*n + 9*n^2 + n^3)/6, (154*n + 71*n^2 + 14*n^3 + n^4)/24}
+Backward differences:
+{-8, 19, -18, 6}
+
+------------------------------------------------------------
+m = 3,   t = 3
+------------------------------------------------------------
+L[n,t,r,k]:
+{n, (7*n + n^2)/2, (47*n + 12*n^2 + n^3)/6, (342*n + 119*n^2 + 18*n^3 + n^4)/24}
+Backward differences:
+{-27, 37, -24, 6}
+
+------------------------------------------------------------
+m = 3,   t = 4
+------------------------------------------------------------
+L[n,t,r,k]:
+{n, (9*n + n^2)/2, (74*n + 15*n^2 + n^3)/6, (638*n + 179*n^2 + 22*n^3 + n^4)/24}
+Backward differences:
+{-64, 61, -30, 6}
+
+Using the latex pattern
+
+\begin{example}
+  \begin{align*}
+    t=0: \quad \KnuthRFoldSum{1}{n}{3}
+    &= 
+    \\
+    t=1: \quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    \\
+    t=2: \quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    \\
+    t=3: \quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    \\
+    t=4: \quad \KnuthRFoldSum{1}{n}{3}
+    &=
+  \end{align*}
+\end{example}
+
+It must be in format: n \cdot 0 + 1/2 (n+n^2) \cdot 1  + 1/6 (-n+n^3) \cdot 6 + 1/24 (2 n-n^2-2 n^3+n^4) \cdot 6.
+Do not simplify fractions.
+For coefficients like {0,1,6,6} use \cdot to distinguish them. 
+Make the example compact, by using \tfrac commands.
+Give your response in complete LaTeX example, so that I copy paste it easily

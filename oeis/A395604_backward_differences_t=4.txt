@@ -1,0 +1,57 @@
+======================================================== NAME =====================================================
+
+Triangle read by rows: T(n,k) = Sum_{j=0..k} (-1)^j * binomial(k,j) * (4-j)^n.
+
+======================================================== DATA =====================================================
+
+1, 4, 1, 16, 7, 2, 64, 37, 18, 6, 256, 175, 110, 60, 24, 1024, 781, 570, 390, 240, 120, 4096, 3367, 2702, 2100, 1560, 1080, 720, 16384, 14197, 12138, 10206, 8400, 6720, 5040, 5040, 65536, 58975, 52670, 46620, 40824, 35280, 30240, 20160, 40320
+
+======================================================== FORMULA =====================================================
+
+T(n,k) = Sum_{j=k..n} binomial(4-k, j-k) * Stirling2(n, j) * j!.
+T(n,k) = Sum_{j=0..n} E(n,j) * binomial(4+j-k, n-k), where E(n,j) are Eulerian numbers (Cf. A173018).
+Let F(t, n, k) = Sum_{j=0..k} (-1)^j * binomial(k,j) * (t-j)^n,
+then
+F(0, n, k) = A278075(n,k),
+F(1, n, k) = A389570(n,k),
+F(2, n, k) = A391068(n,k),
+F(3, n, k) = A391210(n,k),
+F(4, n, k) = T(n,k) (this sequence).
+Let S_m(n) be a sum of powers: S_m(n) = 1^m + 2^m + 3^m + ... + n^m, then
+S_m(n) = Sum_{j=0..m} T(m,j) * ( (-1)^j*binomial(4,j+1) + binomial(n+j-4,j+1) ).
+
+======================================================== CROSSREFS =====================================================
+
+Cf. A278075, A131689, A389570, A391068, A391210, A173018.
+
+======================================================== EXAMPLE =====================================================
+
+Triangle begins:
+[0]     1;
+[1]     4,     1;
+[2]    16,     7,     2;
+[3]    64,    37,    18,     6;
+[4]   256,   175,   110,    60,   24;
+[5]  1024,   781,   570,   390,  240,  120;
+[6]  4096,  3367,  2702,  2100, 1560, 1080,  720;
+[7] 16384, 14197, 12138, 10206, 8400, 6720, 5040, 5040;
+
+======================================================== KEYWORDS =====================================================
+
+easy,tabl
+
+======================================================== LINKS =====================================================
+
+Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
+Petro Kolosov, <a href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica">Mathematica programs</a>, GitHub, 2026.
+Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of powers via backward finite differences and Newton's formula</a>, Zenodo, 2026.
+
+======================================================== MATHEMATICA =====================================================
+
+(*Prints T(n,k) as triangle*)
+T1[t_,n_, k_] := Sum[(-1)^j*Binomial[k, j]*(t - j)^n, {j, 0, k}];Table[T1[4, n, k], {n, 0, 10}, {k, 0, n}] // Flatten
+(*Validates T(n,k) in Stirling form*)
+T2[t_, n_, k_] := Sum[Binomial[t - k, j - k]*StirlingS2[n, j]*j!, {j, k, n}];Table[T2[4, n, k], {n, 0, 10}, {k, 0, n}] // Flatten
+(*Validates T(n,k) in Eulerian form*)
+Eulerian[n_, k_] := Sum[(-1)^s*Binomial[n + 1, s]*(k + 1 - s)^n, {s, 0, k}];
+T3[t_, n_, k_] := Sum[Eulerian[n, j]*Binomial[t + j - k, n - k], {j, 0, n}];Table[T3[4, n, k], {n, 0, 10}, {k, 0, n}] // Flatten

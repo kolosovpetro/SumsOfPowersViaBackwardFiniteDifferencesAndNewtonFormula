@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 29-June-2026
+
+### Changed
+
+- Cleanup unused files
+- Change file structure
+- Added auxiliary lemmas
+- Add ordinary sums of powers formula
+- Add Mathematica test: `ValidateOrdinarySumsOfPowers.txt`
+- Add double sums of powers formula
+- Add Mathematica test: `ValidateDoubleSumsOfPowers.txt`
+- Add multifold sums of powers formula
+- Add Mathematica test: `ValidateMultifoldSumsOfPowers.txt`
+- Add Mathematica program: `GenerateExamplesInPolynomialForm.txt`
+- Edits in examples
+- Add double sums polynomial form example
+- Add Mathematica program: `GenerateFiniteDifferenceTriangles.txt`
+- Add links to OEIS sequences
+- Add OEIS sequence A395604
+- Add Mathematica test: `ValidateMultifoldBinomialSumsOfPowers.txt`
+- Add formula for Multifold Binomial sums of powers negated
+- Add Mathematica test: `ValidateMultifoldBinomialSumsOfPowersNegated.txt`
+- Add example for Multifold Binomial sums of powers negated
+- Add Mathematica program: `GenerateExamplesInPolynomialFormNegated.txt`
+- Add formula Multifold Eulerian sums of powers
+- Add Mathematica test: `ValidateMultifoldEulerianSumsOfPowers.txt`
+- Add formula Multifold Stirling sums of powers
+- Add Mathematica test: `ValidateMultifoldStirlingSumsOfPowers.txt`
+
 ## [1.6.1] - 24-Jan-2026
 
 ### Changed

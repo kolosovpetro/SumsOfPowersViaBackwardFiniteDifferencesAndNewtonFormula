@@ -1,0 +1,88 @@
+(* ================================================================ *)
+(*  Validates Proposition: Ordinary Sums of Powers                  *)
+(* ================================================================ *)
+
+ClearAll[
+  KnuthRFoldSum,
+  BackwardDifference,
+  OrdinarySumsOfPowers,
+  ValidateOrdinarySumsOfPowers
+];
+
+(* --------------------------------------------------------------- *)
+(*  Convention: x^0 = 1 for all x                                   *)
+(* --------------------------------------------------------------- *)
+
+Begin["`Private`"]
+
+Unprotect[Power];
+Power[_?NumericQ | _, 0] = 1;
+Protect[Power];
+
+End[];
+
+(* --------------------------------------------------------------- *)
+(*  Multifold sums of powers (recurrence definition)                *)
+(* --------------------------------------------------------------- *)
+
+KnuthRFoldSum[r_, n_, m_] := 0 /; n <= 0;
+
+KnuthRFoldSum[0, n_, m_] := n^m;
+
+KnuthRFoldSum[r_, n_, m_] :=
+  Sum[
+    KnuthRFoldSum[r - 1, k, m],
+    {k, 1, n}
+  ] /; r > 0;
+
+(* --------------------------------------------------------------- *)
+(*  Backward finite difference                                      *)
+(*                                                                  *)
+(*  ∇^k t^m = Σ (-1)^j Binomial[k,j] (t-j)^m                        *)
+(* --------------------------------------------------------------- *)
+
+BackwardDifference[t_, m_, k_] :=
+  Sum[
+    (-1)^j Binomial[k, j] (t - j)^m,
+    {j, 0, k}
+  ];
+
+(* --------------------------------------------------------------- *)
+(*  Proposition                                                     *)
+(* --------------------------------------------------------------- *)
+
+OrdinarySumsOfPowers[n_, m_, t_] :=
+  Sum[
+    (
+      Binomial[n - t + k, k + 1]
+      -
+      Binomial[k - t, k + 1]
+    )
+    *
+    BackwardDifference[t, m, k],
+    {k, 0, m}
+  ];
+
+(* --------------------------------------------------------------- *)
+(*  Validation routine                                              *)
+(* --------------------------------------------------------------- *)
+
+ValidateOrdinarySumsOfPowers[max_] :=
+  Flatten[
+    Table[
+      FullSimplify[
+        KnuthRFoldSum[1, n, m]
+        -
+        OrdinarySumsOfPowers[n, m, t]
+      ],
+      {n, 1, max},
+      {m, 0, max},
+      {t, -max, max}
+    ]
+  ];
+
+(* --------------------------------------------------------------- *)
+(*  Run test                                                        *)
+(* --------------------------------------------------------------- *)
+
+ValidateOrdinarySumsOfPowers[10]

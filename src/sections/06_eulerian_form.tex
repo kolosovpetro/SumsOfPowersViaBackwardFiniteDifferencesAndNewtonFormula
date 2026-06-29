@@ -1,0 +1,33 @@
+We have Lemma which connects Eulerian numbers $\eulerian{n}{k}$ with backward
+differences of powers $\nabla^{k} t^{m}$
+\begin{lemma} [Eulerian Backward differences]
+  For non-negative integers $m,k$, and an arbitrary integer $t$
+  \label{lem:eulerian-backward-differences}
+  \begin{align*}
+    \nabla^{k} t^{m} = \sum_{j=0}^{m} \binom{t+j-k}{m-k} \eulerian{m}{j}.
+  \end{align*}
+  \begin{proof}
+    By Worpitzky identity
+    $t^{m} = \sum_{k=0}^{m} \binom{t+k}{m} \eulerian{m}{k}$,
+    and by binomial recurrence
+    $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$,
+    see~\cite{Worpitzky1883}.
+  \end{proof}
+\end{lemma}
+Therefore,
+\begin{proposition} [Multifold Eulerian sums of powers]
+  \label{prop:multifold-eulerian-sums-of-powers}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    =
+    \sum_{k=0}^{m}
+    \sum_{j=0}^{m}
+    \left[
+      \binom{n-t+k+r-1}{k+r}
+      -
+      \sum_{s=0}^{r-1}
+      \tbinom{k-t+r-1-s}{k+r-s} \tbinom{s+n-1}{s}
+    \right] \binom{t+j-k}{m-k} \eulerian{m}{j}.
+  \end{align*}
+\end{proposition}

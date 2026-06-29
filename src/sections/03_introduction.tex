@@ -1,0 +1,41 @@
+In this manuscript, we derive formulas for sums of powers by combining
+backward Newton's interpolation formula for powers
+\eqref{lem:backward-newtons-formula-for-powers}
+with hockey-stick identity
+\eqref{lem:backward-hockey-stick-identity}.
+We implement the algorithm for finding closed forms of
+sums of powers of integers, proposed in~\cite[Alg. (11.2)]{kolosov2026framework}.
+More precisely, the main idea is to determine binomial basis of
+Newton's formula, in terms of variants of difference operators,
+for example
+\begin{align*}
+  \begin{cases}
+    f(x)
+    &= \sum_{k=0}^{\infty} \frac{\centralFactorial{(x-a)}{k}}{k!} \delta^{k} f(a)
+    = \sum_{k=0}^{\infty} \frac{x-a}{k} \binom{x-a+\frac{k}{2}-1}{k-1} \delta^{k} f(a), \\
+    f(x)
+    &= \sum_{k=0}^{\infty} \frac{\fallingFactorial{x-a}{k}}{k!} \Delta^k f(a)
+    = \sum_{k=0}^{\infty} \binom{x-a}{k} \Delta^k f(a), \\
+    f(x)
+    &= \sum_{k=0}^{\infty} \frac{\risingFactorial{(x-a)}{k}}{k!} \nabla^k f(a)
+    = \sum_{k=0}^{\infty} \binom{x-a+k-1}{k} \nabla^k f(a), \\
+    f(x)
+    &= \sum_{k=0}^{\infty} \frac{(x-a)^k}{k!} \odd{f(a)}{x}{k}.
+  \end{cases}
+\end{align*}
+We may observe that each variation of Newton's formula above
+has its binomial basis
+\begin{align*}
+  \begin{cases}
+    \frac{\fallingFactorial{x}{n}}{n!} &= \frac{1}{n!} x(x-1)(x-2)\cdots(x-n+1) =\binom{x}{n}, \\
+    \frac{\risingFactorial{x}{n}}{n!}  &= \frac{1}{n!} x(x+1)(x+2)\cdots(x+n-1)  =\binom{x+n-1}{n}, \\
+    \frac{\centralFactorial{x}{n}}{n!} &= \frac{1}{n!} \left( n + \frac{k}{2} -1 \right)\left( n + \frac{k}{2} -2 \right)
+    \cdots \left( n - \frac{k}{2} +1 \right)  =\frac{x}{n} \binom{x+\frac{n}{2}-1}{n-1}.
+  \end{cases}
+\end{align*}
+This allows us to successfully combine Newton's formula with
+hockey-stick type identity, to find closed forms for sums of powers
+of integers.
+Thus, we focus on closed forms of powers sums,
+by utilizing backward Newton's formula, and hockey-stick
+identity~\eqref{lem:backward-hockey-stick-identity}.

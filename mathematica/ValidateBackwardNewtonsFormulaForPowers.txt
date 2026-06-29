@@ -1,0 +1,61 @@
+(* ================================================================ *)
+(*  Validates Lemma: Backward Newton's Formula for Powers            *)
+(* ================================================================ *)
+
+ClearAll[
+  BackwardDifference,
+  ValidateBackwardNewtonsFormulaForPowers
+];
+
+(* --------------------------------------------------------------- *)
+(*  Convention: x^0 = 1 for all x                                   *)
+(* --------------------------------------------------------------- *)
+
+Begin["`Private`"]
+
+Unprotect[Power];
+Power[_?NumericQ | _, 0] = 1;
+Protect[Power];
+
+End[];
+
+(* --------------------------------------------------------------- *)
+(*  Backward finite difference                                      *)
+(*                                                                  *)
+(*  ∇^k t^m = Sum[(-1)^j Binomial[k,j] (t-j)^m, {j,0,k}]            *)
+(* --------------------------------------------------------------- *)
+
+BackwardDifference[t_, m_, k_] :=
+  Sum[
+    (-1)^j Binomial[k, j] (t - j)^m,
+    {j, 0, k}
+  ];
+
+(* --------------------------------------------------------------- *)
+(*  Identity check                                                  *)
+(* --------------------------------------------------------------- *)
+
+ValidateBackwardNewtonsFormulaForPowers[max_] :=
+  Flatten[
+    Table[
+      FullSimplify[
+        n^m
+        -
+        Sum[
+          Binomial[n - t + k - 1, k]
+            *
+          BackwardDifference[t, m, k],
+          {k, 0, m}
+        ]
+      ],
+      {n, 0, max},
+      {m, 0, max},
+      {t, -max, max}
+    ]
+  ];
+
+(* --------------------------------------------------------------- *)
+(*  Run test                                                        *)
+(* --------------------------------------------------------------- *)
+
+ValidateBackwardNewtonsFormulaForPowers[10]
