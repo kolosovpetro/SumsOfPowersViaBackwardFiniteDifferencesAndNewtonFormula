@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add double sums polynomial form example
 - Add Mathematica program: `GenerateFiniteDifferenceTriangles.txt`
 - Add links to OEIS sequences
+- Add OEIS sequence A395604
 
 ## [1.6.1] - 24-Jan-2026
 
