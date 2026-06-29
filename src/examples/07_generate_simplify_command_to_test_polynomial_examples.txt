@@ -1,0 +1,35 @@
+Generate Mathematica Simplify command for each polynomial from the list, give response so that I copy paste it easily.
+Do not comment anything, give just code.
+Never split plus to the next linee, mathematica ignores when + .. moved to next line.
+
+\begin{example} For integer $1 \leq t \leq 4$, we have
+  \begin{align*}
+    t=1:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot (-1)
+    + \tfrac{1}{2}(3n+n^2)\cdot 7
+    + \tfrac{1}{6}(11n+6n^2+n^3)\cdot (-12) \\
+    &+ \tfrac{1}{24}(50n+35n^2+10n^3+n^4)\cdot 6,
+    \\
+    t=2:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot (-8)
+    + \tfrac{1}{2}(5n+n^2)\cdot 19
+    + \tfrac{1}{6}(26n+9n^2+n^3)\cdot (-18) \\
+    &+ \tfrac{1}{24}(154n+71n^2+14n^3+n^4)\cdot 6,
+    \\
+    t=3:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot (-27)
+    + \tfrac{1}{2}(7n+n^2)\cdot 37
+    + \tfrac{1}{6}(47n+12n^2+n^3)\cdot (-24) \\
+    &+ \tfrac{1}{24}(342n+119n^2+18n^3+n^4)\cdot 6,
+    \\
+    t=4:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot (-64)
+    + \tfrac{1}{2}(9n+n^2)\cdot 61
+    + \tfrac{1}{6}(74n+15n^2+n^3)\cdot (-30) \\
+    &+ \tfrac{1}{24}(638n+179n^2+22n^3+n^4)\cdot 6.
+  \end{align*}
+\end{example}
