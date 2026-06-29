@@ -1,0 +1,39 @@
+\begin{example}
+  For $m=3$, we have
+  \begin{align*}
+    t=0:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot 0
+    + \tfrac{1}{2}(n+n^2)\cdot 1
+    + \tfrac{1}{6}(2n+3n^2+n^3)\cdot(-6)
+    + \tfrac{1}{24}(6n+11n^2+6n^3+n^4)\cdot 6,
+    \\
+    t=1:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot 1
+    + \tfrac{1}{2}(-n+n^2)\cdot 1
+    + \tfrac{1}{6}(-n+n^3)\cdot 0
+    + \tfrac{1}{24}(-2n-n^2+2n^3+n^4)\cdot 6,
+    \\
+    t=2:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot 8
+    + \tfrac{1}{2}(-3n+n^2)\cdot 7
+    + \tfrac{1}{6}(2n-3n^2+n^3)\cdot 6
+    + \tfrac{1}{24}(2n-n^2-2n^3+n^4)\cdot 6,
+    \\
+    t=3:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot 27
+    + \tfrac{1}{2}(-5n+n^2)\cdot 19
+    + \tfrac{1}{6}(11n-6n^2+n^3)\cdot 12 \\
+    &+ \tfrac{1}{24}(-6n+11n^2-6n^3+n^4)\cdot 6,
+    \\
+    t=4:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    n \cdot 64
+    + \tfrac{1}{2}(-7n+n^2)\cdot 37
+    + \tfrac{1}{6}(26n-9n^2+n^3)\cdot 18 \\
+    &+ \tfrac{1}{24}(-50n+35n^2-10n^3+n^4)\cdot 6.
+  \end{align*}
+\end{example}
