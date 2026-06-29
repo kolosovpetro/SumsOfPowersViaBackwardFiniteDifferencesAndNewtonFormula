@@ -27,6 +27,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica test: `ValidateMultifoldBinomialSumsOfPowers.txt`
 - Add formula for Multifold Binomial sums of powers negated
 - Add Mathematica test: `ValidateMultifoldBinomialSumsOfPowersNegated.txt`
+- Add example for Multifold Binomial sums of powers negated
+- Add Mathematica program: `GenerateExamplesInPolynomialFormNegated.txt`
 
 ## [1.6.1] - 24-Jan-2026
 

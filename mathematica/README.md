@@ -8,3 +8,4 @@
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateFiniteDifferenceTriangles.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBinomialSumsOfPowers.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBinomialSumsOfPowersNegated.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialFormNegated.txt"
