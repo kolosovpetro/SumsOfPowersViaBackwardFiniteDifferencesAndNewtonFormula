@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add links to OEIS sequences
 - Add OEIS sequence A395604
 - Add Mathematica test: `ValidateMultifoldBinomialSumsOfPowers.txt`
+- Add formula for Multifold Binomial sums of powers negated
+- Add Mathematica test: `ValidateMultifoldBinomialSumsOfPowersNegated.txt`
 
 ## [1.6.1] - 24-Jan-2026
 

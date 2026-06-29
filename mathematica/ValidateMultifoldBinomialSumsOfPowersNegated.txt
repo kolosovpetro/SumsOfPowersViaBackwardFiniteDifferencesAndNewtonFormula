@@ -62,7 +62,7 @@ MultifoldBinomialSumsNegated[r_, n_, m_, t_] :=
         {s, 0, r - 1}
       ]
     )
-    BackwardDifference[t, m, k],
+    BackwardDifference[-t, m, k],
     {k, 0, m}
   ];
 

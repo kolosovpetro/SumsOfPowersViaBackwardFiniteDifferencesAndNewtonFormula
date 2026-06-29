@@ -104,10 +104,6 @@ we get pure binomial version of Theorem~\eqref{thm:multifold-sums-of-powers}
 \end{proposition}
 By setting $t \rightarrow -t$ yields another remarkable
 formula for multifold sums of powers of integers.
-We have
-\begin{align*}
-  \nabla^{k} (-t)^m = (-1)^{m} \nabla^{k} t^m.
-\end{align*}
 Therefore,
 \begin{proposition} [Multifold Binomial sums of powers negated]
   \label{prop:multifold-binomial-sums-of-powers-negated}
@@ -116,12 +112,11 @@ Therefore,
     \KnuthRFoldSum{r}{n}{m}
     =
     \sum_{k=0}^{m}
-    (-1)^{m}
     \left[
       \binom{n+t+k+r-1}{k+r}
       -
       \sum_{s=0}^{r-1}
       \binom{k+t+r-1-s}{k+r-s} \binom{s+n-1}{s}
-    \right] \nabla^{k} t^{m}.
+    \right] \nabla^{k} (-t)^{m}.
   \end{align*}
 \end{proposition}
