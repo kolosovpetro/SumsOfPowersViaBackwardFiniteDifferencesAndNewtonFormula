@@ -1,0 +1,72 @@
+Please generate a list of reference strings using the data below.
+Use plain text, use - as beginning of new line.
+Give response in code block.
+
+\begin{thebibliography}{1}
+
+\bibitem{knuth1993johann}
+{Knuth, Donald E.}
+\newblock {Johann Faulhaber and sums of powers}.
+\newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
+\newblock \url{https://arxiv.org/abs/math/9207222}.
+
+\bibitem{steffensen1933definition}
+J.~F. Steffensen.
+\newblock On the definition of the central factorial.
+\newblock {\em Journal of the Institute of Actuaries (1886-1994)},
+  64(2):165--168, 1933.
+\newblock \url{https://www.jstor.org/stable/41137516}.
+
+\bibitem{newton1850newton}
+{Newton, Isaac and Chittenden, N.W.}
+\newblock {\em {Newton's Principia: the mathematical principles of natural
+  philosophy}}.
+\newblock {New-York, D. Adee}, 1850.
+\newblock
+  \url{https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up}.
+
+\bibitem{steffensen1927interpolation}
+{Steffensen, Johan Frederik}.
+\newblock {\em Interpolation}.
+\newblock {Williams \& Wilkins}, 1927.
+\newblock
+  \url{https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8}.
+
+\bibitem{graham1994concrete}
+{Graham, Ronald L. and Knuth, Donald E. and Patashnik, Oren}.
+\newblock {\em {Concrete mathematics: A foundation for computer science (second
+  edition)}}.
+\newblock {Addison-Wesley Publishing Company, Inc.}, 1994.
+\newblock \url {https://archive.org/details/concrete-mathematics}.
+
+\bibitem{knuth1992notesnotation}
+Donald~E. Knuth.
+\newblock Two notes on notation, 1992.
+\newblock \url{https://arxiv.org/abs/math/9205211}.
+
+\bibitem{kolosov2026framework}
+Petro Kolosov.
+\newblock Sums of powers of integers: A complete framework for closed formulas,
+  June 2026.
+\newblock \url{https://doi.org/10.5281/zenodo.20548019}.
+
+\bibitem{sloane2003line}
+{Sloane, Neil J.A. and others}.
+\newblock {The on-line encyclopedia of integer sequences}.
+\newblock \url{https://oeis.org/}, 2003.
+\newblock \url{https://oeis.org/}.
+
+\bibitem{Worpitzky1883}
+J.~Worpitzky.
+\newblock Studien über die bernoullischen und eulerschen zahlen.
+\newblock {\em Journal für die reine und angewandte Mathematik}, 94:203--232,
+  1883.
+
+\end{thebibliography}
+
+
+Give response so that I copy paste it, use the example of format:
+
+- Knuth, D. E. (1993). Johann Faulhaber and sums of powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
+- Sloane, N. J. A., et al. (2003). The on-line encyclopedia of integer sequences. https://oeis.org/
+- Steffensen, J. F. (1927). Interpolation. Williams & Wilkins. https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8
