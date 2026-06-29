@@ -10,3 +10,4 @@
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBinomialSumsOfPowersNegated.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialFormNegated.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldEulerianSumsOfPowers.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldStirlingSumsOfPowers.txt"

@@ -1,19 +1,19 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition} [Multifold Eulerian sums of powers]
-  \label{prop:multifold-eulerian-sums-of-powers}
+\begin{proposition} [Multifold Stirling sums of powers]
+  \label{prop:multifold-stirling-sums-of-powers}
   For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     =
     \sum_{k=0}^{m}
-    \sum_{j=0}^{m}
+    \sum_{j=k}^{m}
     \left[
       \binom{n-t+k+r-1}{k+r}
       -
       \sum_{s=0}^{r-1}
       \tbinom{k-t+r-1-s}{k+r-s} \tbinom{s+n-1}{s}
-    \right] \binom{t+j-k}{m-k} \eulerian{m}{j}.
+    \right] \binom{t-k}{j-k} \stirlingii{m}{j} j!
   \end{align*}
 \end{proposition}
 
@@ -57,35 +57,90 @@ Use the example below, give your response in a separate code block so that I
 copy paste it easily
 
 (* ================================================================ *)
-(*  Validates Centered Hockey Stick Identity                        *)
+(*  Validates Proposition: Multifold Eulerian sums of powers       *)
 (* ================================================================ *)
 
-ClearAll[ValidateCenteredHockeyStickIdentity];
+ClearAll[
+  KnuthRFoldSum,
+  EulerianNumber,
+  ValidateMultifoldEulerianSumsOfPowers
+];
 
 (* --------------------------------------------------------------- *)
-(*  Identity check                                                 *)
+(*  Convention: x^0 = 1 for all x                                  *)
 (* --------------------------------------------------------------- *)
 
-ValidateCenteredHockeyStickIdentity[max_] :=
+Begin["`Private`"]
+
+Unprotect[Power];
+Power[_?NumericQ | _, 0] = 1;
+Protect[Power];
+
+End[];
+
+(* --------------------------------------------------------------- *)
+(*  Eulerian numbers (as given)                                    *)
+(* --------------------------------------------------------------- *)
+
+EulerianNumber[0, 0] = 1;
+EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
+EulerianNumber[n_, k_] :=
+  EulerianNumber[n, k] =
+    (k + 1) EulerianNumber[n - 1, k] +
+    (n - k) EulerianNumber[n - 1, k - 1];
+
+(* --------------------------------------------------------------- *)
+(*  Multifold sums of powers                                       *)
+(* --------------------------------------------------------------- *)
+
+KnuthRFoldSum[0, n_, m_] := n^m;
+
+KnuthRFoldSum[r_, n_, m_] :=
+  Sum[KnuthRFoldSum[r - 1, k, m], {k, 1, n}];
+
+(* --------------------------------------------------------------- *)
+(*  Main identity kernel                                            *)
+(* --------------------------------------------------------------- *)
+
+MultifoldEulerianSumsOfPowers[r_, n_, m_, t_] :=
+  Sum[
+    Sum[
+      (
+        Binomial[n - t + k + r - 1, k + r]
+        - Sum[
+            Binomial[k - t + r - 1 - s, k + r - s]*
+              Binomial[s + n - 1, s],
+            {s, 0, r - 1}
+          ]
+      )
+      * Binomial[t + j - k, m - k]
+      * EulerianNumber[m, j],
+      {j, 0, m}
+    ],
+    {k, 0, m}
+  ];
+
+(* --------------------------------------------------------------- *)
+(*  Validation routine                                              *)
+(* --------------------------------------------------------------- *)
+
+ValidateMultifoldEulerianSumsOfPowers[max_] :=
   Flatten[
     Table[
       FullSimplify[
-        Sum[
-          Binomial[j - t + k/2 + r, k],
-          {j, 1, n}
-        ]
+        KnuthRFoldSum[r, n, m]
         -
-        (
-          Binomial[n - t + k/2 + r + 1, k + 1]
-          -
-          Binomial[1 - t + k/2 + r, k + 1]
-        )
+        MultifoldEulerianSumsOfPowers[r, n, m, t]
       ],
+      {r, 0, max},
       {n, 1, max},
-      {t, -max, max},
-      {k, -max, max},
-      {r, -max, max}
+      {m, 0, max},
+      {t, -max, max}
     ]
   ];
 
-ValidateCenteredHockeyStickIdentity[10]
+(* --------------------------------------------------------------- *)
+(*  Run test                                                       *)
+(* --------------------------------------------------------------- *)
+
+ValidateMultifoldEulerianSumsOfPowers[5]

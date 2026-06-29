@@ -31,6 +31,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica program: `GenerateExamplesInPolynomialFormNegated.txt`
 - Add formula Multifold Eulerian sums of powers
 - Add Mathematica test: `ValidateMultifoldEulerianSumsOfPowers.txt`
+- Add formula Multifold Stirling sums of powers
+- Add Mathematica test: `ValidateMultifoldStirlingSumsOfPowers.txt`
 
 ## [1.6.1] - 24-Jan-2026
 
