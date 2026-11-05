@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 05-Nov-2026
+
+### Added
+
+- Add Mathematica validation workflow and test runner
+- Add Wolfram container validation and license setup scripts
+- Add Python build, HTML generation, and Pandoc metadata tools
+- Add mathematical writing skill and reference-string generation prompt
+
+### Changed
+
+- Reorganize Mathematica examples, notebooks, and validation files
+- Update build and deployment workflows, documentation, and editor settings
+- Revise manuscript prose, examples, metadata, citations, and references
+
+### Removed
+
+- Remove legacy PowerShell build and metadata scripts
+- Remove the obsolete build guide
+
 ## [2.0.0] - 29-June-2026
 
 ### Changed
