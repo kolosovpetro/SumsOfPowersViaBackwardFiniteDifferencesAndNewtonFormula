@@ -15,17 +15,17 @@ jobs:
     uses: kolosovpetro/github-latex-template/.github/workflows/build-and-deploy-pdf-template.yml@main
     secrets: inherit
     with:
-      file_name: 'github-latex-template'
+      file_name: 'SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula'
       enable_patch_version: true
       enable_pandoc: true
       enable_html_deploy: true
-      html_deploy_path: 'math/test'
+      html_deploy_path: 'sums-of-powers-backward-differences'
       runs_on: 'ubuntu-latest'
       workflow_name: 'Deploy PDF'
       build_assets_path: |
-        src/github-latex-template.tex
-        src/github-latex-template.bbl
-        src/github-latex-template.bib
+        src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.tex
+        src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bbl
+        src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib
         src/sections
         src/metadata
         src/examples

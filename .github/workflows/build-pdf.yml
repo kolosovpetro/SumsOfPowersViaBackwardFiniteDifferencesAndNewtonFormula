@@ -18,15 +18,15 @@ jobs:
   build-pdf:
     uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@main
     with:
-      file_name: 'github-latex-template'
+      file_name: 'SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula'
       enable_patch_version: true
       enable_pandoc: true
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build PDF'
       build_assets_path: |
-        src/github-latex-template.tex
-        src/github-latex-template.bbl
-        src/github-latex-template.bib
+        src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.tex
+        src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bbl
+        src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib
         src/sections
         src/metadata
         src/examples
