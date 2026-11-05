@@ -133,3 +133,6 @@ Use this checklist when drafting, editing, or reviewing the paper. Apply it to p
 27. Do not use period after cases environment
   - Bad: \end{cases}.
   - Good: \end{cases}
+28. Do not use colon in Lemmas, Propositions, Definitions, Corollaries etc.
+  - Bad: For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds:
+  - Good: For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds

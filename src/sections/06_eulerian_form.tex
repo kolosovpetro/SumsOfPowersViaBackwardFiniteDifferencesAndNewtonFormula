@@ -1,23 +1,23 @@
-We have Lemma which connects Eulerian numbers $\eulerian{n}{k}$ with backward
-differences of powers $\nabla^{k} t^{m}$
-\begin{lemma} [Eulerian Backward differences]
-  For non-negative integers $m,k$, and an arbitrary integer $t$
+The following lemma relates Eulerian numbers $\eulerian{n}{k}$ to backward
+differences of powers $\nabla^{k} t^{m}$.
+\begin{lemma} [Eulerian Backward Differences]
+  For non-negative integers $m$ and $k$, and an arbitrary integer $t$, the following identity holds
   \label{lem:eulerian-backward-differences}
   \begin{align*}
     \nabla^{k} t^{m} = \sum_{j=0}^{m} \binom{t+j-k}{m-k} \eulerian{m}{j}.
   \end{align*}
   \begin{proof}
-    By Worpitzky identity
+    Worpitzky's identity
     $t^{m} = \sum_{k=0}^{m} \binom{t+k}{m} \eulerian{m}{k}$,
-    and by binomial recurrence
+    together with the binomial recurrence
     $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$,
-    see~\cite{Worpitzky1883}.
+    gives the result. See~\cite{Worpitzky1883}.
   \end{proof}
 \end{lemma}
-Therefore,
-\begin{proposition} [Multifold Eulerian sums of powers]
+The lemma gives the following representation.
+\begin{proposition} [Multifold Eulerian Sums of Powers]
   \label{prop:multifold-eulerian-sums-of-powers}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     =
