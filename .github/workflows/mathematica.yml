@@ -21,3 +21,5 @@ jobs:
     with:
       mathematica-directory: ./mathematica
       wolfram-image: wolframresearch/wolframengine:15.0
+    secrets:
+      WOLFRAM_LICENSE_FILE: ${{ secrets.WOLFRAM_LICENSE_FILE }}
