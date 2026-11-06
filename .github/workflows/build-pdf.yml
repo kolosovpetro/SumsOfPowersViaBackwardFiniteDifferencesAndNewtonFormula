@@ -29,4 +29,5 @@ jobs:
         src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib
         src/sections
         src/metadata
+        src/examples
       working_directory_for_latex: 'src'

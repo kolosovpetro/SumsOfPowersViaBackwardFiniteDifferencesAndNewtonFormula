@@ -1,13 +1,11 @@
 In this manuscript, we derive formulas for sums of powers by combining
-backward Newton's interpolation formula for powers
-\eqref{lem:backward-newtons-formula-for-powers}
-with hockey-stick identity
-\eqref{lem:backward-hockey-stick-identity}.
+backward Newton's interpolation formula for powers in Lemma~\eqref{lem:backward-newtons-formula-for-powers}
+with the hockey-stick identity in Lemma~\eqref{lem:backward-hockey-stick-identity}.
 We implement the algorithm for finding closed forms of
 sums of powers of integers, proposed in~\cite[Alg. (11.2)]{kolosov2026framework}.
-More precisely, the main idea is to determine binomial basis of
-Newton's formula, in terms of variants of difference operators,
-for example
+More precisely, the main idea is to identify the binomial basis of
+Newton's formula for several difference operators. The corresponding
+variants are
 \begin{align*}
   \begin{cases}
     f(x)
@@ -21,21 +19,19 @@ for example
     = \sum_{k=0}^{\infty} \binom{x-a+k-1}{k} \nabla^k f(a), \\
     f(x)
     &= \sum_{k=0}^{\infty} \frac{(x-a)^k}{k!} \odd{f(a)}{x}{k}.
-  \end{cases}
+  \end{cases}.
 \end{align*}
-We may observe that each variation of Newton's formula above
-has its binomial basis
+Each variation of Newton's formula above has its binomial basis:
 \begin{align*}
   \begin{cases}
     \frac{\fallingFactorial{x}{n}}{n!} &= \frac{1}{n!} x(x-1)(x-2)\cdots(x-n+1) =\binom{x}{n}, \\
     \frac{\risingFactorial{x}{n}}{n!}  &= \frac{1}{n!} x(x+1)(x+2)\cdots(x+n-1)  =\binom{x+n-1}{n}, \\
     \frac{\centralFactorial{x}{n}}{n!} &= \frac{1}{n!} \left( n + \frac{k}{2} -1 \right)\left( n + \frac{k}{2} -2 \right)
     \cdots \left( n - \frac{k}{2} +1 \right)  =\frac{x}{n} \binom{x+\frac{n}{2}-1}{n-1}.
-  \end{cases}
+  \end{cases}.
 \end{align*}
-This allows us to successfully combine Newton's formula with
-hockey-stick type identity, to find closed forms for sums of powers
+These bases allow us to combine Newton's formula with
+hockey-stick-type identities to find closed forms for sums of powers
 of integers.
-Thus, we focus on closed forms of powers sums,
-by utilizing backward Newton's formula, and hockey-stick
-identity~\eqref{lem:backward-hockey-stick-identity}.
+Accordingly, the main results use backward Newton's formula and the
+hockey-stick identity in Lemma~\eqref{lem:backward-hockey-stick-identity}.

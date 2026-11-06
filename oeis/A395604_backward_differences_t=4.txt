@@ -44,7 +44,7 @@ easy,tabl
 
 Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
 Petro Kolosov, <a href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica">Mathematica programs</a>, GitHub, 2026.
-Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of powers via backward finite differences and Newton's formula</a>, Zenodo, 2026.
+Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of Powers via Backward Finite Differences and Newton's Formula</a>, Zenodo, 2026.
 
 ======================================================== MATHEMATICA =====================================================
 

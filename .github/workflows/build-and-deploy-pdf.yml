@@ -11,7 +11,7 @@ env:
   # REQUIRES ${{ secrets.GH_ACCESS_TOKEN }} defined in secrets
 
 jobs:
-  build-deploy-pdf:
+  deploy-pdf:
     uses: kolosovpetro/github-latex-template/.github/workflows/build-and-deploy-pdf-template.yml@main
     secrets: inherit
     with:
@@ -21,11 +21,12 @@ jobs:
       enable_html_deploy: true
       html_deploy_path: 'sums-of-powers-backward-differences'
       runs_on: 'ubuntu-latest'
-      workflow_name: 'Build and Deploy PDF'
+      workflow_name: 'Deploy PDF'
       build_assets_path: |
         src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.tex
         src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bbl
         src/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib
         src/sections
         src/metadata
+        src/examples
       working_directory_for_latex: 'src'

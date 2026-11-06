@@ -24,8 +24,10 @@ tests
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-#*.pdf
+# *.pdf
+*.annotated.pdf
 #out
+mathematica/Licensing
 
 ## JetBrains
 .idea

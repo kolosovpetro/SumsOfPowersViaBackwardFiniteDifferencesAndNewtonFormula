@@ -1,17 +1,17 @@
-We start our discussion from Lemma~\eqref{lem:backward-newtons-formula-for-powers},
-which yields backward Newton's interpolation formula for powers.
-For example,
+We begin with Lemma~\eqref{lem:backward-newtons-formula-for-powers},
+which gives backward Newton's interpolation formula for powers.
+For example, the formula gives the following expansions for cubes:
 \input{examples/01_newtons_formula_for_cubes.tex}
-Thus, the transition to formula for sums of powers is quite straightforward,
+The transition to a formula for sums of powers is straightforward:
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
-  = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t+k-1}{k} \right] \nabla^{k} t^m.
+    = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t+k-1}{k} \right] \nabla^{k} t^m.
 \end{align*}
-Therefore, by setting $r=0$ into Lemma~\eqref{lem:backward-hockey-stick-identity}
-yields closed form of ordinary sums of powers
-\begin{proposition}[Ordinary sums of powers]
+Setting $r=0$ in Lemma~\eqref{lem:backward-hockey-stick-identity}
+therefore gives the following closed form for ordinary sums of powers.
+\begin{proposition}[Ordinary Sums of Powers]
   \label{prop:ordinary-sums-of-powers}
-  For non-negative integers $n,m$, and an arbitrary integer $t$
+  For non-negative integers $n$ and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     = \sum_{k=0}^{m}
@@ -20,37 +20,36 @@ yields closed form of ordinary sums of powers
     \right] \nabla^{k} t^m.
   \end{align*}
 \end{proposition}
-We may see that the basis $\binom{j-t+k-1+r}{k+r}$ for repeatedly
-applied Lemma~\eqref{lem:backward-hockey-stick-identity}
-was indeed chosen correctly, because we derived closed form for sums of powers
-with ease, simply setting parameter for $r$.
-For example,
+The basis $\binom{j-t+k-1+r}{k+r}$ is well suited to repeated
+applications of Lemma~\eqref{lem:backward-hockey-stick-identity}.
+Indeed, setting the parameter $r$ gives a closed form for sums of powers.
+For example, the case of cubes is as follows:
 \input{examples/02_ordinary_sums_of_cubes_binomial_form.tex}
-From example above, we may observe binomial coefficients of negative upper
-index, which may looking unfamiliar.
-However, there is no reason to be afraid of, because negative
-upper index binomial coefficients are completely deterministic,
-because $\binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}$.
-Moreover, binomial coefficient $\binom{n}{k}$ is a polynomial
-in $n$, thus accepting even fraction values in its upper index.
-Therefore, Proposition~\eqref{prop:ordinary-sums-of-powers}
+In the preceding example, some binomial coefficients have negative upper
+indices, which may look unfamiliar.
+These coefficients are well defined because negative
+upper-index binomial coefficients satisfy
+$\binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}$.
+Moreover, the binomial coefficient $\binom{n}{k}$ is a polynomial
+in $n$ and therefore accepts fractional values in its upper index.
+Consequently, the expression in Proposition~\eqref{prop:ordinary-sums-of-powers}
 is also a polynomial in $n$.
-For example,
+The following example illustrates the polynomial form of the formula.
 \input{examples/03_ordinary_sums_of_powers_polynomial_form.tex}
-Where the coefficients
+The coefficients for the indicated values of $t$ form the following OEIS sequences:
 \begin{itemize}
-  \item For $t=0$ are $0, 1, -6, 6$ belong to sequence \href{https://oeis.org/A278075}{\texttt{A278075}} in the OEIS~\cite{sloane2003line}.
-  \item For $t=1$ are $1, 1, 0, 6$ belong to sequence \href{https://oeis.org/A389570}{\texttt{A389570}} in the OEIS~\cite{sloane2003line}.
-  \item For $t=2$ are $8, 7, 6, 6$ belong to sequence \href{https://oeis.org/A391068}{\texttt{A391068}} in the OEIS~\cite{sloane2003line}.
-  \item For $t=3$ are $27, 19, 12, 6$ belong to sequence \href{https://oeis.org/A391210}{\texttt{A391210}} in the OEIS~\cite{sloane2003line}.
-  \item For $t=4$ are $64, 37, 18, 6$ belong to sequence \href{https://oeis.org/A395604}{\texttt{A395604}} in the OEIS~\cite{sloane2003line}.
+  \item For $t=0$, the coefficients $0, 1, -6, 6$ form sequence \href{https://oeis.org/A278075}{\texttt{A278075}} in the OEIS~\cite{sloane2003line}.
+  \item For $t=1$, the coefficients $1, 1, 0, 6$ form sequence \href{https://oeis.org/A389570}{\texttt{A389570}} in the OEIS~\cite{sloane2003line}.
+  \item For $t=2$, the coefficients $8, 7, 6, 6$ form sequence \href{https://oeis.org/A391068}{\texttt{A391068}} in the OEIS~\cite{sloane2003line}.
+  \item For $t=3$, the coefficients $27, 19, 12, 6$ form sequence \href{https://oeis.org/A391210}{\texttt{A391210}} in the OEIS~\cite{sloane2003line}.
+  \item For $t=4$, the coefficients $64, 37, 18, 6$ form sequence \href{https://oeis.org/A395604}{\texttt{A395604}} in the OEIS~\cite{sloane2003line}.
 \end{itemize}
-Formula for double sums of powers could be derivate similarly,
-by setting $r=1$ into Lemma~\eqref{lem:backward-hockey-stick-identity}
-which yields
-\begin{proposition}[Double sums of powers]
+We derive a formula for double sums of powers similarly.
+Setting $r=1$ in Lemma~\eqref{lem:backward-hockey-stick-identity}
+yields the following result.
+\begin{proposition}[Double Sums of Powers]
   \label{prop:double-sums-of-powers}
-  For non-negative integers $n,m$, and an arbitrary integer $t$
+  For non-negative integers $n$ and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
     \KnuthRFoldSum{2}{n}{m}
     = \sum_{k=0}^{m}
@@ -61,16 +60,15 @@ which yields
     \right] \nabla^{k} t^m.
   \end{align*}
 \end{proposition}
-Note that we added correction terms $\KnuthRFoldSum{r}{n}{0}$,
-which are $\KnuthRFoldSum{0}{n}{0}=1$, and $\KnuthRFoldSum{1}{n}{0}=n$.
-For example,
+The formula includes the correction terms $\KnuthRFoldSum{0}{n}{0}=1$
+and $\KnuthRFoldSum{1}{n}{0}=n$.
+The next example gives a formula for double sums of powers.
 \input{examples/04_double_sums_of_powers_polynomial_form.tex}
-Similarly, we obtain closed formula for multifold sums of powers,
-by using Lemma~\eqref{lem:backward-hockey-stick-identity} repeatedly.
-Thus,
-\begin{theorem} [Multifold sums of powers]
+Similarly, repeated application of Lemma~\eqref{lem:backward-hockey-stick-identity}
+yields a closed formula for multifold sums of powers.
+\begin{theorem} [Multifold Sums of Powers]
   \label{thm:multifold-sums-of-powers}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     =
@@ -83,13 +81,13 @@ Thus,
     \right] \nabla^{k} t^{m}.
   \end{align*}
 \end{theorem}
-For example,
+The following example illustrates the multifold formula.
 \input{examples/05_multifold_binomial_sums_of_powers_t_0_3.tex}
-By using Lemma~\eqref{lem:multifold-sum-of-zero-powers},
-we get pure binomial version of Theorem~\eqref{thm:multifold-sums-of-powers}
-\begin{proposition} [Multifold Binomial sums of powers]
+Using Lemma~\eqref{lem:multifold-sum-of-zero-powers},
+we obtain the following binomial form of Theorem~\eqref{thm:multifold-sums-of-powers}.
+\begin{proposition} [Multifold Binomial Sums of Powers]
   \label{prop:multifold-binomial-sums-of-powers}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     =
@@ -102,12 +100,10 @@ we get pure binomial version of Theorem~\eqref{thm:multifold-sums-of-powers}
     \right] \nabla^{k} t^{m}.
   \end{align*}
 \end{proposition}
-By setting $t \rightarrow -t$ yields another remarkable
-formula for multifold sums of powers of integers.
-Therefore,
-\begin{proposition} [Multifold Binomial sums of powers negated]
+Replacing $t$ with $-t$ yields another formula for multifold sums of powers.
+\begin{proposition} [Multifold Binomial Sums of Powers Negated]
   \label{prop:multifold-binomial-sums-of-powers-negated}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     =
@@ -120,5 +116,5 @@ Therefore,
     \right] \nabla^{k} (-t)^{m}.
   \end{align*}
 \end{proposition}
-For example,
+The next example illustrates the formula after replacing $t$ with $-t$.
 \input{examples/06_multifold_binomial_sums_of_powers_negated_t_1_4.tex}

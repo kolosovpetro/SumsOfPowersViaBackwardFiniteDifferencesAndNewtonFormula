@@ -1,21 +1,21 @@
-We have Lemma which connects Stirling numbers of the second kind $\stirlingii{n}{k}$
-with backward differences of powers $\nabla^{k} t^{m}$
-\begin{lemma} [Stirling Backward differences]
-  For non-negative integers $m,k$, and an arbitrary integer $t$
+The following lemma relates Stirling numbers of the second kind $\stirlingii{n}{k}$
+to backward differences of powers $\nabla^{k} t^{m}$.
+\begin{lemma} [Stirling Backward Differences]
+  For non-negative integers $m$ and $k$, and an arbitrary integer $t$, the following identity holds
   \label{lem:stirling-backward-differencess}
   \begin{align*}
-    \nabla^{k} t^{m} = \sum_{j=k}^{m} \binom{t-k}{j-k} \stirlingii{m}{j} j!
+    \nabla^{k} t^{m} = \sum_{j=k}^{m} \binom{t-k}{j-k} \stirlingii{m}{j} j!.
   \end{align*}
   \begin{proof}
-    By the identity $t^m  = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{k} k!$,
-    and by using
-    binomial recurrence $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$.
+    The identity $t^m  = \sum_{k=0}^{m} \binom{t}{k} \stirlingii{m}{k} k!$,
+    together with the binomial recurrence
+    $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$, gives the result.
   \end{proof}
 \end{lemma}
-Therefore,
-\begin{proposition} [Multifold Stirling sums of powers]
+The lemma gives the following representation.
+\begin{proposition} [Multifold Stirling Sums of Powers]
   \label{prop:multifold-stirling-sums-of-powers}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     =
@@ -26,6 +26,6 @@ Therefore,
       -
       \sum_{s=0}^{r-1}
       \tbinom{k-t+r-1-s}{k+r-s} \tbinom{s+n-1}{s}
-    \right] \binom{t-k}{j-k} \stirlingii{m}{j} j!
+    \right] \binom{t-k}{j-k} \stirlingii{m}{j} j!.
   \end{align*}
 \end{proposition}

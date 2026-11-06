@@ -5,7 +5,7 @@ Triangle read by rows: T(n,k) = Sum_{j=0..k} (-1)^j * binomial(k,j) * (1-j)^n.
 
 Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
 Petro Kolosov, <a href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica">Mathematica programs</a>, GitHub, 2026.
-Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of powers via backward finite differences and Newton's formula</a>, Zenodo, 2026.
+Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of Powers via Backward Finite Differences and Newton's Formula</a>, Zenodo, 2026.
 
 Triangle begins:
   k=    0  1  2    3      4      5       6     7
@@ -49,7 +49,7 @@ Triangle read by rows: T(n,k) = Sum_{j=0..k} (-1)^j * binomial(k,j) * (2-j)^n.
 
 Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
 Petro Kolosov, <a href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica">Mathematica programs</a>, GitHub, 2026.
-Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of powers via backward finite differences and Newton's formula</a>, Zenodo, 2026.
+Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of Powers via Backward Finite Differences and Newton's Formula</a>, Zenodo, 2026.
 
 T(n,k) = Sum_{j=k..n} binomial(2-k, j-k) * Stirling2(n, j) * j!.
 T(n,k) = Sum_{j=0..n} E(n,j) * binomial(2+j-k, n-k), where E(n,j) is Eulerian number (Cf. A173018).
@@ -120,7 +120,7 @@ S_m(n) = Sum_{j=0..m} T(m,j) * ( (-1)^j*binomial(3,j+1) + binomial(n+j-3, j+1 ).
 
 Donald E. Knuth, <a href="https://arxiv.org/abs/math/9207222">Johann Faulhaber and Sums of Powers</a>, arXiv:9207222 [math.CA], 1992.
 Petro Kolosov, <a href="https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula/tree/main/mathematica">Mathematica programs</a>, GitHub, 2026.
-Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of powers via backward finite differences and Newton's formula</a>, Zenodo, 2026.
+Petro Kolosov, <a href="https://doi.org/10.5281/zenodo.18118011">Sums of Powers via Backward Finite Differences and Newton's Formula</a>, Zenodo, 2026.
 
 (*Prints T(n,k) as triangle*)
 T1[t_,n_, k_] := Sum[(-1)^j*Binomial[k, j]*(t - j)^n, {j, 0, k}];Table[T1[3, n, k], {n, 0, 10}, {k, 0, n}] // Flatten

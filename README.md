@@ -1,4 +1,4 @@
-# Sums of powers via backward finite differences and Newton's formula
+# Sums of Powers via Backward Finite Differences and Newton's Formula
 
 ## Abstract
 
@@ -28,7 +28,7 @@ In this manuscript, we derive closed formulas for multifold sums of powers of in
 
 - [Newton's interpolation formula and sums of powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
 - [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
-- [Sums of powers via backward finite differences and Newton's formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
+- [Sums of Powers via Backward Finite Differences and Newton's Formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
 - [Sums of powers of integers: A complete framework for closed formulas (2026)](https://github.com/kolosovpetro/SumsOfPowersACompleteFrameworkForClosedForms)
 
 ## References
