@@ -54,7 +54,7 @@ BackwardDifference[t_, m_, k_] :=
 MultifoldBinomialSumsNegated[r_, n_, m_, t_] :=
   Sum[
     (
-      Binomial[n + t + k + r, k + r + 1]
+      Binomial[n + k + r + t, k + r + 1]
       -
       Sum[
         Binomial[k - s + r + t, k - s + r + 1]
