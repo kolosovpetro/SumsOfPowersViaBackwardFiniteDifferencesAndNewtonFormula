@@ -1,52 +1,54 @@
 \begin{example}
   For non-negative integers $r$, $n$, and $m$, we have
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     &=
     \tsum_{k=0}^{m}
     \left[
-      \tbinom{n+k+r-1}{k+r}
+      \tbinom{n+k+r-0}{k+r+1}
       -
-      \tsum_{s=0}^{r-1}
-      \tbinom{k+r-1-s}{k+r-s}
-      \KnuthRFoldSum{s}{n}{0}
-    \right]
-    \nabla^k 0^m,
+      \tsum_{s=0}^{r}
+      \tbinom{k-s+r-0}{k-s+r+1} \KnuthRFoldSum{s}{n}{0}
+    \right] \nabla^{k} 0^{m},
     \\
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     &=
     \tsum_{k=0}^{m}
     \left[
-      \tbinom{n+k+r-2}{k+r}
+      \tbinom{n+k+r-1}{k+r+1}
       -
-      \tsum_{s=0}^{r-1}
-      \tbinom{k+r-2-s}{k+r-s}
-      \KnuthRFoldSum{s}{n}{0}
-    \right]
-    \nabla^k 1^m,
+      \tsum_{s=0}^{r}
+      \tbinom{k-s+r-1}{k-s+r+1} \KnuthRFoldSum{s}{n}{0}
+    \right] \nabla^{k} 1^{m},
     \\
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     &=
     \tsum_{k=0}^{m}
     \left[
-      \tbinom{n+k+r-3}{k+r}
+      \tbinom{n+k+r-2}{k+r+1}
       -
-      \tsum_{s=0}^{r-1}
-      \tbinom{k+r-3-s}{k+r-s}
-      \KnuthRFoldSum{s}{n}{0}
-    \right]
-    \nabla^k 2^m,
+      \tsum_{s=0}^{r}
+      \tbinom{k-s+r-2}{k-s+r+1} \KnuthRFoldSum{s}{n}{0}
+    \right] \nabla^{k} 2^{m},
     \\
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     &=
     \tsum_{k=0}^{m}
     \left[
-      \tbinom{n+k+r-4}{k+r}
+      \tbinom{n+k+r-3}{k+r+1}
       -
-      \tsum_{s=0}^{r-1}
-      \tbinom{k+r-4-s}{k+r-s}
-      \KnuthRFoldSum{s}{n}{0}
-    \right]
-    \nabla^k 3^m.
+      \tsum_{s=0}^{r}
+      \tbinom{k-s+r-3}{k-s+r+1} \KnuthRFoldSum{s}{n}{0}
+    \right] \nabla^{k} 3^{m},
+    \\
+    \KnuthRFoldSum{r+1}{n}{m}
+    &=
+    \tsum_{k=0}^{m}
+    \left[
+      \tbinom{n+k+r-4}{k+r+1}
+      -
+      \tsum_{s=0}^{r}
+      \tbinom{k-s+r-4}{k-s+r+1} \KnuthRFoldSum{s}{n}{0}
+    \right] \nabla^{k} 4^{m}.
   \end{align*}
 \end{example}

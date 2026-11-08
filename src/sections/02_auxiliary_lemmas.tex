@@ -24,7 +24,7 @@ We use the following notation for rising factorials.
       0, \quad & \mathrm{if \; } k < 0, \\
       1, \quad & \mathrm{if \; } k = 0, \\
       \prod_{j=0}^{k-1} (n+j), \quad & \mathrm{if \; } k>0.
-    \end{cases}.
+    \end{cases}
   \end{align*}
 \end{definition}
 For further discussion of generalized factorials, see J. F. Steffensen~\cite{steffensen1933definition}.
@@ -66,7 +66,7 @@ For further discussion of generalized factorials, see J. F. Steffensen~\cite{ste
 
 \begin{lemma}[Generalized Hockey-Stick Identity]
   \label{lem:generalized-hockey-stick-identity}
-    For arbitrary integers $a$, $b$, and $j$, the following identity holds
+  For arbitrary integers $a$, $b$, and $j$, the following identity holds
   \begin{align*}
     \sum_{k=a}^{b} \binom{k}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}.
   \end{align*}
@@ -122,25 +122,25 @@ For further discussion of generalized factorials, see J. F. Steffensen~\cite{ste
       \item For arbitrary non-negative integer $r$, iterating the definition and applying the hockey-stick identity gives
         \begin{align*}
           \KnuthRFoldSum{r}{n}{0}
-          &= \sum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0} \\
-          &= \sum_{k=1}^{n} \binom{k+r-2}{r-1} \\
-          &= \binom{r+n-1}{r}.
+          &= \sum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
+          = \sum_{k=1}^{n} \binom{k+r-2}{r-1}
+          = \binom{r+n-1}{r}.
         \end{align*}
     \end{enumerate}
     This completes the proof.
   \end{proof}
 \end{lemma}
 
-\begin{lemma}[Upper Binomial Negation]
-  \label{lem:upper-binomial-negation}
-  For integers $n$ and $k$, the following identity holds
-  \begin{align*}
-    \binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}.
-  \end{align*}
-  \begin{proof}
-    See~\cite[p. 164, Equation (5.14)]{graham1994concrete}.
-  \end{proof}
-\end{lemma}
+% \begin{lemma}[Upper Binomial Negation]
+%   \label{lem:upper-binomial-negation}
+%   For integers $n$ and $k$, the following identity holds
+%   \begin{align*}
+%     \binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}.
+%   \end{align*}
+%   \begin{proof}
+%     See~\cite[p. 164, Equation (5.14)]{graham1994concrete}.
+%   \end{proof}
+% \end{lemma}
 
 \begin{convention} For every $x$, we use the convention
   \begin{align*}

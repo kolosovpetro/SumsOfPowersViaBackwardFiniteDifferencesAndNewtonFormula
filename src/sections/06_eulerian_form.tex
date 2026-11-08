@@ -19,15 +19,16 @@ The lemma gives the following representation.
   \label{prop:multifold-eulerian-sums-of-powers}
   For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     =
-    \sum_{k=0}^{m}
     \sum_{j=0}^{m}
+    \sum_{k=0}^{m}
     \left[
-      \binom{n-t+k+r-1}{k+r}
+      \binom{n+k+r-t}{k+r+1}
       -
-      \sum_{s=0}^{r-1}
-      \tbinom{k-t+r-1-s}{k+r-s} \tbinom{s+n-1}{s}
-    \right] \binom{t+j-k}{m-k} \eulerian{m}{j}.
+      \sum_{s=0}^{r}
+      \binom{k-s+r-t}{k-s+r+1} \binom{s+n-1}{s}
+    \right]
+    \binom{t+j-k}{m-k} \eulerian{m}{j}.
   \end{align*}
 \end{proposition}

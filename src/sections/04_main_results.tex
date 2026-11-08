@@ -5,7 +5,7 @@ For example, the formula gives the following expansions for cubes:
 The transition to a formula for sums of powers is straightforward:
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
-    = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t+k-1}{k} \right] \nabla^{k} t^m.
+  = \sum_{k=0}^{m} \left[ \sum_{j=1}^{n} \binom{j-t+k-1}{k} \right] \nabla^{k} t^m.
 \end{align*}
 Setting $r=0$ in Lemma~\eqref{lem:backward-hockey-stick-identity}
 therefore gives the following closed form for ordinary sums of powers.
@@ -24,12 +24,36 @@ The basis $\binom{j-t+k-1+r}{k+r}$ is well suited to repeated
 applications of Lemma~\eqref{lem:backward-hockey-stick-identity}.
 Indeed, setting the parameter $r$ gives a closed form for sums of powers.
 For example, the case of cubes is as follows:
-\input{examples/02_ordinary_sums_of_cubes_binomial_form.tex}
+\input{examples/02_ordinary_sums_of_cubes_binomial_form_1.tex}
 In the preceding example, some binomial coefficients have negative upper
 indices, which may look unfamiliar.
-These coefficients are well defined because negative
-upper-index binomial coefficients satisfy
+These coefficients are well defined because they satisfy
+the upper negation identity for binomial coefficients
 $\binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}$.
+Thus,
+\begin{align*}
+  \binom{k-t}{k+1} = \binom{-(t+k)}{k+1}
+  = (-1)^{k+1} \binom{(k+1)+(t-k)-1}{k+1}
+  = (-1)^{k+1} \binom{t}{k+1}
+\end{align*}
+\begin{corollary}[Ordinary Sums of Powers]
+  \label{cor:ordinary-sums-of-powers-upper-negation}
+  For non-negative integers $n$ and $m$, and an arbitrary integer $t$, the following identity holds
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{m}
+    &= \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+k}{k+1} + (-1)^{k+2} \binom{t}{k+1}
+    \right] \nabla^{k} t^m
+    \\
+    &= \sum_{k=0}^{m}
+    \left[
+      \binom{n-t+k}{k+1} + (-1)^{k} \binom{t}{k+1}
+    \right] \nabla^{k} t^m.
+  \end{align*}
+\end{corollary}
+For example,
+\input{examples/02_ordinary_sums_of_cubes_binomial_form_2.tex}
 Moreover, the binomial coefficient $\binom{n}{k}$ is a polynomial
 in $n$ and therefore accepts fractional values in its upper index.
 Consequently, the expression in Proposition~\eqref{prop:ordinary-sums-of-powers}
@@ -70,14 +94,14 @@ yields a closed formula for multifold sums of powers.
   \label{thm:multifold-sums-of-powers}
   For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     =
     \sum_{k=0}^{m}
     \left[
-      \binom{n-t+k+r-1}{k+r}
+      \binom{n+k+r-t}{k+r+1}
       -
-      \sum_{s=0}^{r-1}
-      \binom{k-t+r-1-s}{k+r-s} \KnuthRFoldSum{s}{n}{0}
+      \sum_{s=0}^{r}
+      \binom{k-s+r-t}{k-s+r+1} \KnuthRFoldSum{s}{n}{0}
     \right] \nabla^{k} t^{m}.
   \end{align*}
 \end{theorem}
@@ -89,14 +113,14 @@ we obtain the following binomial form of Theorem~\eqref{thm:multifold-sums-of-po
   \label{prop:multifold-binomial-sums-of-powers}
   For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     =
     \sum_{k=0}^{m}
     \left[
-      \binom{n-t+k+r-1}{k+r}
+      \binom{n+k+r-t}{k+r+1}
       -
-      \sum_{s=0}^{r-1}
-      \binom{k-t+r-1-s}{k+r-s} \binom{s+n-1}{s}
+      \sum_{s=0}^{r}
+      \binom{k-s+r-t}{k-s+r+1} \binom{s+n-1}{s}
     \right] \nabla^{k} t^{m}.
   \end{align*}
 \end{proposition}
@@ -104,15 +128,26 @@ Replacing $t$ with $-t$ yields another formula for multifold sums of powers.
 \begin{proposition} [Multifold Binomial Sums of Powers Negated]
   \label{prop:multifold-binomial-sums-of-powers-negated}
   For non-negative integers $r$, $n$, and $m$, and an arbitrary integer $t$, the following identity holds
+  %   \begin{align*}
+  %     \KnuthRFoldSum{r}{n}{m}
+  %     =
+  %     \sum_{k=0}^{m}
+  %     \left[
+  %       \binom{n+t+k+r-1}{k+r}
+  %       -
+  %       \sum_{s=0}^{r-1}
+  %       \binom{k+t+r-1-s}{k+r-s} \binom{s+n-1}{s}
+  %     \right] \nabla^{k} (-t)^{m}.
+  %   \end{align*}
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     =
     \sum_{k=0}^{m}
     \left[
-      \binom{n+t+k+r-1}{k+r}
+      \binom{n+k+r+t}{k+r+1}
       -
-      \sum_{s=0}^{r-1}
-      \binom{k+t+r-1-s}{k+r-s} \binom{s+n-1}{s}
+      \sum_{s=0}^{r}
+      \binom{k-s+r+t}{k-s+r+1} \binom{s+n-1}{s}
     \right] \nabla^{k} (-t)^{m}.
   \end{align*}
 \end{proposition}
