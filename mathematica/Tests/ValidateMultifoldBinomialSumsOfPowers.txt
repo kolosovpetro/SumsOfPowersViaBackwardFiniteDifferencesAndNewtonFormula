@@ -4,7 +4,7 @@
 
 ClearAll[
   KnuthRFoldSum,
-  ForwardDifference,
+  BackwardDifference,
   RHS,
   ValidateMultifoldBinomialSumsOfPowers
 ];
@@ -27,10 +27,10 @@ KnuthRFoldSum[r_, n_, m_] /; r > 0 :=
   Sum[KnuthRFoldSum[r - 1, k, m], {k, 1, n}];
 
 (* --------------------------------------------------------------- *)
-(*  Backward/forward difference operator (as defined in identity)   *)
+(*  Backward difference operator (as defined in identity)   *)
 (* --------------------------------------------------------------- *)
 
-ForwardDifference[t_, m_, k_] :=
+BackwardDifference[t_, m_, k_] :=
   Sum[(-1)^j Binomial[k, j] (t - j)^m, {j, 0, k}];
 
 (* --------------------------------------------------------------- *)
@@ -40,7 +40,7 @@ ForwardDifference[t_, m_, k_] :=
 RHS[r_, n_, m_, t_] :=
   Sum[
     (Binomial[n + k + r - t, k + r + 1] - Sum[Binomial[k - s + r - t, k - s + r + 1] Binomial[s + n - 1, s], {s, 0, r}])
-    ForwardDifference[t, m, k],
+    BackwardDifference[t, m, k],
     {k, 0, m}
   ];
 
