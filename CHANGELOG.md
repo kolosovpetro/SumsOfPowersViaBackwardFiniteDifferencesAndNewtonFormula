@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 08-Nov-2026
+
+### Added
+
+- Add a corollary for ordinary sums of powers using upper-negated binomial coefficients
+- Add Mathematica validation for the ordinary-sums corollary
+- Add separate cube examples for two binomial forms and extend them through `t = 7`
+
+### Changed
+
+- Extend the finite-difference generator to produce cubic differences for `t = 0` through `7`
+- Reindex the multifold binomial, Stirling, and Eulerian formulas and update their correction terms
+- Revise manuscript explanations and examples to match the updated formulas
+
 ## [2.1.0] - 06-Nov-2026
 
 ### Added
