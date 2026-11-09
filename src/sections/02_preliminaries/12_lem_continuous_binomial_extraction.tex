@@ -1,0 +1,12 @@
+\begin{lemma}[Continuous Binomial Extranction]
+  \begin{align*}
+    \frac{k(k-1)(k-2)(k-3)\cdots(k-\ell+1)}{n(n-1)(n-2)(n-3)\cdots(n-\ell+1)}
+    \binom{n}{k}
+    = \frac{\fallingFactorial{k}{\ell}}{\fallingFactorial{n}{\ell}} \binom{n}{k}
+    = \binom{n-\ell}{k-\ell}.
+  \end{align*}
+  \begin{proof}
+    By continuous application of
+    Binomial Extraction property~\eqref{lem:binomial-extraction} on itself.
+  \end{proof}
+\end{lemma}

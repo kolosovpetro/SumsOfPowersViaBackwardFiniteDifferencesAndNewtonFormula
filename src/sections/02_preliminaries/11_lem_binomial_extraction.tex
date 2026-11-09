@@ -1,0 +1,22 @@
+\begin{lemma}[Binomial Extranction]
+  \label{lem:binomial-extraction}
+  \begin{align*}
+    \frac{k}{n} \binom{n}{k} = \binom{n-1}{k-1}.
+  \end{align*}
+  \begin{proof}
+    By definition of Binomial Coefficients, we have $\binom{n}{k} = \frac{n!}{k! (n-k)!}$.
+    Therefore,
+    \begin{align*}
+      \binom{n}{k} = \frac{n(n-1)(n-2)(n-3)\cdots(n-k+1)}{k!}
+      = \frac{\fallingFactorial{n}{k}}{k!}.
+    \end{align*}
+    Thus,
+    \begin{align*}
+      \frac{k}{n} \binom{n}{k}
+      = \frac{k}{n} \left( \frac{n(n-1)(n-2)(n-3)\cdots(n-k+1)}{k!} \right)
+      = \frac{\fallingFactorial{n-1}{k-1}}{(k-1)!}
+      = \binom{n-1}{k-1}.
+    \end{align*}
+    Where $\fallingFactorial{n}{k}$ denotes falling factorial defined by~\eqref{def:falling-factorials}.
+  \end{proof}
+\end{lemma}

@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.aux
 The style file: unsrt.bst
 Database file #1: SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula.bib
-You've used 9 entries,
+You've used 8 entries,
             1791 wiz_defined-function locations,
-            505 strings with 5242 characters,
-and the built_in function-call counts, 1548 in all, are:
-= -- 145
-> -- 36
+            496 strings with 4990 characters,
+and the built_in function-call counts, 1317 in all, are:
+= -- 120
+> -- 32
 < -- 0
-+ -- 18
-- -- 9
-* -- 63
-:= -- 249
-add.period$ -- 33
-call.type$ -- 9
-change.case$ -- 6
++ -- 16
+- -- 8
+* -- 46
+:= -- 213
+add.period$ -- 29
+call.type$ -- 8
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 72
-empty$ -- 183
-format.name$ -- 9
-if$ -- 352
+cite$ -- 8
+duplicate$ -- 63
+empty$ -- 159
+format.name$ -- 8
+if$ -- 302
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 9
-newline$ -- 54
-num.names$ -- 9
+int.to.str$ -- 8
+missing$ -- 8
+newline$ -- 48
+num.names$ -- 8
 pop$ -- 39
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 23
+skip$ -- 20
 stack$ -- 0
-substring$ -- 71
-swap$ -- 9
+substring$ -- 46
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 14
-width$ -- 10
-write$ -- 107
+while$ -- 11
+width$ -- 9
+write$ -- 94
