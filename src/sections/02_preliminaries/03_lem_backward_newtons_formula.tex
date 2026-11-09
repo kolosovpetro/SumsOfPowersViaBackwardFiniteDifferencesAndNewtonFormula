@@ -1,0 +1,23 @@
+\begin{lemma}[Backward Newton's formula]
+  \label{lem:backward-newtons-formula}
+  Let $f\colon \mathbb{Z} \to \mathbb{C}$ be a function,
+  and let $t \in \mathbb{Z}$.
+  Then, for all $n \in \mathbb{Z}$,
+  \begin{align*}
+    f(n)
+    = \sum_{k=0}^{\infty} \frac{\risingFactorial{(n-t)}{k}}{k!} \nabla^{k} f(t)
+    = \sum_{k=0}^{\infty} \binom{n-t+k-1}{k} \nabla^{k} f(t),
+  \end{align*}
+  Here, $\nabla^{k} f(t)$ denotes the $k$-th backward difference of $f$
+  evaluated at $t$
+  \begin{align*}
+    \nabla^{k} t^{m} = \tsum_{j=0}^{k} (-1)^j \tbinom{k}{j} (t-j)^m.
+  \end{align*}
+  \begin{proof}
+    Sir Isaac Newton originally presented this formula in~\cite{newton1850newton}.
+    J. F. Steffensen expressed it in modern mathematical notation in~\cite[Section 2, Equation (19)]{steffensen1927interpolation}.
+    The identity
+    $\frac{\risingFactorial{(n-t)}{k}}{k!} = \binom{n-t+k-1}{k}$
+    gives the binomial form.
+  \end{proof}
+\end{lemma}

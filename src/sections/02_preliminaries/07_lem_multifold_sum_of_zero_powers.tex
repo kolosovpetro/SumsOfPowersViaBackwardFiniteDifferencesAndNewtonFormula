@@ -1,0 +1,32 @@
+\begin{lemma}[Multifold Sums of Zero Powers]
+  \label{lem:multifold-sum-of-zero-powers}
+  For non-negative integers $r$ and $n$, the following identity holds
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}.
+  \end{align*}
+  \begin{proof}
+    \leavevmode\par
+    \begin{enumerate}
+      \item When $r=0$, Definition~\ref{def:multifold-sums-of-powers-recurrence} gives $\KnuthRFoldSum{0}{n}{0} = 1$.
+      \item When $r=1$, we have
+        $\KnuthRFoldSum{1}{n}{0}
+        = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
+      \item When $r=2$, we have
+        $\KnuthRFoldSum{2}{n}{0}
+        = \sum_{k=1}^{n} \binom{k}{1}
+        = \binom{n+1}{2}$.
+      \item When $r=3$, we have
+        $\KnuthRFoldSum{3}{n}{0}
+        = \sum_{k=1}^{n} \binom{k+1}{2}
+        = \binom{n+2}{3}$.
+      \item For arbitrary non-negative integer $r$, iterating the definition and applying the hockey-stick identity gives
+        \begin{align*}
+          \KnuthRFoldSum{r}{n}{0}
+          &= \sum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
+          = \sum_{k=1}^{n} \binom{k+r-2}{r-1}
+          = \binom{r+n-1}{r}.
+        \end{align*}
+    \end{enumerate}
+    This completes the proof.
+  \end{proof}
+\end{lemma}
