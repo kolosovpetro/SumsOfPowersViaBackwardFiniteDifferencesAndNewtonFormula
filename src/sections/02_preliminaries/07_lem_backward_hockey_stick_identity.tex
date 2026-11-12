@@ -1,0 +1,12 @@
+\begin{lemma}[Backward Hockey-Stick Identity]
+  \label{lem:backward-hockey-stick-identity}
+  For an integer $n\geq1$ and arbitrary integers $t$, $k$, and $r$, the following identity holds
+  \begin{align*}
+    \sum_{j=1}^{n} \binom{j-t+k-1+r}{k+r}
+    = \binom{n-t+k+r}{k+r+1} - \binom{k-t+r}{k+r+1}.
+  \end{align*}
+  \begin{proof}
+    Setting $a=k-t+r$ and $b=n-t+k-1+r$ in
+    Lemma~\eqref{lem:generalized-hockey-stick-identity} gives the result.
+  \end{proof}
+\end{lemma}

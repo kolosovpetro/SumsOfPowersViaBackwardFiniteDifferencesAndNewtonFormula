@@ -24,12 +24,12 @@ In this manuscript, we derive closed formulas for multifold sums of powers of in
 - [A391210](https://oeis.org/A391210) — Triangle read by rows: T(n,k) = \sum_{j=0}^{k} (-1)^j \binom{k}{j} (3-j)^n. (2026)
 - [A395604](https://oeis.org/A395604) — Triangle read by rows: T(n,k) = \sum_{j=0}^{k} (-1)^j \binom{k}{j} (4-j)^n. (2026)
 
-## Related projects
+## Related Projects
 
-- [Newton's interpolation formula and sums of powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
-- [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
+- [Newton's Interpolation Formula and Sums of Powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
+- [Sums of Powers via Central Finite Differences and Newton's Formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
 - [Sums of Powers via Backward Finite Differences and Newton's Formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
-- [Sums of powers of integers: A complete framework for closed formulas (2026)](https://github.com/kolosovpetro/SumsOfPowersACompleteFrameworkForClosedForms)
+- [Sums of Powers of Integers: A Complete Framework for Closed Formulas (2026)](https://github.com/kolosovpetro/SumsOfPowersACompleteFrameworkForClosedForms)
 
 ## References
 

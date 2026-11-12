@@ -1,0 +1,20 @@
+\begin{lemma}[Continuous Binomial Extraction]
+  \label{lem:continuous-binomial-extraction}
+  For integers $n$, $k$, and $\ell$ with $0 \leq \ell \leq k \leq n$, the following identity holds
+  \begin{align*}
+    \frac{\fallingFactorial{k}{\ell}}{\fallingFactorial{n}{\ell}}
+    \binom{n}{k}
+    = \binom{n-\ell}{k-\ell}.
+  \end{align*}
+  \begin{proof}
+    Repeated application of Lemma~\ref{lem:binomial-extraction} gives
+    \begin{align*}
+      \binom{n-\ell}{k-\ell}
+      &= \frac{k-\ell+1}{n-\ell+1}\binom{n-\ell+1}{k-\ell+1} \\
+      &= \cdots \\
+      &= \frac{(k-\ell+1)\cdots k}{(n-\ell+1)\cdots n}\binom{n}{k} \\
+      &= \frac{\fallingFactorial{k}{\ell}}{\fallingFactorial{n}{\ell}}\binom{n}{k}.
+    \end{align*}
+    The identity also holds when $\ell=0$, since both sides then equal $\binom{n}{k}$.
+  \end{proof}
+\end{lemma}

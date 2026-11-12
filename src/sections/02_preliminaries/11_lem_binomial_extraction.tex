@@ -1,0 +1,24 @@
+\begin{lemma}[Binomial Extraction]
+  \label{lem:binomial-extraction}
+  For integers $n$ and $k$ with $1 \leq k \leq n$, the following identity holds
+  \begin{align*}
+    \frac{k}{n} \binom{n}{k} = \binom{n-1}{k-1}.
+  \end{align*}
+  \begin{proof}
+    By the definition of binomial coefficients, we have
+    \begin{align*}
+      \binom{n}{k}
+      = \frac{n!}{k!(n-k)!}
+      = \frac{n(n-1)\cdots(n-k+1)}{k!}
+      = \frac{\fallingFactorial{n}{k}}{k!}.
+    \end{align*}
+    Hence,
+    \begin{align*}
+      \frac{k}{n} \binom{n}{k}
+      = \frac{(n-1)\cdots(n-k+1)}{(k-1)!}
+      = \frac{\fallingFactorial{n-1}{k-1}}{(k-1)!}
+      = \binom{n-1}{k-1}.
+    \end{align*}
+    Here, $\fallingFactorial{n}{k}$ denotes the falling factorial from Definition~\ref{def:falling-factorials}.
+  \end{proof}
+\end{lemma}
