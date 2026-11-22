@@ -16,7 +16,7 @@ env:
 
 jobs:
   build-pdf:
-    uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@main
+    uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@v2.1.0
     with:
       file_name: 'SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula'
       enable_patch_version: true
