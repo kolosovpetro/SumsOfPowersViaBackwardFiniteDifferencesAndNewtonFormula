@@ -12,7 +12,7 @@ env:
 
 jobs:
   deploy-pdf:
-    uses: kolosovpetro/github-latex-template/.github/workflows/build-and-deploy-pdf-template.yml@main
+    uses: kolosovpetro/github-latex-template/.github/workflows/build-and-deploy-pdf-template.yml@v2.1.0
     secrets: inherit
     with:
       file_name: 'SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula'

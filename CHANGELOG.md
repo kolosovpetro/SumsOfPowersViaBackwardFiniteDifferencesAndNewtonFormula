@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
-## [2.2.0] - 12-Nov-2026
+## [2.3.0] - Nov 22, 2026
+
+### Changed
+
+- Adjust CI to point to tag v2.1.0
+
+## [2.2.0] - Nov 12, 2026
 
 ### Added
 
@@ -19,7 +25,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Reindex the multifold binomial, Stirling, and Eulerian formulas and update their correction terms
 - Revise manuscript explanations and examples to match the updated formulas
 
-## [2.1.0] - 06-Nov-2026
+## [2.1.0] - Nov 6, 2026
 
 ### Added
 
@@ -39,7 +45,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Remove legacy PowerShell build and metadata scripts
 - Remove the obsolete build guide
 
-## [2.0.0] - 29-June-2026
+## [2.0.0] - Jun 29, 2026
 
 ### Changed
 
@@ -68,7 +74,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add formula Multifold Stirling sums of powers
 - Add Mathematica test: `ValidateMultifoldStirlingSumsOfPowers.txt`
 
-## [1.6.1] - 24-Jan-2026
+## [1.6.1] - Jan 24, 2026
 
 ### Changed
 
@@ -76,7 +82,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add math writing guidelines
 - Update HTML metadata
 
-## [1.6.0] - 21-Jan-2026
+## [1.6.0] - Jan 21, 2026
 
 ### Changed
 
@@ -92,13 +98,13 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update build script
 - Fix punctuation
 
-## [1.5.1] - 07-Jan-2026
+## [1.5.1] - Jan 7, 2026
 
 ### Changed
 
 - Fix typo
 
-## [1.5.0] - 07-Jan-2026
+## [1.5.0] - Jan 7, 2026
 
 ### Changed
 
@@ -108,7 +114,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Enable pandoc for GitHub actions
 - Rework metadata
 
-## [1.4.0] - 04-Jan-2026
+## [1.4.0] - Jan 4, 2026
 
 ### Changed
 
@@ -120,7 +126,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add formula for ordinary sums of powers
 - Add slides
 
-## [1.3.0] - 03-Jan-2026
+## [1.3.0] - Jan 3, 2026
 
 ### Changed
 
@@ -129,7 +135,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Formulas for multifold sums of powers
 - Mathematica for multifold sums of powers
 
-## [1.2.0] - 03-Jan-2026
+## [1.2.0] - Jan 3, 2026
 
 ### Changed
 
@@ -138,7 +144,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Update README
 - Add DOI
 
-## [1.1.0] - 02-Jan-2026
+## [1.1.0] - Jan 2, 2026
 
 ### Changed
 
@@ -153,7 +159,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add conclusions
 - Update abstract
 
-## [1.0.1] - 01-Jan-2026
+## [1.0.1] - Jan 1, 2026
 
 ### Changed
 
@@ -161,7 +167,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Fix file title
 - Update CITATION file
 
-## [1.0.0] - 01-Jan-2026
+## [1.0.0] - Jan 1, 2026
 
 ### Changed
 
